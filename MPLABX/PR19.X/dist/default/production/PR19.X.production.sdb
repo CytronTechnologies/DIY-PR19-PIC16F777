@@ -1,0 +1,269 @@
+[p LITE_MODE AUTOSTATIC PIC14 PICREGULAR PICMID ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 16F777 ]
+[d frameptr 6 ]
+"93 D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+[v _main main `(v  1 e 0 0 ]
+"160
+[v _alphamode alphamode `(v  1 e 0 0 ]
+"182
+[v _betamode betamode `(v  1 e 0 0 ]
+"205
+[v _m_stop m_stop `(v  1 e 0 0 ]
+"216
+[v _lm_run lm_run `(v  1 e 0 0 ]
+"222
+[v _rm_run rm_run `(v  1 e 0 0 ]
+"228
+[v _bm_run bm_run `(v  1 e 0 0 ]
+"235
+[v _deg_0 deg_0 `(v  1 e 0 0 ]
+"244
+[v _deg_30 deg_30 `(v  1 e 0 0 ]
+"265
+[v _deg_90 deg_90 `(v  1 e 0 0 ]
+"287
+[v _deg_150 deg_150 `(v  1 e 0 0 ]
+"297
+[v _deg_180 deg_180 `(v  1 e 0 0 ]
+"306
+[v _deg_210 deg_210 `(v  1 e 0 0 ]
+"327
+[v _deg_270 deg_270 `(v  1 e 0 0 ]
+"349
+[v _deg_330 deg_330 `(v  1 e 0 0 ]
+"359
+[v _clockwise clockwise `(v  1 e 0 0 ]
+"379
+[v _delay delay `(v  1 e 0 0 ]
+"386
+[v _send_config send_config `(v  1 e 0 0 ]
+"396
+[v _send_char send_char `(v  1 e 0 0 ]
+"407
+[v _lcd_goto lcd_goto `(v  1 e 0 0 ]
+"420
+[v _lcd_clr lcd_clr `(v  1 e 0 0 ]
+"426
+[v _send_string send_string `(v  1 e 0 0 ]
+"433
+[v _shift_display shift_display `(v  1 e 0 0 ]
+"490
+[v _mode_display mode_display `(v  1 e 0 0 ]
+"62 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\float.c
+[v ___ftpack __ftpack `(f  1 e 3 0 ]
+"86 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftadd.c
+[v ___ftadd __ftadd `(f  1 e 3 0 ]
+"36 D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+[v _i i `uc  1 e 1 0 ]
+[v _shift shift `uc  1 e 1 0 ]
+"221 C:\Program Files (x86)\Microchip\xc8\v1.34\include\pic16f777.h
+[v _PORTB PORTB `VEuc  1 e 1 @6 ]
+"282
+[v _PORTC PORTC `VEuc  1 e 1 @7 ]
+"343
+[v _PORTD PORTD `VEuc  1 e 1 @8 ]
+"765
+[v _T2CON T2CON `VEuc  1 e 1 @18 ]
+"916
+[v _CCPR1L CCPR1L `VEuc  1 e 1 @21 ]
+"928
+[v _CCP1CON CCP1CON `VEuc  1 e 1 @23 ]
+"1097
+[v _CCPR2L CCPR2L `VEuc  1 e 1 @27 ]
+"1109
+[v _CCP2CON CCP2CON `VEuc  1 e 1 @29 ]
+"1341
+[v _TRISA TRISA `VEuc  1 e 1 @133 ]
+"1402
+[v _TRISB TRISB `VEuc  1 e 1 @134 ]
+"1463
+[v _TRISC TRISC `VEuc  1 e 1 @135 ]
+"1524
+[v _TRISD TRISD `VEuc  1 e 1 @136 ]
+"1985
+[v _PR2 PR2 `VEuc  1 e 1 @146 ]
+"2171
+[v _CCPR3L CCPR3L `VEuc  1 e 1 @149 ]
+"2209
+[v _CCP3CON CCP3CON `VEuc  1 e 1 @151 ]
+"2532
+[v _ADCON1 ADCON1 `VEuc  1 e 1 @159 ]
+"3010
+[v _RA0 RA0 `VEb  1 e 0 @40 ]
+"3012
+[v _RA1 RA1 `VEb  1 e 0 @41 ]
+"3014
+[v _RA2 RA2 `VEb  1 e 0 @42 ]
+"3016
+[v _RA3 RA3 `VEb  1 e 0 @43 ]
+"3032
+[v _RB3 RB3 `VEb  1 e 0 @51 ]
+"3034
+[v _RB4 RB4 `VEb  1 e 0 @52 ]
+"3038
+[v _RB6 RB6 `VEb  1 e 0 @54 ]
+"3040
+[v _RB7 RB7 `VEb  1 e 0 @55 ]
+"3046
+[v _RC0 RC0 `VEb  1 e 0 @56 ]
+"3052
+[v _RC3 RC3 `VEb  1 e 0 @59 ]
+"3054
+[v _RC4 RC4 `VEb  1 e 0 @60 ]
+"3056
+[v _RC5 RC5 `VEb  1 e 0 @61 ]
+"93 D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+[v _main main `(v  1 e 0 0 ]
+{
+"155
+} 0
+"433
+[v _shift_display shift_display `(v  1 e 0 0 ]
+{
+"486
+} 0
+"182
+[v _betamode betamode `(v  1 e 0 0 ]
+{
+"201
+} 0
+"349
+[v _deg_330 deg_330 `(v  1 e 0 0 ]
+{
+"357
+} 0
+"244
+[v _deg_30 deg_30 `(v  1 e 0 0 ]
+{
+"252
+} 0
+"306
+[v _deg_210 deg_210 `(v  1 e 0 0 ]
+{
+"314
+} 0
+"287
+[v _deg_150 deg_150 `(v  1 e 0 0 ]
+{
+"295
+} 0
+"160
+[v _alphamode alphamode `(v  1 e 0 0 ]
+{
+"179
+} 0
+"205
+[v _m_stop m_stop `(v  1 e 0 0 ]
+{
+"214
+} 0
+"265
+[v _deg_90 deg_90 `(v  1 e 0 0 ]
+{
+"274
+} 0
+"327
+[v _deg_270 deg_270 `(v  1 e 0 0 ]
+{
+"336
+} 0
+"297
+[v _deg_180 deg_180 `(v  1 e 0 0 ]
+{
+"304
+} 0
+"235
+[v _deg_0 deg_0 `(v  1 e 0 0 ]
+{
+"242
+} 0
+"359
+[v _clockwise clockwise `(v  1 e 0 0 ]
+{
+"366
+} 0
+"222
+[v _rm_run rm_run `(v  1 e 0 0 ]
+{
+[v rm_run@dir dir `uc  1 a 1 wreg ]
+[v rm_run@dir dir `uc  1 a 1 wreg ]
+"224
+[v rm_run@dir dir `uc  1 a 1 0 ]
+"226
+} 0
+"490
+[v _mode_display mode_display `(v  1 e 0 0 ]
+{
+[v mode_display@x x `*.24DCCuc  1 a 1 wreg ]
+[v mode_display@x x `*.24DCCuc  1 a 1 wreg ]
+[v mode_display@y y `*.24DCCuc  1 p 1 11 ]
+"492
+[v mode_display@x x `*.24DCCuc  1 a 1 12 ]
+"500
+} 0
+"426
+[v _send_string send_string `(v  1 e 0 0 ]
+{
+[v send_string@s s `*.24DCCuc  1 a 1 wreg ]
+[v send_string@s s `*.24DCCuc  1 a 1 wreg ]
+[v send_string@s s `*.24DCCuc  1 a 1 10 ]
+"429
+} 0
+"396
+[v _send_char send_char `(v  1 e 0 0 ]
+{
+[v send_char@data data `uc  1 a 1 wreg ]
+[v send_char@data data `uc  1 a 1 wreg ]
+"398
+[v send_char@data data `uc  1 a 1 8 ]
+"404
+} 0
+"407
+[v _lcd_goto lcd_goto `(v  1 e 0 0 ]
+{
+[v lcd_goto@data data `uc  1 a 1 wreg ]
+[v lcd_goto@data data `uc  1 a 1 wreg ]
+"409
+[v lcd_goto@data data `uc  1 a 1 10 ]
+"418
+} 0
+"420
+[v _lcd_clr lcd_clr `(v  1 e 0 0 ]
+{
+"424
+} 0
+"386
+[v _send_config send_config `(v  1 e 0 0 ]
+{
+[v send_config@data data `uc  1 a 1 wreg ]
+[v send_config@data data `uc  1 a 1 wreg ]
+"388
+[v send_config@data data `uc  1 a 1 8 ]
+"394
+} 0
+"379
+[v _delay delay `(v  1 e 0 0 ]
+{
+[v delay@data data `ul  1 p 4 0 ]
+"382
+} 0
+"216
+[v _lm_run lm_run `(v  1 e 0 0 ]
+{
+[v lm_run@dir dir `uc  1 a 1 wreg ]
+[v lm_run@dir dir `uc  1 a 1 wreg ]
+"218
+[v lm_run@dir dir `uc  1 a 1 0 ]
+"220
+} 0
+"228
+[v _bm_run bm_run `(v  1 e 0 0 ]
+{
+[v bm_run@dir dir `uc  1 a 1 wreg ]
+[v bm_run@dir dir `uc  1 a 1 wreg ]
+"230
+[v bm_run@dir dir `uc  1 a 1 0 ]
+"232
+} 0

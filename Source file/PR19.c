@@ -1,44 +1,61 @@
 //==========================================================================
-//	Author				: 	Cytron Technologies
-//	Project				: 	PR19- Flexibot-Using Transwheel
+//	Author              : 	Cytron Technologies
+//	Project             : 	PR19- Flexibot-Using Transwheel
 //	Project description	: 	Cytron Flexibot which can move in any 
-//			           		direction without having to turn relative to the robot base
+//                          direction without having to turn relative to the robot base
 //==========================================================================
 
 //	include
 //==========================================================================
-#include <pic.h> 						//include the PIC microchip header file
+#if defined(__XC8)
+  #include <xc.h> 						//include the PIC microchip header file
 
 //	configuration
 //==========================================================================
-__CONFIG(0x3FA2);						//configuration word register 1 for the  microcontroller
-__CONFIG(0x3FBC);						//configuration word register 2 for the  microcontroller
+   //#pragma config CONFIG = 0x3FA2;						//configuration word register 1 for the  microcontroller
+          #pragma config FOSC = EXTRCCLK  // Oscillator Selection bits (EXTRC oscillator; CLKO function on OSC2/CLKO/RA6)
+          #pragma config WDTE = ON        // Watchdog Timer Enable bit (WDT enabled)
+          #pragma config PWRTE = OFF      // Power-up Timer Enable bit (PWRT disabled)
+          #pragma config MCLRE = ON       // MCLR/VPP/RE3 Pin Function Select bit (MCLR/VPP/RE3 pin function is MCLR)
+          #pragma config BOREN = ON       // Brown-out Reset Enable bit (Enabled)
+          #pragma config BORV = 20        // Brown-out Reset Voltage bits (VBOR set to 2.0V)
+          #pragma config CCP2MX = RC1     // CCP2 Multiplex bit (CCP2 is on RC1)
+          #pragma config CP = OFF         // Flash Program Memory Code Protection bits (Code protection off)
+   //#pragma config CONFIG = 0x3FBC;						//configuration word register 2 for the  microcontroller
+           #pragma config FCMEN = ON       // Fail-Safe Clock Monitor Enable bit (Fail-Safe Clock Monitor enabled)
+           #pragma config IESO = ON        // Internal External Switchover bit (Internal External Switchover mode enabled)
+#else
+#include <htc.h>
+//#include <pic.h>
 
-//	assign global variable
+__CONFIG (0x3FA2);
+__CONFIG (0x3FBC);
+
+#endif
 //==========================================================================v
 unsigned char i=0,shift=0;				//assign global variable and set the initial alue to it
 									
 //	define
 //========================================================================== 
-#define	rs			RB7					//RS pin of the LCD display
-#define e			RB6					//E pin of the LCD display
-#define button1		RA0					//button (active low)
-#define button2		RA1					//button (active low)
-#define	lcd_light	RA2					//Background light of LCD display
-#define	buzzer		RA3					//Buzzer control pin
-#define	lcd_data	PORTD				//LCD 8-bit data PORT
-#define lmspeed		CCPR1L				//left motor driver speed control pin(L298N enable pin)
-#define lmotor1		RC0					//left motor driver input1
-#define lmotor2		RC3					//left motor driver input2
-#define	rmspeed		CCPR2L				//right motor driver speed control pin(L298N enable pin)
-#define rmotor1		RC4					//right motor driver input1
-#define rmotor2		RC5					//right motor driver input2
-#define	bmspeed		CCPR3L				//back motor driver speed control pin(L298N enable pin)
-#define bmotor1		RB3					//back motor driver input1
-#define bmotor2		RB4					//back motor driver input2
-#define	exspeed		RB2					//extra motor driver speed control pin(L298N enable pin)
-#define emotor1		RB1					//extra motor driver input1
-#define emotor2		RB0					//extra motor driver input2
+#define	RS        RB7					//RS pin of the LCD display
+#define E         RB6					//E pin of the LCD display
+#define BUTTON1		RA0					//button (active low)
+#define BUTTON2		RA1					//button (active low)
+#define	LCD_LIGHT	RA2					//Background light of LCD display
+#define	BUZZER		RA3					//Buzzer control pin
+#define	LCD_DATA	PORTD				//LCD 8-bit data PORT
+#define LMSPEED		CCPR1L				//left motor driver speed control pin(L298N enable pin)
+#define LMOTOR1		RC0					//left motor driver input1
+#define LMOTOR2		RC3					//left motor driver input2
+#define	RMSPEED		CCPR2L				//right motor driver speed control pin(L298N enable pin)
+#define RMOTOR1		RC4					//right motor driver input1
+#define RMOTOR2		RC5					//right motor driver input2
+#define	BMSPEED		CCPR3L				//back motor driver speed control pin(L298N enable pin)
+#define BMOTOR1		RB3					//back motor driver input1
+#define BMOTOR2		RB4					//back motor driver input2
+#define	EXSPEED		RB2					//extra motor driver speed control pin(L298N enable pin)
+#define EMOTOR1		RB1					//extra motor driver input1
+#define EMOTOR2		RB0					//extra motor driver input2
 
 //	function prototype					(every function must have a function prototype)
 //==========================================================================
@@ -83,9 +100,9 @@ TRISA = 0b00000011;						//configure PORTA I/O direction
 TRISB = 0b00000000;						//configure PORTB I/O direction
 TRISC = 0b00000000;						//configure PORTC I/O direction
 TRISD = 0b00000000;						//configure PORTD I/O direction
-PORTB = 0x00;							//Clear port B all output pin
-PORTC = 0x00;							//Clear port C all output pin	
-PORTD = 0x00;							//Clear port D all output pin
+PORTB = 0x00;                 //Clear port B all output pin
+PORTC = 0x00;                 //Clear port C all output pin
+PORTD = 0x00;                 //Clear port D all output pin
 	
 //configure lcd
 send_config(0b00000001);				//clear display at lcd
@@ -93,36 +110,36 @@ send_config(0b00000010);				//lcd return to home
 send_config(0b00000110);				//entry mode-cursor increase 1
 send_config(0b00001100);				//display on, cursor off and cursor blink off
 send_config(0b00111000);				//function set
-lcd_light=1;							//switch off background light
+LCD_LIGHT=1;                    //switch off background light
 
 //Setup up PWM operation
-PR2=255;								//Set PWM period
+PR2=255;                      //Set PWM period
 CCP1CON = 0b00001100;					//Configure CCP1CON to on the PWM1 operation
 CCP2CON = 0b00001100;					//Configure CCP2CON to on the PWM2 operation
 CCP3CON = 0b00001100;					//Configure CCP3CON to on the PWM3 operation
 T2CON   = 0b00000100;					//On timer 2 for PWM & set prescale 1
-lmspeed = 0;							//Clear left motor speed
-rmspeed = 0;							//Clear right motor speed
-bmspeed = 0;							//Clear back motor speed
+LMSPEED = 0;                  //Clear left motor speed
+RMSPEED = 0;                  //Clear right motor speed
+BMSPEED = 0;                  //Clear back motor speed
 
 //program start
-	while(1)							//Infinity Loop
+	while(1)                  //Infinity Loop
 	{
-		if(button1 == 0)				//select mode
+		if(BUTTON1 == 0)				//select mode
 		{					
-			i+=1;						//local variable i plus one
-			if(i==3)i=0;				//when local variable i reach three,set it back to zero
-			while(button1 == 0)			//loop to filter the switch
+			i+=1;                 //local variable i plus one
+			if(i==3)i=0;          //when local variable i reach three,set it back to zero
+			while(BUTTON1 == 0)		//loop to filter the switch
 			{
-				buzzer=1;
+				BUZZER=1;
 				delay(10000);
 			}
 		}
-		if(button2 == 0)				//execute to the selected mode
+		if(BUTTON2 == 0)          	//execute to the selected mode
 		{
-    		while(button2 == 0)			//loop to filter the switch
+    		while(BUTTON2 == 0)			//loop to filter the switch
     		{
-    			buzzer=1;
+    			BUZZER=1;
     			delay(10000);
     		}
     		switch(i)
@@ -132,7 +149,7 @@ bmspeed = 0;							//Clear back motor speed
     				break;						
     			}
 		}		
-		buzzer=0;						//clear buzzer
+		BUZZER=0;               //clear buzzer
 		shift_display();				//display current shifting mode
 	}
 }
@@ -187,38 +204,38 @@ void betamode(void)							//function of alpha mode
 //==========================================================================
 void m_stop(void)											//Function to stop the motor
 {
-	lmotor1=0;
-	lmotor2=0;
-	rmotor1=0;
-	rmotor2=0;
-	bmotor1=0;
-	bmotor2=0;		
+	LMOTOR1=0;
+	LMOTOR2=0;
+	RMOTOR1=0;
+	RMOTOR2=0;
+	BMOTOR1=0;
+	BMOTOR2=0;
     mode_display("Flexibot","Stop");						//display the current situation
 }
 
 void lm_run(unsigned char dir)								//Function to run the left motor
 {
-	lmotor1=dir;											//assign variable "dir" to left motor pin 1
-	lmotor2=!dir;											//assign the oppesite value of "dir" variable to left motor pin 2
+	LMOTOR1=dir;											//assign variable "dir" to left motor pin 1
+	LMOTOR2=!dir;											//assign the oppesite value of "dir" variable to left motor pin 2
 } 
 
 void rm_run(unsigned char dir)								//Function to run the right motor
 {
-	rmotor1=dir;											//assign variable "dir" to right motor pin 1
-	rmotor2=!dir;											//assign the oppesite value of "dir" variable to right motor pin 2
+	RMOTOR1=dir;											//assign variable "dir" to right motor pin 1
+	RMOTOR2=!dir;											//assign the oppesite value of "dir" variable to right motor pin 2
 } 
 
 void bm_run(unsigned char dir)								//Function to run the back motor
 {
-	bmotor1=!dir;											//assign variable "dir" to back motor pin 1
-	bmotor2=dir;											//assign the oppesite value of "dir" variable to back motor pin 2	
+	BMOTOR1=!dir;											//assign variable "dir" to back motor pin 1
+	BMOTOR2=dir;											//assign the oppesite value of "dir" variable to back motor pin 2
 } 
 
 
 void deg_0(void)											//Function to run Flexibot 0 degree
 {
-	lmspeed=rmspeed=255;									//assign speed to respective motor pwm pin
-	bmspeed=0;
+	LMSPEED=RMSPEED=255;									//assign speed to respective motor pwm pin
+	BMSPEED=0;
 	lm_run(1);												//assign the direction to respective motor
 	rm_run(0);
 	mode_display("0","Degree");					    		//display the current situation
@@ -226,9 +243,9 @@ void deg_0(void)											//Function to run Flexibot 0 degree
 
 void deg_30(void)											//Function to run Flexibot 30 degree
 {
-	lmspeed=255;											//assign speed to respective motor pwm pin
-	rmspeed=0;
-	bmspeed=255;
+	LMSPEED=255;											//assign speed to respective motor pwm pin
+	RMSPEED=0;
+	BMSPEED=255;
 	lm_run(1);												//assign the direction to respective motor
 	bm_run(0);
 	mode_display("30","Degree");							//display the current situation
@@ -236,9 +253,9 @@ void deg_30(void)											//Function to run Flexibot 30 degree
 
 void deg_60(void)											//Function to run Flexibot 60 degree
 {
-	lmspeed=200;
-	rmspeed=180;
-	bmspeed=230;
+	LMSPEED=200;
+	RMSPEED=180;
+	BMSPEED=230;
 	lm_run(1);
 	rm_run(1);
 	bm_run(0);
@@ -247,9 +264,9 @@ void deg_60(void)											//Function to run Flexibot 60 degree
 
 void deg_90(void)											//Function to run Flexibot 90 degree
 {
-	lmspeed=190;
-	rmspeed=190;
-	bmspeed=255;
+	LMSPEED=190;
+	RMSPEED=190;
+	BMSPEED=255;
 	lm_run(1);
 	rm_run(1);
 	bm_run(0);
@@ -258,9 +275,9 @@ void deg_90(void)											//Function to run Flexibot 90 degree
 
 void deg_120(void)											//Function to run Flexibot 120 degree
 {
-	lmspeed=160;
-	rmspeed=180;
-	bmspeed=200;			
+	LMSPEED=160;
+	RMSPEED=180;
+	BMSPEED=200;
 	lm_run(1);
 	rm_run(1);
 	bm_run(0);
@@ -269,9 +286,9 @@ void deg_120(void)											//Function to run Flexibot 120 degree
 
 void deg_150(void)											//Function to run Flexibot 150 degree
 {
-	lmspeed=0;
-	rmspeed=255;
-	bmspeed=255;
+	LMSPEED=0;
+	RMSPEED=255;
+	BMSPEED=255;
 	rm_run(1);
 	bm_run(0);
 	mode_display("150","Degree");
@@ -279,8 +296,8 @@ void deg_150(void)											//Function to run Flexibot 150 degree
 
 void deg_180(void)											//Function to run Flexibot 180 degree
 {
-	lmspeed=rmspeed=255;
-	bmspeed=0;
+	LMSPEED=RMSPEED=255;
+	BMSPEED=0;
 	lm_run(0);
 	rm_run(1);
 	mode_display("180","Degree");	
@@ -288,9 +305,9 @@ void deg_180(void)											//Function to run Flexibot 180 degree
 
 void deg_210(void)											//Function to run Flexibot 210 degree
 {
-	lmspeed=255;
-	rmspeed=0;
-	bmspeed=255;
+	LMSPEED=255;
+	RMSPEED=0;
+	BMSPEED=255;
 	lm_run(0);
 	bm_run(1);
 	mode_display("210","Degree");
@@ -298,9 +315,9 @@ void deg_210(void)											//Function to run Flexibot 210 degree
 
 void deg_240(void)											//Function to run Flexibot 240 degree
 {
-	lmspeed=180;
-	rmspeed=200;
-	bmspeed=230;
+	LMSPEED=180;
+	RMSPEED=200;
+	BMSPEED=230;
 	lm_run(0);
 	rm_run(0);
 	bm_run(1);
@@ -309,9 +326,9 @@ void deg_240(void)											//Function to run Flexibot 240 degree
 
 void deg_270(void)											//Function to run Flexibot 270 degree
 {
-	lmspeed=190;
-	rmspeed=190;
-	bmspeed=255;
+	LMSPEED=190;
+	RMSPEED=190;
+	BMSPEED=255;
 	lm_run(0);
 	rm_run(0);
 	bm_run(1);
@@ -320,9 +337,9 @@ void deg_270(void)											//Function to run Flexibot 270 degree
 
 void deg_300(void)											//Function to run Flexibot 300 degree
 {
-	lmspeed=180;
-	rmspeed=200;
-	bmspeed=230;
+	LMSPEED=180;
+	RMSPEED=200;
+	BMSPEED=230;
 	lm_run(0);
 	rm_run(0);
 	bm_run(1);
@@ -331,9 +348,9 @@ void deg_300(void)											//Function to run Flexibot 300 degree
 
 void deg_330(void)											//Function to run Flexibot 330 degree
 {			
-	lmspeed=0;
-	rmspeed=255;
-	bmspeed=255;
+	LMSPEED=0;
+	RMSPEED=255;
+	BMSPEED=255;
 	rm_run(0);
 	bm_run(1);
 	mode_display("330","Degree");
@@ -341,7 +358,7 @@ void deg_330(void)											//Function to run Flexibot 330 degree
 
 void clockwise(void)										//Function to run Flexibot clockwise
 {
-	lmspeed=rmspeed=bmspeed=255;
+	LMSPEED=RMSPEED=BMSPEED=255;
 	lm_run(1);
 	rm_run(1);
 	bm_run(1);
@@ -350,7 +367,7 @@ void clockwise(void)										//Function to run Flexibot clockwise
 
 void anticlockwise(void)									//Function to run Flexibot anticlockwise
 {
-	lmspeed=rmspeed=bmspeed=255;
+	LMSPEED=RMSPEED=BMSPEED=255;
 	lm_run(0);
 	rm_run(0);
 	bm_run(0);
@@ -368,21 +385,21 @@ void delay(unsigned long data)								//delay function, the delay time
 //==========================================================================
 void send_config(unsigned char data)						//send lcd configuration 
 {
-	rs=0;													//set lcd to configuration mode
-	lcd_data=data;											//lcd data port = data
-	e=1;													//pulse e to confirm the data
+	RS=0;													//set lcd to configuration mode
+	LCD_DATA=data;											//lcd data port = data
+	E=1;													//pulse e to confirm the data
 	delay(50);
-	e=0;
+	E=0;
 	delay(50);
 }
 
 void send_char(unsigned char data)							//send lcd character
 {
-	rs=1;													//set lcd to display mode
-	lcd_data=data;											//lcd data port = data
-	e=1;													//pulse e to confirm the data
+	RS=1;													//set lcd to display mode
+	LCD_DATA=data;											//lcd data port = data
+	E=1;													//pulse e to confirm the data
 	delay(10);
-	e=0;
+	E=0;
 	delay(10);
 }
 
@@ -426,13 +443,13 @@ void shift_display(void)										//function to display the shifting current mod
 			send_string("Flexibot");							//display robot's name	
 			for( ;shift<8;shift+=1)								//loop to shift character
 			{
-				if(button1 == 0)return;							//condition to exit loop when button is pushed			
+				if(BUTTON1 == 0)return;							//condition to exit loop when button is pushed
 				send_config(0b00011100);						//lcd configuration to shift the character to right
 				delay(50000);									//delay for display the shift welcome note
 			}	
 			for( ;shift>0;shift-=1)								//loop to shift character
 			{
-				if(button1 == 0)return;							//condition to exit loop when button is pushed			
+				if(BUTTON1 == 0)return;							//condition to exit loop when button is pushed
 				send_config(0b00011000);						//lcd configuration to shift the character to left
 				delay(50000);									//delay for display the shift welcome note
 			}	
@@ -444,10 +461,10 @@ void shift_display(void)										//function to display the shifting current mod
 			send_string("Cytron Flexibot");						//display robot's name
 			lcd_goto(22);										//set the lcd cursor to location 21			
 			send_string("Alpha Mode?");							//display current mode	
-			if(button1 == 0 || button2 ==0)return;				//condition to exit loop when button is pushed			
+			if(BUTTON1 == 0 || BUTTON2 ==0)return;				//condition to exit loop when button is pushed
 			send_config(0b00011100);							//lcd configuration to shift the character to right
 			delay(80000);										//delay for display the shift current mode	
-			if(button1 == 0 || button2 ==0)return;				//condition to exit loop when button is pushed			
+			if(BUTTON1 == 0 ||BUTTON2 ==0)return;				//condition to exit loop when button is pushed
 			send_config(0b00011000);							//lcd configuration to shift the character to left
 			delay(80000);										//delay for display the shift current mode
 			break;
@@ -458,10 +475,10 @@ void shift_display(void)										//function to display the shifting current mod
 			send_string("Cytron Flexibot");						//display robot's name
 			lcd_goto(22);										//set the lcd cursor to location 21			
 			send_string("Beta Mode?");				    		//display current mode	
-			if(button1 == 0 || button2 ==0)return;				//condition to exit loop when button is pushed			
+			if(BUTTON1 == 0 || BUTTON2 ==0)return;				//condition to exit loop when button is pushed
 			send_config(0b00011100);							//lcd configuration to shift the character to right
 			delay(80000);										//delay for display the shift current mode	
-			if(button1 == 0 || button2 ==0)return;				//condition to exit loop when button is pushed			
+			if(BUTTON1 == 0 || BUTTON2 ==0)return;				//condition to exit loop when button is pushed
 			send_config(0b00011000);							//lcd configuration to shift the character to left
 			delay(80000);										//delay for display the shift current mode
 			break;
@@ -472,8 +489,8 @@ void shift_display(void)										//function to display the shifting current mod
 //==========================================================================
 void mode_display(const char *x,const char *y)
 {
-    buzzer=0;		                       						//clear buzzor
-	if(button1 == 0)return;										//condition to exit loop when button is pushed
+    BUZZER=0;		                       						//clear buzzor
+	if(BUTTON1 == 0)return;										//condition to exit loop when button is pushed
 	lcd_clr();													//clear lcd
 	lcd_goto(0);												//set the lcd cursor to first line and first cursor 	
 	send_string(x);												//display character in line 1

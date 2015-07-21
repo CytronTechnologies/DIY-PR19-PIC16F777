@@ -1,0 +1,681 @@
+%CMF
+# %PSECTS Section
+# For each object file, details of its psects are enumerated here.
+# The begining of the section is indicated by %PSECTS.  The first
+# line indicates the name of the first object file, e.g.
+#    $foo.obj
+# Each line that follows describes a psect in that object file, until
+# the next object file.  The lines that describe a psect have the
+# format:
+#    <psect name> <class name> <space> <link address> <load addresses> <length> <delta>
+# All addresses and the length are given in unqualified hexadecimal
+# in delta units.  Any other numeric values are decimal.
+%PSECTS
+$dist/default/production\PR19.X.production.obj
+cinit CODE 0 7FA 7FA 6 2
+text1 CODE 0 6EC 6EC 10E 2
+text2 CODE 0 5CE 5CE 85 2
+text3 CODE 0 408 408 1E 2
+text4 CODE 0 3EA 3EA 1E 2
+text5 CODE 0 3CC 3CC 1E 2
+text6 CODE 0 3AE 3AE 1E 2
+text7 CODE 0 54A 54A 84 2
+text8 CODE 0 2FC 2FC 11 2
+text9 CODE 0 4F6 4F6 25 2
+text10 CODE 0 4D1 4D1 25 2
+text11 CODE 0 391 391 1D 2
+text12 CODE 0 374 374 1D 2
+text13 CODE 0 4AE 4AE 23 2
+text14 CODE 0 349 349 15 2
+text15 CODE 0 51B 51B 2F 2
+text16 CODE 0 426 426 1F 2
+text17 CODE 0 48B 48B 23 2
+text18 CODE 0 35E 35E 16 2
+text19 CODE 0 30D 30D 12 2
+text20 CODE 0 468 468 23 2
+text21 CODE 0 445 445 23 2
+text22 CODE 0 334 334 15 2
+text23 CODE 0 31F 31F 15 2
+maintext CODE 0 653 653 99 2
+cstackCOMMON COMMON 1 70 70 E 1
+cstackBANK0 BANK0 1 22 22 1 1
+bssBANK0 BANK0 1 20 20 2 1
+strings STRING 0 3 3 7E 2
+$C:\Users\TRAINE~1\AppData\Local\Temp\s4n4.obj
+end_init CODE 0 0 0 3 2
+config CONFIG 0 2007 2007 2 2
+# %UNUSED Section
+# This section enumerates the unused ranges of each CLASS. Each entry
+# is described on a single line as follows:
+#    <class name> <range> <delta>
+# Addresses given in the range are in hexadecimal and units of delta.
+%UNUSED
+RAM 23-6F 1
+RAM A0-EF 1
+RAM 110-16F 1
+RAM 190-1EF 1
+BANK0 23-6F 1
+BANK1 A0-EF 1
+BANK2 110-16F 1
+BANK3 190-1EF 1
+CONST 81-2FB 2
+CONST 800-1FFF 2
+ENTRY 81-2FB 2
+ENTRY 800-1FFF 2
+IDLOC 2000-2003 2
+STACK 110-16F 1
+CODE 81-2FB 2
+CODE 800-1FFF 2
+SFR0 0-1F 1
+SFR1 80-9F 1
+SFR2 100-10F 1
+SFR3 180-18F 1
+STRCODE 81-2FB 2
+STRCODE 800-1FFF 2
+STRING 81-2FB 2
+STRING 800-1FFF 2
+# %LINETAB Section
+# This section enumerates the file/line to address mappings.
+# The beginning of the section is indicated by %LINETAB.
+# The first line indicates the name of the first object file, e.g.
+#   $foo.obj
+# Each line that follows describes a single mapping until the next
+# object file.  Mappings have the following format:
+#    <address> <psect name> <class name> ><line number>:<file name>
+# The address is absolute and given given in unqualified hex 
+# in delta units of the psect. All mappings within an object file
+# are in ascending order of addresses.
+# All other numeric values are in decimal.
+%LINETAB
+$dist/default/production\PR19.X.production.obj
+2FC text8 CODE >205:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+2FC text8 CODE >207:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+2FF text8 CODE >208:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+300 text8 CODE >209:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+301 text8 CODE >210:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+302 text8 CODE >211:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+303 text8 CODE >212:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+304 text8 CODE >213:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+30C text8 CODE >214:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+30D text19 CODE >420:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+30D text19 CODE >422:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+313 text19 CODE >423:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+31E text19 CODE >424:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+31F text23 CODE >228:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+320 text23 CODE >230:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+32A text23 CODE >231:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+333 text23 CODE >232:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+334 text22 CODE >216:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+335 text22 CODE >218:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+33E text22 CODE >219:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+348 text22 CODE >220:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+349 text14 CODE >222:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+34A text14 CODE >224:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+353 text14 CODE >225:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+35D text14 CODE >226:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+35E text18 CODE >407:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+35F text18 CODE >409:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+363 text18 CODE >411:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+368 text18 CODE >412:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+369 text18 CODE >415:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+36E text18 CODE >416:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+374 text12 CODE >235:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+374 text12 CODE >237:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+379 text12 CODE >238:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+37C text12 CODE >239:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+382 text12 CODE >240:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+388 text12 CODE >241:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+390 text12 CODE >242:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+391 text11 CODE >297:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+391 text11 CODE >299:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+396 text11 CODE >300:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+399 text11 CODE >301:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+39F text11 CODE >302:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+3A5 text11 CODE >303:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+3AD text11 CODE >304:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+3AE text6 CODE >287:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+3AE text6 CODE >289:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+3B1 text6 CODE >290:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+3B3 text6 CODE >291:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+3B7 text6 CODE >292:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+3BD text6 CODE >293:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+3C3 text6 CODE >294:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+3CB text6 CODE >295:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+3CC text5 CODE >306:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+3CC text5 CODE >308:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+3D0 text5 CODE >309:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+3D1 text5 CODE >310:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+3D5 text5 CODE >311:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+3DB text5 CODE >312:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+3E1 text5 CODE >313:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+3E9 text5 CODE >314:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+3EA text4 CODE >244:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+3EA text4 CODE >246:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+3EE text4 CODE >247:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+3EF text4 CODE >248:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+3F3 text4 CODE >249:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+3F9 text4 CODE >250:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+3FF text4 CODE >251:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+407 text4 CODE >252:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+408 text3 CODE >349:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+408 text3 CODE >351:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+40B text3 CODE >352:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+40D text3 CODE >353:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+411 text3 CODE >354:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+417 text3 CODE >355:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+41D text3 CODE >356:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+425 text3 CODE >357:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+426 text16 CODE >426:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+427 text16 CODE >428:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+445 text21 CODE >379:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+445 text21 CODE >381:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+468 text20 CODE >386:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+469 text20 CODE >388:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+46C text20 CODE >389:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+46E text20 CODE >390:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+46F text20 CODE >391:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+47C text20 CODE >392:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+47F text20 CODE >393:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+48A text20 CODE >394:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+48B text17 CODE >396:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+48C text17 CODE >398:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+48F text17 CODE >399:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+491 text17 CODE >400:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+492 text17 CODE >401:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+49F text17 CODE >402:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+4A2 text17 CODE >403:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+4AD text17 CODE >404:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+4AE text13 CODE >359:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+4AE text13 CODE >361:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+4B6 text13 CODE >362:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+4BC text13 CODE >363:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+4C2 text13 CODE >364:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+4C8 text13 CODE >365:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+4D0 text13 CODE >366:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+4D1 text10 CODE >327:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+4D1 text10 CODE >329:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+4D5 text10 CODE >330:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+4D7 text10 CODE >331:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+4DB text10 CODE >332:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+4E1 text10 CODE >333:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+4E7 text10 CODE >334:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+4ED text10 CODE >335:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+4F5 text10 CODE >336:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+4F6 text9 CODE >265:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+4F6 text9 CODE >267:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+4FA text9 CODE >268:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+4FC text9 CODE >269:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+500 text9 CODE >270:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+506 text9 CODE >271:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+50C text9 CODE >272:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+512 text9 CODE >273:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+51A text9 CODE >274:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+51B text15 CODE >490:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+51C text15 CODE >492:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+51F text15 CODE >493:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+521 text15 CODE >494:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+526 text15 CODE >495:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+52C text15 CODE >496:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+532 text15 CODE >497:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+538 text15 CODE >498:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+53E text15 CODE >499:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+549 text15 CODE >500:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+54A text7 CODE >160:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+54A text7 CODE >162:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+54F text7 CODE >164:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+554 text7 CODE >165:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+561 text7 CODE >166:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+566 text7 CODE >167:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+573 text7 CODE >168:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+578 text7 CODE >169:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+585 text7 CODE >170:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+58A text7 CODE >171:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+597 text7 CODE >172:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+59C text7 CODE >173:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+5A9 text7 CODE >174:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+5AE text7 CODE >175:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+5BB text7 CODE >176:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+5C0 text7 CODE >177:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+5CD text7 CODE >162:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+5CE text2 CODE >182:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+5CE text2 CODE >184:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+5D4 text2 CODE >186:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+5D9 text2 CODE >187:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+5E6 text2 CODE >188:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+5EB text2 CODE >189:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+5F8 text2 CODE >190:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+5FD text2 CODE >191:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+60A text2 CODE >192:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+60F text2 CODE >193:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+61C text2 CODE >194:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+621 text2 CODE >195:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+62E text2 CODE >196:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+633 text2 CODE >197:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+640 text2 CODE >198:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+645 text2 CODE >199:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+652 text2 CODE >184:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+653 maintext CODE >93:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+653 maintext CODE >96:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+657 maintext CODE >99:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+659 maintext CODE >100:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+65A maintext CODE >101:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+65B maintext CODE >102:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+65C maintext CODE >103:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+65F maintext CODE >104:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+660 maintext CODE >105:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+661 maintext CODE >108:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+667 maintext CODE >109:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+66D maintext CODE >110:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+673 maintext CODE >111:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+679 maintext CODE >112:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+67F maintext CODE >113:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+682 maintext CODE >116:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+686 maintext CODE >117:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+68A maintext CODE >118:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+68C maintext CODE >119:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+690 maintext CODE >120:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+694 maintext CODE >121:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+695 maintext CODE >122:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+696 maintext CODE >123:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+699 maintext CODE >128:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+69D maintext CODE >130:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+6A1 maintext CODE >131:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+6A5 maintext CODE >132:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+6A9 maintext CODE >134:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+6AA maintext CODE >135:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+6B7 maintext CODE >132:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+6B8 maintext CODE >137:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+6B8 maintext CODE >138:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+6BB maintext CODE >140:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+6BB maintext CODE >142:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+6BC maintext CODE >143:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+6C9 maintext CODE >140:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+6CE maintext CODE >147:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+6D3 maintext CODE >148:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+6D8 maintext CODE >150:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+6D9 maintext CODE >145:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+6E3 maintext CODE >151:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+6E3 maintext CODE >152:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+6E6 maintext CODE >153:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+6EB maintext CODE >126:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+6EC text1 CODE >433:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+6EC text1 CODE >435:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+6ED text1 CODE >438:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+6F0 text1 CODE >439:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+6F5 text1 CODE >440:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+6FB text1 CODE >441:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+701 text1 CODE >442:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+707 text1 CODE >443:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+70D text1 CODE >444:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+713 text1 CODE >446:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+715 text1 CODE >447:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+71B text1 CODE >448:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+728 text1 CODE >444:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+72F text1 CODE >451:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+72F text1 CODE >452:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+731 text1 CODE >453:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+737 text1 CODE >454:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+744 text1 CODE >450:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+74C text1 CODE >458:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+74D text1 CODE >459:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+752 text1 CODE >460:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+758 text1 CODE >461:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+75E text1 CODE >462:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+764 text1 CODE >463:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+76A text1 CODE >464:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+770 text1 CODE >465:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+776 text1 CODE >466:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+783 text1 CODE >467:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+789 text1 CODE >468:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+78F text1 CODE >469:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+79A text1 CODE >470:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+79B text1 CODE >472:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+79E text1 CODE >473:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+7A3 text1 CODE >474:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+7A9 text1 CODE >475:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+7AF text1 CODE >476:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+7B5 text1 CODE >477:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+7BB text1 CODE >478:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+7C1 text1 CODE >479:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+7C7 text1 CODE >480:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+7D4 text1 CODE >481:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+7DA text1 CODE >482:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+7E0 text1 CODE >483:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+7EB text1 CODE >485:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+7EC text1 CODE >435:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+7F9 text1 CODE >486:D:\DIY\DIY-PR19-PIC16F777\NEW/Source file/PR19.c
+7FA cinit CODE >539:C:\Users\TRAINE~1\AppData\Local\Temp\s4n4.
+7FA cinit CODE >542:C:\Users\TRAINE~1\AppData\Local\Temp\s4n4.
+7FA cinit CODE >555:C:\Users\TRAINE~1\AppData\Local\Temp\s4n4.
+7FB cinit CODE >556:C:\Users\TRAINE~1\AppData\Local\Temp\s4n4.
+7FC cinit CODE >562:C:\Users\TRAINE~1\AppData\Local\Temp\s4n4.
+7FC cinit CODE >563:C:\Users\TRAINE~1\AppData\Local\Temp\s4n4.
+7FD cinit CODE >564:C:\Users\TRAINE~1\AppData\Local\Temp\s4n4.
+# %SYMTAB Section
+# An enumeration of all symbols in the program.
+# The beginning of the section is indicated by %SYMTAB.
+# Each line describes a single symbol as follows:
+#    <label> <value> [-]<load-adj> <class> <space> <psect> <file-name>
+# The value and load-adj are both in unqualified hexadecimal.
+# All other numeric values are in decimal.  The load-adj is the
+# quantity one needs to add to the symbol value in order to obtain the load
+# address of the symbol.  This value may be signed. If the symbol
+# was defined in a psect then <psect> will be "-". File-name
+# is the name of the object file in which the symbol was defined.
+%SYMTAB
+_i 20 0 BANK0 1 bssBANK0 dist/default/production\PR19.X.production.obj
+___latbits 2 0 ABS 0 - dist/default/production\PR19.X.production.obj
+_send_string 84C 0 CODE 0 text16 dist/default/production\PR19.X.production.obj
+__Hspace_0 2009 0 ABS 0 - -
+__Hspace_1 7E 0 ABS 0 - -
+__Hspace_2 0 0 ABS 0 - -
+__Hspace_3 0 0 ABS 0 - -
+__size_of_lcd_clr 0 0 ABS 0 - dist/default/production\PR19.X.production.obj
+__Heeprom_data 0 0 EEDATA 3 eeprom_data -
+__CFG_MCLRE$ON 0 0 ABS 0 - dist/default/production\PR19.X.production.obj
+ltemp0 7E 0 ABS 0 - dist/default/production\PR19.X.production.obj
+ltemp1 82 0 ABS 0 - dist/default/production\PR19.X.production.obj
+ltemp2 86 0 ABS 0 - dist/default/production\PR19.X.production.obj
+ltemp3 80 0 ABS 0 - dist/default/production\PR19.X.production.obj
+__Hstrings 0 0 ABS 0 strings -
+___sp 0 0 STACK 2 stack C:\Users\TRAINE~1\AppData\Local\Temp\s4n4.obj
+_main CA6 0 CODE 0 maintext dist/default/production\PR19.X.production.obj
+btemp 7E 0 ABS 0 - dist/default/production\PR19.X.production.obj
+ltemp 7E 0 ABS 0 - dist/default/production\PR19.X.production.obj
+start 0 0 CODE 0 init C:\Users\TRAINE~1\AppData\Local\Temp\s4n4.obj
+ttemp 7E 0 ABS 0 - dist/default/production\PR19.X.production.obj
+wtemp 7E 0 ABS 0 - dist/default/production\PR19.X.production.obj
+__size_of_main 0 0 ABS 0 - dist/default/production\PR19.X.production.obj
+_betamode B9C 0 CODE 0 text2 dist/default/production\PR19.X.production.obj
+__end_of_betamode CA6 0 CODE 0 text2 dist/default/production\PR19.X.production.obj
+__Hpowerup 0 0 CODE 0 powerup -
+__end_of_alphamode B9C 0 CODE 0 text7 dist/default/production\PR19.X.production.obj
+ttemp0 7E 0 ABS 0 - dist/default/production\PR19.X.production.obj
+ttemp1 81 0 ABS 0 - dist/default/production\PR19.X.production.obj
+ttemp2 84 0 ABS 0 - dist/default/production\PR19.X.production.obj
+ttemp3 87 0 ABS 0 - dist/default/production\PR19.X.production.obj
+ttemp4 7F 0 ABS 0 - dist/default/production\PR19.X.production.obj
+__size_of_alphamode 0 0 ABS 0 - dist/default/production\PR19.X.production.obj
+intlevel0 0 0 CODE 0 functab C:\Users\TRAINE~1\AppData\Local\Temp\s4n4.obj
+intlevel1 0 0 CODE 0 functab C:\Users\TRAINE~1\AppData\Local\Temp\s4n4.obj
+intlevel2 0 0 CODE 0 functab C:\Users\TRAINE~1\AppData\Local\Temp\s4n4.obj
+intlevel3 0 0 CODE 0 functab C:\Users\TRAINE~1\AppData\Local\Temp\s4n4.obj
+intlevel4 0 0 CODE 0 functab C:\Users\TRAINE~1\AppData\Local\Temp\s4n4.obj
+intlevel5 0 0 CODE 0 functab C:\Users\TRAINE~1\AppData\Local\Temp\s4n4.obj
+wtemp0 7E 0 ABS 0 - dist/default/production\PR19.X.production.obj
+wtemp1 80 0 ABS 0 - dist/default/production\PR19.X.production.obj
+wtemp2 82 0 ABS 0 - dist/default/production\PR19.X.production.obj
+wtemp3 84 0 ABS 0 - dist/default/production\PR19.X.production.obj
+wtemp4 86 0 ABS 0 - dist/default/production\PR19.X.production.obj
+wtemp5 88 0 ABS 0 - dist/default/production\PR19.X.production.obj
+wtemp6 7F 0 ABS 0 - dist/default/production\PR19.X.production.obj
+__Hfunctab 0 0 CODE 0 functab -
+__Hclrtext 0 0 ABS 0 clrtext -
+_alphamode A94 0 CODE 0 text7 dist/default/production\PR19.X.production.obj
+_deg_150 75C 0 CODE 0 text6 dist/default/production\PR19.X.production.obj
+_deg_180 722 0 CODE 0 text11 dist/default/production\PR19.X.production.obj
+_deg_210 798 0 CODE 0 text5 dist/default/production\PR19.X.production.obj
+_deg_270 9A2 0 CODE 0 text10 dist/default/production\PR19.X.production.obj
+_deg_330 810 0 CODE 0 text3 dist/default/production\PR19.X.production.obj
+_ADCON1 9F 0 ABS 0 - dist/default/production\PR19.X.production.obj
+__end_of_lcd_clr 63E 0 CODE 0 text19 dist/default/production\PR19.X.production.obj
+__end_of_send_char 95C 0 CODE 0 text17 dist/default/production\PR19.X.production.obj
+_CCPR1L 15 0 ABS 0 - dist/default/production\PR19.X.production.obj
+_CCPR2L 1B 0 ABS 0 - dist/default/production\PR19.X.production.obj
+_CCPR3L 95 0 ABS 0 - dist/default/production\PR19.X.production.obj
+__size_of_send_char 0 0 ABS 0 - dist/default/production\PR19.X.production.obj
+__Lmaintext 0 0 ABS 0 maintext -
+__end_of_bm_run 668 0 CODE 0 text23 dist/default/production\PR19.X.production.obj
+__end_of_send_config 916 0 CODE 0 text20 dist/default/production\PR19.X.production.obj
+_send_char 916 0 CODE 0 text17 dist/default/production\PR19.X.production.obj
+__end_of_deg_30 810 0 CODE 0 text4 dist/default/production\PR19.X.production.obj
+__end_of_deg_90 A36 0 CODE 0 text9 dist/default/production\PR19.X.production.obj
+__CFG_CCP2MX$RC1 0 0 ABS 0 - dist/default/production\PR19.X.production.obj
+__size_of_deg_0 0 0 ABS 0 - dist/default/production\PR19.X.production.obj
+__size_of_delay 0 0 ABS 0 - dist/default/production\PR19.X.production.obj
+send_config@data 78 0 COMMON 1 cstackCOMMON dist/default/production\PR19.X.production.obj
+start_initialization FF4 0 CODE 0 cinit dist/default/production\PR19.X.production.obj
+__end_of_lm_run 692 0 CODE 0 text22 dist/default/production\PR19.X.production.obj
+__end_of_m_stop 61A 0 CODE 0 text8 dist/default/production\PR19.X.production.obj
+__pcstackBANK0 22 0 BANK0 1 cstackBANK0 dist/default/production\PR19.X.production.obj
+__end_of_rm_run 6BC 0 CODE 0 text14 dist/default/production\PR19.X.production.obj
+___int_sp 0 0 STACK 2 stack C:\Users\TRAINE~1\AppData\Local\Temp\s4n4.obj
+__end_of_send_string 88A 0 CODE 0 text16 dist/default/production\PR19.X.production.obj
+_shift_display DD8 0 CODE 0 text1 dist/default/production\PR19.X.production.obj
+bm_run@dir 70 0 COMMON 1 cstackCOMMON dist/default/production\PR19.X.production.obj
+__Hbank0 0 0 ABS 0 bank0 -
+__Hbank1 0 0 ABS 0 bank1 -
+__Hbank2 0 0 ABS 0 bank2 -
+__Hbank3 0 0 ABS 0 bank3 -
+__Hcinit 1000 0 CODE 0 cinit -
+__Hidloc 0 0 IDLOC 0 idloc -
+__Hstack 0 0 STACK 2 stack -
+__stringbase 10 0 STRING 0 strings dist/default/production\PR19.X.production.obj
+__Hmaintext 0 0 ABS 0 maintext -
+__size_of_lcd_goto 0 0 ABS 0 - dist/default/production\PR19.X.production.obj
+__Hcommon 0 0 ABS 0 common -
+__Hconfig 4012 0 CONFIG 0 config -
+__Lbank0 0 0 ABS 0 bank0 -
+__Lbank1 0 0 ABS 0 bank1 -
+__Lbank2 0 0 ABS 0 bank2 -
+__Lbank3 0 0 ABS 0 bank3 -
+__Lcinit FF4 0 CODE 0 cinit -
+__Lidloc 0 0 IDLOC 0 idloc -
+__Lstack 0 0 STACK 2 stack -
+__Habs1 0 0 ABS 0 abs1 -
+__Hcode 0 0 ABS 0 code -
+__Hinit 0 0 CODE 0 init -
+__Hsfr0 0 0 ABS 0 sfr0 -
+__Hsfr1 0 0 ABS 0 sfr1 -
+__Hsfr2 0 0 ABS 0 sfr2 -
+__Hsfr3 0 0 ABS 0 sfr3 -
+__Htext 0 0 ABS 0 text -
+__Labs1 0 0 ABS 0 abs1 -
+__Lcode 0 0 ABS 0 code -
+__Linit 0 0 CODE 0 init -
+__Lsfr0 0 0 ABS 0 sfr0 -
+__Lsfr1 0 0 ABS 0 sfr1 -
+__Lsfr2 0 0 ABS 0 sfr2 -
+__Lsfr3 0 0 ABS 0 sfr3 -
+__Ltext 0 0 ABS 0 text -
+__LcstackBANK0 0 0 ABS 0 cstackBANK0 -
+__HcstackCOMMON 0 0 ABS 0 cstackCOMMON -
+_PR2 92 0 ABS 0 - dist/default/production\PR19.X.production.obj
+_RA0 28 0 ABS 0 - dist/default/production\PR19.X.production.obj
+_RA1 29 0 ABS 0 - dist/default/production\PR19.X.production.obj
+_RA2 2A 0 ABS 0 - dist/default/production\PR19.X.production.obj
+_RA3 2B 0 ABS 0 - dist/default/production\PR19.X.production.obj
+_RB3 33 0 ABS 0 - dist/default/production\PR19.X.production.obj
+_RB4 34 0 ABS 0 - dist/default/production\PR19.X.production.obj
+_RB6 36 0 ABS 0 - dist/default/production\PR19.X.production.obj
+_RB7 37 0 ABS 0 - dist/default/production\PR19.X.production.obj
+_RC0 38 0 ABS 0 - dist/default/production\PR19.X.production.obj
+_RC3 3B 0 ABS 0 - dist/default/production\PR19.X.production.obj
+_RC4 3C 0 ABS 0 - dist/default/production\PR19.X.production.obj
+_RC5 3D 0 ABS 0 - dist/default/production\PR19.X.production.obj
+__S0 2009 0 ABS 0 - -
+__S1 7E 0 ABS 0 - -
+__S2 0 0 ABS 0 - -
+_bm_run 63E 0 CODE 0 text23 dist/default/production\PR19.X.production.obj
+_deg_30 7D4 0 CODE 0 text4 dist/default/production\PR19.X.production.obj
+_deg_90 9EC 0 CODE 0 text9 dist/default/production\PR19.X.production.obj
+__size_of_send_config 0 0 ABS 0 - dist/default/production\PR19.X.production.obj
+__CFG_BOREN$ON 0 0 ABS 0 - dist/default/production\PR19.X.production.obj
+_lcd_goto 6BC 0 CODE 0 text18 dist/default/production\PR19.X.production.obj
+__Lintentry 0 0 CODE 0 intentry -
+__stringtab 6 0 STRING 0 strings dist/default/production\PR19.X.production.obj
+lm_run@dir 70 0 COMMON 1 cstackCOMMON dist/default/production\PR19.X.production.obj
+_lcd_clr 61A 0 CODE 0 text19 dist/default/production\PR19.X.production.obj
+reset_vec 0 0 CODE 0 reset_vec C:\Users\TRAINE~1\AppData\Local\Temp\s4n4.obj
+__LbssBANK0 0 0 ABS 0 bssBANK0 -
+__end_of_lcd_goto 6E8 0 CODE 0 text18 dist/default/production\PR19.X.production.obj
+send_string@s 7A 0 COMMON 1 cstackCOMMON dist/default/production\PR19.X.production.obj
+__CFG_FCMEN$ON 0 0 ABS 0 - dist/default/production\PR19.X.production.obj
+_lm_run 668 0 CODE 0 text22 dist/default/production\PR19.X.production.obj
+__size_of_shift_display 0 0 ABS 0 - dist/default/production\PR19.X.production.obj
+_m_stop 5F8 0 CODE 0 text8 dist/default/production\PR19.X.production.obj
+__size_of_bm_run 0 0 ABS 0 - dist/default/production\PR19.X.production.obj
+__ptext10 9A2 0 CODE 0 text10 dist/default/production\PR19.X.production.obj
+__ptext11 722 0 CODE 0 text11 dist/default/production\PR19.X.production.obj
+__ptext12 6E8 0 CODE 0 text12 dist/default/production\PR19.X.production.obj
+__ptext13 95C 0 CODE 0 text13 dist/default/production\PR19.X.production.obj
+__ptext14 692 0 CODE 0 text14 dist/default/production\PR19.X.production.obj
+__ptext15 A36 0 CODE 0 text15 dist/default/production\PR19.X.production.obj
+__ptext16 84C 0 CODE 0 text16 dist/default/production\PR19.X.production.obj
+__ptext17 916 0 CODE 0 text17 dist/default/production\PR19.X.production.obj
+__ptext18 6BC 0 CODE 0 text18 dist/default/production\PR19.X.production.obj
+__ptext19 61A 0 CODE 0 text19 dist/default/production\PR19.X.production.obj
+__ptext20 8D0 0 CODE 0 text20 dist/default/production\PR19.X.production.obj
+__ptext21 88A 0 CODE 0 text21 dist/default/production\PR19.X.production.obj
+__ptext22 668 0 CODE 0 text22 dist/default/production\PR19.X.production.obj
+__ptext23 63E 0 CODE 0 text23 dist/default/production\PR19.X.production.obj
+__pmaintext CA6 0 CODE 0 maintext dist/default/production\PR19.X.production.obj
+__CFG_BORV$20 0 0 ABS 0 - dist/default/production\PR19.X.production.obj
+__size_of_deg_30 0 0 ABS 0 - dist/default/production\PR19.X.production.obj
+__size_of_deg_90 0 0 ABS 0 - dist/default/production\PR19.X.production.obj
+__size_of_deg_150 0 0 ABS 0 - dist/default/production\PR19.X.production.obj
+__size_of_deg_180 0 0 ABS 0 - dist/default/production\PR19.X.production.obj
+__size_of_deg_210 0 0 ABS 0 - dist/default/production\PR19.X.production.obj
+__size_of_deg_270 0 0 ABS 0 - dist/default/production\PR19.X.production.obj
+__size_of_deg_330 0 0 ABS 0 - dist/default/production\PR19.X.production.obj
+__Lcommon 0 0 ABS 0 common -
+__Lconfig 400E 0 CONFIG 0 config -
+__CFG_CP$OFF 0 0 ABS 0 - dist/default/production\PR19.X.production.obj
+__CFG_IESO$ON 0 0 ABS 0 - dist/default/production\PR19.X.production.obj
+__CFG_FOSC$EXTRCCLK 0 0 ABS 0 - dist/default/production\PR19.X.production.obj
+_rm_run 692 0 CODE 0 text14 dist/default/production\PR19.X.production.obj
+lcd_goto@data 7A 0 COMMON 1 cstackCOMMON dist/default/production\PR19.X.production.obj
+rm_run@dir 70 0 COMMON 1 cstackCOMMON dist/default/production\PR19.X.production.obj
+__size_of_send_string 0 0 ABS 0 - dist/default/production\PR19.X.production.obj
+__end_of_shift_display FF4 0 CODE 0 text1 dist/default/production\PR19.X.production.obj
+stackhi 0 0 ABS 0 - C:\Users\TRAINE~1\AppData\Local\Temp\s4n4.obj
+stacklo 0 0 ABS 0 - C:\Users\TRAINE~1\AppData\Local\Temp\s4n4.obj
+__end_of_clockwise 9A2 0 CODE 0 text13 dist/default/production\PR19.X.production.obj
+__size_of_clockwise 0 0 ABS 0 - dist/default/production\PR19.X.production.obj
+__end_of__stringtab 12 0 STRING 0 strings dist/default/production\PR19.X.production.obj
+__size_of_lm_run 0 0 ABS 0 - dist/default/production\PR19.X.production.obj
+__Lspace_0 0 0 ABS 0 - -
+__Lspace_1 0 0 ABS 0 - -
+__Lspace_2 0 0 ABS 0 - -
+__Lspace_3 0 0 ABS 0 - -
+delay@data 70 0 COMMON 1 cstackCOMMON dist/default/production\PR19.X.production.obj
+__size_of_m_stop 0 0 ABS 0 - dist/default/production\PR19.X.production.obj
+__HcstackBANK0 0 0 ABS 0 cstackBANK0 -
+__Lend_init 0 0 CODE 0 end_init -
+__LcstackCOMMON 0 0 ABS 0 cstackCOMMON -
+end_of_initialization FF8 0 CODE 0 cinit dist/default/production\PR19.X.production.obj
+__Hintentry 0 0 CODE 0 intentry -
+_clockwise 95C 0 CODE 0 text13 dist/default/production\PR19.X.production.obj
+__Lstrings 0 0 ABS 0 strings -
+__Hreset_vec 0 0 CODE 0 reset_vec -
+__size_of_rm_run 0 0 ABS 0 - dist/default/production\PR19.X.production.obj
+__HbssBANK0 0 0 ABS 0 bssBANK0 -
+__ptext1 DD8 0 CODE 0 text1 dist/default/production\PR19.X.production.obj
+__ptext2 B9C 0 CODE 0 text2 dist/default/production\PR19.X.production.obj
+__ptext3 810 0 CODE 0 text3 dist/default/production\PR19.X.production.obj
+__ptext4 7D4 0 CODE 0 text4 dist/default/production\PR19.X.production.obj
+__ptext5 798 0 CODE 0 text5 dist/default/production\PR19.X.production.obj
+__ptext6 75C 0 CODE 0 text6 dist/default/production\PR19.X.production.obj
+__ptext7 A94 0 CODE 0 text7 dist/default/production\PR19.X.production.obj
+__ptext8 5F8 0 CODE 0 text8 dist/default/production\PR19.X.production.obj
+__ptext9 9EC 0 CODE 0 text9 dist/default/production\PR19.X.production.obj
+__Lpowerup 0 0 CODE 0 powerup -
+__Leeprom_data 0 0 EEDATA 3 eeprom_data -
+__end_of_deg_150 798 0 CODE 0 text6 dist/default/production\PR19.X.production.obj
+__end_of_deg_180 75C 0 CODE 0 text11 dist/default/production\PR19.X.production.obj
+__end_of_deg_210 7D4 0 CODE 0 text5 dist/default/production\PR19.X.production.obj
+__end_of_deg_270 9EC 0 CODE 0 text10 dist/default/production\PR19.X.production.obj
+__end_of_deg_330 84C 0 CODE 0 text3 dist/default/production\PR19.X.production.obj
+_mode_display A36 0 CODE 0 text15 dist/default/production\PR19.X.production.obj
+__Lreset_vec 0 0 CODE 0 reset_vec -
+__CFG_WDTE$ON 0 0 ABS 0 - dist/default/production\PR19.X.production.obj
+__end_of__initialization FF8 0 CODE 0 cinit dist/default/production\PR19.X.production.obj
+__Lfunctab 0 0 CODE 0 functab -
+_send_config 8D0 0 CODE 0 text20 dist/default/production\PR19.X.production.obj
+send_char@data 78 0 COMMON 1 cstackCOMMON dist/default/production\PR19.X.production.obj
+__Lclrtext 0 0 ABS 0 clrtext -
+__pcstackCOMMON 70 0 COMMON 1 cstackCOMMON dist/default/production\PR19.X.production.obj
+__Hend_init 6 0 CODE 0 end_init -
+__end_of_main DD8 0 CODE 0 maintext dist/default/production\PR19.X.production.obj
+__size_of_mode_display 0 0 ABS 0 - dist/default/production\PR19.X.production.obj
+__end_of_deg_0 722 0 CODE 0 text12 dist/default/production\PR19.X.production.obj
+__end_of_delay 8D0 0 CODE 0 text21 dist/default/production\PR19.X.production.obj
+_PORTB 6 0 ABS 0 - dist/default/production\PR19.X.production.obj
+_PORTC 7 0 ABS 0 - dist/default/production\PR19.X.production.obj
+_PORTD 8 0 ABS 0 - dist/default/production\PR19.X.production.obj
+_T2CON 12 0 ABS 0 - dist/default/production\PR19.X.production.obj
+_TRISA 85 0 ABS 0 - dist/default/production\PR19.X.production.obj
+_TRISB 86 0 ABS 0 - dist/default/production\PR19.X.production.obj
+_TRISC 87 0 ABS 0 - dist/default/production\PR19.X.production.obj
+_TRISD 88 0 ABS 0 - dist/default/production\PR19.X.production.obj
+__Hram 0 0 ABS 0 ram -
+__Lram 0 0 ABS 0 ram -
+_deg_0 6E8 0 CODE 0 text12 dist/default/production\PR19.X.production.obj
+_delay 88A 0 CODE 0 text21 dist/default/production\PR19.X.production.obj
+_shift 21 0 BANK0 1 bssBANK0 dist/default/production\PR19.X.production.obj
+_CCP1CON 17 0 ABS 0 - dist/default/production\PR19.X.production.obj
+_CCP2CON 1D 0 ABS 0 - dist/default/production\PR19.X.production.obj
+_CCP3CON 97 0 ABS 0 - dist/default/production\PR19.X.production.obj
+__size_of_betamode 0 0 ABS 0 - dist/default/production\PR19.X.production.obj
+__initialization FF4 0 CODE 0 cinit dist/default/production\PR19.X.production.obj
+__CFG_PWRTE$OFF 0 0 ABS 0 - dist/default/production\PR19.X.production.obj
+__pbssBANK0 20 0 BANK0 1 bssBANK0 dist/default/production\PR19.X.production.obj
+mode_display@x 7C 0 COMMON 1 cstackCOMMON dist/default/production\PR19.X.production.obj
+mode_display@y 7B 0 COMMON 1 cstackCOMMON dist/default/production\PR19.X.production.obj
+__pstrings 6 0 STRING 0 strings dist/default/production\PR19.X.production.obj
+__end_of_mode_display A94 0 CODE 0 text15 dist/default/production\PR19.X.production.obj
+# %SPLITSTAB Section
+# This section enumerates all the psect splits performed by the assembler.
+# The beginning of the section is indicated by %SPLITSTAB.
+# Each line is a record a particular split, where the parent psect is on
+# the left and the child on the right.  Note that a child psect is always
+# split form the top of the parent psect. All splits from a given parent
+# are listed in the order in which they occurred.
+%SPLITSTAB
+# %DABS Section
+# This section contains a table of all usuage of the assember
+# directive DABS in the program. Each line has the following format:
+#   <name> <space> <address> <size>
+# If the DABS was originally labelled then that shall be <name>,
+# otherwise name will be "-".  The <space> number is in decimal.
+# <address> and <size> are in byte units as unqaulified hexadecimal
+%DABS
+- 1 7E 2
+# %SEGMENTS Section
+# This sections enumerates the segments of the program.  Each segment
+# is described on a single line as follows:
+#    <name> <space> <link address> <file address> <size> <delta>
+# Addresses and size are in unqualified hexadecimal.  The link address
+# and size are in units of delta. The file address is in units of bytes.
+# All other numeric quantities are in decimal.
+%SEGMENTS
+cinit 0 7FA FF4 6 2
+text1 0 6EC DD8 10E 2
+text2 0 5CE B9C 85 2
+text3 0 408 810 1E 2
+text4 0 3EA 7D4 1E 2
+text5 0 3CC 798 1E 2
+text6 0 3AE 75C 1E 2
+text7 0 54A A94 84 2
+text8 0 2FC 5F8 11 2
+text9 0 4F6 9EC 25 2
+text10 0 4D1 9A2 25 2
+text11 0 391 722 1D 2
+text12 0 374 6E8 1D 2
+text13 0 4AE 95C 23 2
+text14 0 349 692 15 2
+text15 0 51B A36 2F 2
+text16 0 426 84C 1F 2
+text17 0 48B 916 23 2
+text18 0 35E 6BC 16 2
+text19 0 30D 61A 12 2
+text20 0 468 8D0 23 2
+text21 0 445 88A 23 2
+text22 0 334 668 15 2
+text23 0 31F 63E 15 2
+maintext 0 653 CA6 99 2
+cstackCOMMON 1 70 70 E 1
+reset_vec 0 0 0 3 2
+bssBANK0 1 20 20 3 1
+strings 0 3 6 7E 2
+config 0 2007 400E 2 2

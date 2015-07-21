@@ -1,0 +1,3573 @@
+
+
+Microchip Technology PIC LITE Macro Assembler V1.34 build -361300703 
+                                                                                               Tue Jul 21 14:10:31 2015
+
+Microchip Technology Omniscient Code Generator (Lite mode) build 201502162209
+     1                           	processor	16F777
+     2                           	opt	pw 120
+     3                           	opt	lm
+     4                           	psect	strings,global,class=STRING,delta=2
+     5                           	psect	cinit,global,class=CODE,merge=1,delta=2
+     6                           	psect	bssBANK0,global,class=BANK0,space=1,delta=1
+     7                           	psect	cstackCOMMON,global,class=COMMON,space=1,delta=1
+     8                           	psect	cstackBANK0,global,class=BANK0,space=1,delta=1
+     9                           	psect	maintext,global,class=CODE,split=1,delta=2
+    10                           	psect	text1,local,class=CODE,merge=1,delta=2
+    11                           	psect	text2,local,class=CODE,merge=1,delta=2
+    12                           	psect	text3,local,class=CODE,merge=1,delta=2
+    13                           	psect	text4,local,class=CODE,merge=1,delta=2
+    14                           	psect	text5,local,class=CODE,merge=1,delta=2
+    15                           	psect	text6,local,class=CODE,merge=1,delta=2
+    16                           	psect	text7,local,class=CODE,merge=1,delta=2
+    17                           	psect	text8,local,class=CODE,merge=1,delta=2
+    18                           	psect	text9,local,class=CODE,merge=1,delta=2
+    19                           	psect	text10,local,class=CODE,merge=1,delta=2
+    20                           	psect	text11,local,class=CODE,merge=1,delta=2
+    21                           	psect	text12,local,class=CODE,merge=1,delta=2
+    22                           	psect	text13,local,class=CODE,merge=1,delta=2
+    23                           	psect	text14,local,class=CODE,merge=1,delta=2
+    24                           	psect	text15,local,class=CODE,merge=1,delta=2
+    25                           	psect	text16,local,class=CODE,merge=1,delta=2
+    26                           	psect	text17,local,class=CODE,merge=1,delta=2
+    27                           	psect	text18,local,class=CODE,merge=1,delta=2
+    28                           	psect	text19,local,class=CODE,merge=1,delta=2
+    29                           	psect	text20,local,class=CODE,merge=1,delta=2
+    30                           	psect	text21,local,class=CODE,merge=1,delta=2
+    31                           	psect	text22,local,class=CODE,merge=1,delta=2
+    32                           	psect	text23,local,class=CODE,merge=1,delta=2
+    33                           	dabs	1,0x7E,2
+    34  0000                     	;# 
+    35  0001                     	;# 
+    36  0002                     	;# 
+    37  0003                     	;# 
+    38  0004                     	;# 
+    39  0005                     	;# 
+    40  0006                     	;# 
+    41  0007                     	;# 
+    42  0008                     	;# 
+    43  0009                     	;# 
+    44  000A                     	;# 
+    45  000B                     	;# 
+    46  000C                     	;# 
+    47  000D                     	;# 
+    48  000E                     	;# 
+    49  000E                     	;# 
+    50  000F                     	;# 
+    51  0010                     	;# 
+    52  0011                     	;# 
+    53  0012                     	;# 
+    54  0013                     	;# 
+    55  0014                     	;# 
+    56  0015                     	;# 
+    57  0015                     	;# 
+    58  0016                     	;# 
+    59  0017                     	;# 
+    60  0018                     	;# 
+    61  0019                     	;# 
+    62  001A                     	;# 
+    63  001B                     	;# 
+    64  001B                     	;# 
+    65  001C                     	;# 
+    66  001D                     	;# 
+    67  001E                     	;# 
+    68  001F                     	;# 
+    69  0081                     	;# 
+    70  0085                     	;# 
+    71  0086                     	;# 
+    72  0087                     	;# 
+    73  0088                     	;# 
+    74  0089                     	;# 
+    75  008C                     	;# 
+    76  008D                     	;# 
+    77  008E                     	;# 
+    78  008F                     	;# 
+    79  0090                     	;# 
+    80  0091                     	;# 
+    81  0092                     	;# 
+    82  0093                     	;# 
+    83  0094                     	;# 
+    84  0095                     	;# 
+    85  0095                     	;# 
+    86  0096                     	;# 
+    87  0097                     	;# 
+    88  0098                     	;# 
+    89  0099                     	;# 
+    90  009B                     	;# 
+    91  009C                     	;# 
+    92  009D                     	;# 
+    93  009E                     	;# 
+    94  009F                     	;# 
+    95  0105                     	;# 
+    96  0109                     	;# 
+    97  010C                     	;# 
+    98  010D                     	;# 
+    99  010E                     	;# 
+   100  010F                     	;# 
+   101  018C                     	;# 
+   102  0017                     _CCP1CON	set	23
+   103  001D                     _CCP2CON	set	29
+   104  0015                     _CCPR1L	set	21
+   105  001B                     _CCPR2L	set	27
+   106  0006                     _PORTB	set	6
+   107  0007                     _PORTC	set	7
+   108  0008                     _PORTD	set	8
+   109  0012                     _T2CON	set	18
+   110  0028                     _RA0	set	40
+   111  0029                     _RA1	set	41
+   112  002A                     _RA2	set	42
+   113  002B                     _RA3	set	43
+   114  0033                     _RB3	set	51
+   115  0034                     _RB4	set	52
+   116  0036                     _RB6	set	54
+   117  0037                     _RB7	set	55
+   118  0038                     _RC0	set	56
+   119  003B                     _RC3	set	59
+   120  003C                     _RC4	set	60
+   121  003D                     _RC5	set	61
+   122  009F                     _ADCON1	set	159
+   123  0097                     _CCP3CON	set	151
+   124  0095                     _CCPR3L	set	149
+   125  0092                     _PR2	set	146
+   126  0085                     _TRISA	set	133
+   127  0086                     _TRISB	set	134
+   128  0087                     _TRISC	set	135
+   129  0088                     _TRISD	set	136
+   130                           
+   131                           	psect	strings
+   132  0003                     __pstrings:	
+   133  0003                     stringtab:	
+   134  0003                     __stringtab:	
+   135  0003                     stringcode:	
+   136                           ;	String table - string pointers are 1 byte each
+   137                           
+   138  0003                     stringdir:	
+   139  0003  3000               	movlw	high stringdir
+   140  0004  008A               	movwf	10
+   141  0005  0804               	movf	4,w
+   142  0006  0A84               	incf	4,f
+   143  0007  0782               	addwf	2,f
+   144  0008                     __stringbase:	
+   145  0008  3400               	retlw	0
+   146  0009                     __end_of__stringtab:	
+   147  0009                     STR_33:	
+   148  0009  3443               	retlw	67	;'C'
+   149  000A  3479               	retlw	121	;'y'
+   150  000B  3474               	retlw	116	;'t'
+   151  000C  3472               	retlw	114	;'r'
+   152  000D  346F               	retlw	111	;'o'
+   153  000E  346E               	retlw	110	;'n'
+   154  000F  3420               	retlw	32	;' '
+   155  0010  3446               	retlw	70	;'F'
+   156  0011  346C               	retlw	108	;'l'
+   157  0012  3465               	retlw	101	;'e'
+   158  0013  3478               	retlw	120	;'x'
+   159  0014  3469               	retlw	105	;'i'
+   160  0015  3462               	retlw	98	;'b'
+   161  0016  346F               	retlw	111	;'o'
+   162  0017  3474               	retlw	116	;'t'
+   163  0018  3400               	retlw	0
+   164  0019                     STR_29:	
+   165  0019  3441               	retlw	65	;'A'
+   166  001A  346E               	retlw	110	;'n'
+   167  001B  3474               	retlw	116	;'t'
+   168  001C  3469               	retlw	105	;'i'
+   169  001D  3463               	retlw	99	;'c'
+   170  001E  346C               	retlw	108	;'l'
+   171  001F  346F               	retlw	111	;'o'
+   172  0020  3463               	retlw	99	;'c'
+   173  0021  346B               	retlw	107	;'k'
+   174  0022  3477               	retlw	119	;'w'
+   175  0023  3469               	retlw	105	;'i'
+   176  0024  3473               	retlw	115	;'s'
+   177  0025  3465               	retlw	101	;'e'
+   178  0026  3400               	retlw	0
+   179  0027                     STR_34:	
+   180  0027  3441               	retlw	65	;'A'
+   181  0028  346C               	retlw	108	;'l'
+   182  0029  3470               	retlw	112	;'p'
+   183  002A  3468               	retlw	104	;'h'
+   184  002B  3461               	retlw	97	;'a'
+   185  002C  3420               	retlw	32	;' '
+   186  002D  344D               	retlw	77	;'M'
+   187  002E  346F               	retlw	111	;'o'
+   188  002F  3464               	retlw	100	;'d'
+   189  0030  3465               	retlw	101	;'e'
+   190  0031  343F               	retlw	63	;'?'
+   191  0032  3400               	retlw	0
+   192  0033                     STR_36:	
+   193  0033  3442               	retlw	66	;'B'
+   194  0034  3465               	retlw	101	;'e'
+   195  0035  3474               	retlw	116	;'t'
+   196  0036  3461               	retlw	97	;'a'
+   197  0037  3420               	retlw	32	;' '
+   198  0038  344D               	retlw	77	;'M'
+   199  0039  346F               	retlw	111	;'o'
+   200  003A  3464               	retlw	100	;'d'
+   201  003B  3465               	retlw	101	;'e'
+   202  003C  343F               	retlw	63	;'?'
+   203  003D  3400               	retlw	0
+   204  003E                     STR_27:	
+   205  003E  3443               	retlw	67	;'C'
+   206  003F  346C               	retlw	108	;'l'
+   207  0040  346F               	retlw	111	;'o'
+   208  0041  3463               	retlw	99	;'c'
+   209  0042  346B               	retlw	107	;'k'
+   210  0043  3477               	retlw	119	;'w'
+   211  0044  3469               	retlw	105	;'i'
+   212  0045  3473               	retlw	115	;'s'
+   213  0046  3465               	retlw	101	;'e'
+   214  0047  3400               	retlw	0
+   215  0048                     STR_4:	
+   216  0048  3444               	retlw	68	;'D'
+   217  0049  3465               	retlw	101	;'e'
+   218  004A  3467               	retlw	103	;'g'
+   219  004B  3472               	retlw	114	;'r'
+   220  004C  3465               	retlw	101	;'e'
+   221  004D  3465               	retlw	101	;'e'
+   222  004E  3400               	retlw	0
+   223  004F                     STR_31:	
+   224  004F  3443               	retlw	67	;'C'
+   225  0050  3479               	retlw	121	;'y'
+   226  0051  3474               	retlw	116	;'t'
+   227  0052  3472               	retlw	114	;'r'
+   228  0053  346F               	retlw	111	;'o'
+   229  0054  346E               	retlw	110	;'n'
+   230  0055  3400               	retlw	0
+   231  0056                     STR_2:	
+   232  0056  3453               	retlw	83	;'S'
+   233  0057  3474               	retlw	116	;'t'
+   234  0058  346F               	retlw	111	;'o'
+   235  0059  3470               	retlw	112	;'p'
+   236  005A  3400               	retlw	0
+   237  005B                     STR_23:	
+   238  005B  3433               	retlw	51	;'3'
+   239  005C  3430               	retlw	48	;'0'
+   240  005D  3430               	retlw	48	;'0'
+   241  005E  3400               	retlw	0
+   242  005F                     STR_17:	
+   243  005F  3432               	retlw	50	;'2'
+   244  0060  3431               	retlw	49	;'1'
+   245  0061  3430               	retlw	48	;'0'
+   246  0062  3400               	retlw	0
+   247  0063                     STR_11:	
+   248  0063  3431               	retlw	49	;'1'
+   249  0064  3432               	retlw	50	;'2'
+   250  0065  3430               	retlw	48	;'0'
+   251  0066  3400               	retlw	0
+   252  0067                     STR_25:	
+   253  0067  3433               	retlw	51	;'3'
+   254  0068  3433               	retlw	51	;'3'
+   255  0069  3430               	retlw	48	;'0'
+   256  006A  3400               	retlw	0
+   257  006B                     STR_19:	
+   258  006B  3432               	retlw	50	;'2'
+   259  006C  3434               	retlw	52	;'4'
+   260  006D  3430               	retlw	48	;'0'
+   261  006E  3400               	retlw	0
+   262  006F                     STR_13:	
+   263  006F  3431               	retlw	49	;'1'
+   264  0070  3435               	retlw	53	;'5'
+   265  0071  3430               	retlw	48	;'0'
+   266  0072  3400               	retlw	0
+   267  0073                     STR_21:	
+   268  0073  3432               	retlw	50	;'2'
+   269  0074  3437               	retlw	55	;'7'
+   270  0075  3430               	retlw	48	;'0'
+   271  0076  3400               	retlw	0
+   272  0077                     STR_15:	
+   273  0077  3431               	retlw	49	;'1'
+   274  0078  3438               	retlw	56	;'8'
+   275  0079  3430               	retlw	48	;'0'
+   276  007A  3400               	retlw	0
+   277  007B                     STR_7:	
+   278  007B  3436               	retlw	54	;'6'
+   279  007C  3430               	retlw	48	;'0'
+   280  007D  3400               	retlw	0
+   281  007E                     STR_9:	
+   282  007E  3439               	retlw	57	;'9'
+   283  007F  3430               	retlw	48	;'0'
+   284  0080  3400               	retlw	0
+   285  005E                     
+   286                           ; #config settings
+   287  0000                     
+   288                           	psect	cinit
+   289  07FA                     start_initialization:	
+   290  07FA                     __initialization:	
+   291                           
+   292                           ; Clear objects allocated to BANK0
+   293  07FA  01A0               	clrf	__pbssBANK0& (0+127)
+   294  07FB  01A1               	clrf	(__pbssBANK0+1)& (0+127)
+   295  07FC                     end_of_initialization:	
+   296                           ;End of C runtime variable initialization code
+   297                           
+   298  07FC                     __end_of__initialization:	
+   299  07FC  0183               	clrf	3
+   300  07FD  120A  118A  2E53   	ljmp	_main	;jump to C main() function
+   301                           
+   302                           	psect	bssBANK0
+   303  0020                     __pbssBANK0:	
+   304  0020                     _i:	
+   305  0020                     	ds	1
+   306  0021                     _shift:	
+   307  0021                     	ds	1
+   308                           
+   309                           	psect	cstackCOMMON
+   310  0070                     __pcstackCOMMON:	
+   311  0070                     ?_send_config:	
+   312  0070                     ?_delay:	
+   313                           ; 0 bytes @ 0x0
+   314                           
+   315  0070                     ?_alphamode:	
+   316                           ; 0 bytes @ 0x0
+   317                           
+   318  0070                     ?_betamode:	
+   319                           ; 0 bytes @ 0x0
+   320                           
+   321  0070                     ?_shift_display:	
+   322                           ; 0 bytes @ 0x0
+   323                           
+   324  0070                     ?_deg_270:	
+   325                           ; 0 bytes @ 0x0
+   326                           
+   327  0070                     ?_deg_0:	
+   328                           ; 0 bytes @ 0x0
+   329                           
+   330  0070                     ?_deg_90:	
+   331                           ; 0 bytes @ 0x0
+   332                           
+   333  0070                     ?_deg_180:	
+   334                           ; 0 bytes @ 0x0
+   335                           
+   336  0070                     ?_clockwise:	
+   337                           ; 0 bytes @ 0x0
+   338                           
+   339  0070                     ?_m_stop:	
+   340                           ; 0 bytes @ 0x0
+   341                           
+   342  0070                     ?_deg_330:	
+   343                           ; 0 bytes @ 0x0
+   344                           
+   345  0070                     ?_deg_30:	
+   346                           ; 0 bytes @ 0x0
+   347                           
+   348  0070                     ?_deg_150:	
+   349                           ; 0 bytes @ 0x0
+   350                           
+   351  0070                     ?_deg_210:	
+   352                           ; 0 bytes @ 0x0
+   353                           
+   354  0070                     ?_main:	
+   355                           ; 0 bytes @ 0x0
+   356                           
+   357  0070                     ?_lm_run:	
+   358                           ; 0 bytes @ 0x0
+   359                           
+   360  0070                     ??_lm_run:	
+   361                           ; 0 bytes @ 0x0
+   362                           
+   363  0070                     ?_rm_run:	
+   364                           ; 0 bytes @ 0x0
+   365                           
+   366  0070                     ??_rm_run:	
+   367                           ; 0 bytes @ 0x0
+   368                           
+   369  0070                     ?_bm_run:	
+   370                           ; 0 bytes @ 0x0
+   371                           
+   372  0070                     ??_bm_run:	
+   373                           ; 0 bytes @ 0x0
+   374                           
+   375  0070                     ?_send_char:	
+   376                           ; 0 bytes @ 0x0
+   377                           
+   378  0070                     ?_lcd_goto:	
+   379                           ; 0 bytes @ 0x0
+   380                           
+   381  0070                     ?_lcd_clr:	
+   382                           ; 0 bytes @ 0x0
+   383                           
+   384  0070                     ?_send_string:	
+   385                           ; 0 bytes @ 0x0
+   386                           
+   387  0070                     lm_run@dir:	
+   388                           ; 0 bytes @ 0x0
+   389                           
+   390  0070                     rm_run@dir:	
+   391                           ; 1 bytes @ 0x0
+   392                           
+   393  0070                     bm_run@dir:	
+   394                           ; 1 bytes @ 0x0
+   395                           
+   396  0070                     delay@data:	
+   397                           ; 1 bytes @ 0x0
+   398                           
+   399                           
+   400                           ; 4 bytes @ 0x0
+   401  0070                     	ds	4
+   402  0074                     ??_delay:	
+   403                           
+   404                           ; 0 bytes @ 0x4
+   405  0074                     	ds	4
+   406  0078                     ??_send_config:	
+   407  0078                     ??_send_char:	
+   408                           ; 0 bytes @ 0x8
+   409                           
+   410  0078                     send_config@data:	
+   411                           ; 0 bytes @ 0x8
+   412                           
+   413  0078                     send_char@data:	
+   414                           ; 1 bytes @ 0x8
+   415                           
+   416                           
+   417                           ; 1 bytes @ 0x8
+   418  0078                     	ds	1
+   419  0079                     ??_lcd_goto:	
+   420  0079                     ??_lcd_clr:	
+   421                           ; 0 bytes @ 0x9
+   422                           
+   423  0079                     ??_send_string:	
+   424                           ; 0 bytes @ 0x9
+   425                           
+   426                           
+   427                           ; 0 bytes @ 0x9
+   428  0079                     	ds	1
+   429  007A                     lcd_goto@data:	
+   430  007A                     send_string@s:	
+   431                           ; 1 bytes @ 0xA
+   432                           
+   433                           
+   434                           ; 1 bytes @ 0xA
+   435  007A                     	ds	1
+   436  007B                     ??_shift_display:	
+   437  007B                     ?_mode_display:	
+   438                           ; 0 bytes @ 0xB
+   439                           
+   440  007B                     mode_display@y:	
+   441                           ; 0 bytes @ 0xB
+   442                           
+   443                           
+   444                           ; 1 bytes @ 0xB
+   445  007B                     	ds	1
+   446  007C                     ??_mode_display:	
+   447  007C                     mode_display@x:	
+   448                           ; 0 bytes @ 0xC
+   449                           
+   450                           
+   451                           ; 1 bytes @ 0xC
+   452  007C                     	ds	1
+   453  007D                     ??_deg_270:	
+   454  007D                     ??_deg_0:	
+   455                           ; 0 bytes @ 0xD
+   456                           
+   457  007D                     ??_deg_90:	
+   458                           ; 0 bytes @ 0xD
+   459                           
+   460  007D                     ??_deg_180:	
+   461                           ; 0 bytes @ 0xD
+   462                           
+   463  007D                     ??_clockwise:	
+   464                           ; 0 bytes @ 0xD
+   465                           
+   466  007D                     ??_m_stop:	
+   467                           ; 0 bytes @ 0xD
+   468                           
+   469  007D                     ??_deg_330:	
+   470                           ; 0 bytes @ 0xD
+   471                           
+   472  007D                     ??_deg_30:	
+   473                           ; 0 bytes @ 0xD
+   474                           
+   475  007D                     ??_deg_150:	
+   476                           ; 0 bytes @ 0xD
+   477                           
+   478  007D                     ??_deg_210:	
+   479                           ; 0 bytes @ 0xD
+   480                           
+   481                           
+   482                           ; 0 bytes @ 0xD
+   483  007D                     	ds	1
+   484  007E                     ??_alphamode:	
+   485  007E                     ??_betamode:	
+   486                           ; 0 bytes @ 0xE
+   487                           
+   488                           
+   489                           	psect	cstackBANK0
+   490  0022                     __pcstackBANK0:	
+   491                           ; 0 bytes @ 0xE
+   492                           
+   493  0022                     ??_main:	
+   494                           
+   495                           ; 0 bytes @ 0x0
+   496  0022                     	ds	1
+   497                           
+   498                           	psect	maintext
+   499  0653                     __pmaintext:	
+   500 ;;
+   501 ;;Main: autosize = 0, tempsize = 1, incstack = 0, save=0
+   502 ;;
+   503 ;; *************** function _main *****************
+   504 ;; Defined at:
+   505 ;;		line 93 in file "../../Source file/PR19.c"
+   506 ;; Parameters:    Size  Location     Type
+   507 ;;		None
+   508 ;; Auto vars:     Size  Location     Type
+   509 ;;		None
+   510 ;; Return value:  Size  Location     Type
+   511 ;;		None               void
+   512 ;; Registers used:
+   513 ;;		wreg, fsr0l, fsr0h, status,2, status,0, pclath, cstack
+   514 ;; Tracked objects:
+   515 ;;		On entry : B00/0
+   516 ;;		On exit  : 0/0
+   517 ;;		Unchanged: 0/0
+   518 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   519 ;;      Params:         0       0       0       0       0
+   520 ;;      Locals:         0       0       0       0       0
+   521 ;;      Temps:          0       1       0       0       0
+   522 ;;      Totals:         0       1       0       0       0
+   523 ;;Total ram usage:        1 bytes
+   524 ;; Hardware stack levels required when called:    6
+   525 ;; This function calls:
+   526 ;;		_alphamode
+   527 ;;		_betamode
+   528 ;;		_delay
+   529 ;;		_send_config
+   530 ;;		_shift_display
+   531 ;; This function is called by:
+   532 ;;		Startup code after reset
+   533 ;; This function uses a non-reentrant model
+   534 ;;
+   535                           
+   536                           
+   537                           ;psect for function _main
+   538  0653                     _main:	
+   539                           
+   540                           ;PR19.c: 96: ADCON1 = 0b00001111;
+   541                           
+   542                           ;incstack = 0
+   543                           ; Regs used in _main: [wreg-fsr0h+status,2+status,0+pclath+cstack]
+   544  0653  300F               	movlw	15
+   545  0654  1683               	bsf	3,5	;RP0=1, select bank1
+   546  0655  1303               	bcf	3,6	;RP1=0, select bank1
+   547  0656  009F               	movwf	31	;volatile
+   548                           
+   549                           ;PR19.c: 99: TRISA = 0b00000011;
+   550  0657  3003               	movlw	3
+   551  0658  0085               	movwf	5	;volatile
+   552                           
+   553                           ;PR19.c: 100: TRISB = 0b00000000;
+   554  0659  0186               	clrf	6	;volatile
+   555                           
+   556                           ;PR19.c: 101: TRISC = 0b00000000;
+   557  065A  0187               	clrf	7	;volatile
+   558                           
+   559                           ;PR19.c: 102: TRISD = 0b00000000;
+   560  065B  0188               	clrf	8	;volatile
+   561                           
+   562                           ;PR19.c: 103: PORTB = 0x00;
+   563  065C  1283               	bcf	3,5	;RP0=0, select bank0
+   564  065D  1303               	bcf	3,6	;RP1=0, select bank0
+   565  065E  0186               	clrf	6	;volatile
+   566                           
+   567                           ;PR19.c: 104: PORTC = 0x00;
+   568  065F  0187               	clrf	7	;volatile
+   569                           
+   570                           ;PR19.c: 105: PORTD = 0x00;
+   571  0660  0188               	clrf	8	;volatile
+   572                           
+   573                           ;PR19.c: 108: send_config(0b00000001);
+   574  0661  3001               	movlw	1
+   575  0662  120A  118A  2468  120A  118A  	fcall	_send_config
+   576                           
+   577                           ;PR19.c: 109: send_config(0b00000010);
+   578  0667  3002               	movlw	2
+   579  0668  120A  118A  2468  120A  118A  	fcall	_send_config
+   580                           
+   581                           ;PR19.c: 110: send_config(0b00000110);
+   582  066D  3006               	movlw	6
+   583  066E  120A  118A  2468  120A  118A  	fcall	_send_config
+   584                           
+   585                           ;PR19.c: 111: send_config(0b00001100);
+   586  0673  300C               	movlw	12
+   587  0674  120A  118A  2468  120A  118A  	fcall	_send_config
+   588                           
+   589                           ;PR19.c: 112: send_config(0b00111000);
+   590  0679  3038               	movlw	56
+   591  067A  120A  118A  2468  120A  118A  	fcall	_send_config
+   592                           
+   593                           ;PR19.c: 113: RA2=1;
+   594  067F  1283               	bcf	3,5	;RP0=0, select bank0
+   595  0680  1303               	bcf	3,6	;RP1=0, select bank0
+   596  0681  1505               	bsf	5,2	;volatile
+   597                           
+   598                           ;PR19.c: 116: PR2=255;
+   599  0682  30FF               	movlw	255
+   600  0683  1683               	bsf	3,5	;RP0=1, select bank1
+   601  0684  1303               	bcf	3,6	;RP1=0, select bank1
+   602  0685  0092               	movwf	18	;volatile
+   603                           
+   604                           ;PR19.c: 117: CCP1CON = 0b00001100;
+   605  0686  300C               	movlw	12
+   606  0687  1283               	bcf	3,5	;RP0=0, select bank0
+   607  0688  1303               	bcf	3,6	;RP1=0, select bank0
+   608  0689  0097               	movwf	23	;volatile
+   609                           
+   610                           ;PR19.c: 118: CCP2CON = 0b00001100;
+   611  068A  300C               	movlw	12
+   612  068B  009D               	movwf	29	;volatile
+   613                           
+   614                           ;PR19.c: 119: CCP3CON = 0b00001100;
+   615  068C  300C               	movlw	12
+   616  068D  1683               	bsf	3,5	;RP0=1, select bank1
+   617  068E  1303               	bcf	3,6	;RP1=0, select bank1
+   618  068F  0097               	movwf	23	;volatile
+   619                           
+   620                           ;PR19.c: 120: T2CON = 0b00000100;
+   621  0690  3004               	movlw	4
+   622  0691  1283               	bcf	3,5	;RP0=0, select bank0
+   623  0692  1303               	bcf	3,6	;RP1=0, select bank0
+   624  0693  0092               	movwf	18	;volatile
+   625                           
+   626                           ;PR19.c: 121: CCPR1L = 0;
+   627  0694  0195               	clrf	21	;volatile
+   628                           
+   629                           ;PR19.c: 122: CCPR2L = 0;
+   630  0695  019B               	clrf	27	;volatile
+   631                           
+   632                           ;PR19.c: 123: CCPR3L = 0;
+   633  0696  1683               	bsf	3,5	;RP0=1, select bank1
+   634  0697  1303               	bcf	3,6	;RP1=0, select bank1
+   635  0698  0195               	clrf	21	;volatile
+   636  0699                     l1386:	
+   637                           ;PR19.c: 126: while(1)
+   638                           
+   639                           
+   640                           ;PR19.c: 127: {
+   641                           ;PR19.c: 128: if(RA0 == 0)
+   642  0699  1283               	bcf	3,5	;RP0=0, select bank0
+   643  069A  1303               	bcf	3,6	;RP1=0, select bank0
+   644  069B  1805               	btfsc	5,0	;volatile
+   645  069C  2EB8               	goto	l96
+   646                           
+   647                           ;PR19.c: 129: {
+   648                           ;PR19.c: 130: i+=1;
+   649  069D  3001               	movlw	1
+   650  069E  00A2               	movwf	??_main
+   651  069F  0822               	movf	??_main,w
+   652  06A0  07A0               	addwf	_i,f
+   653                           
+   654                           ;PR19.c: 131: if(i==3)i=0;
+   655  06A1  3003               	movlw	3
+   656  06A2  0620               	xorwf	_i,w
+   657  06A3  1903               	btfsc	3,2
+   658  06A4  01A0               	clrf	_i
+   659  06A5                     l1394:	
+   660                           ;PR19.c: 132: while(RA0 == 0)
+   661                           
+   662  06A5  1283               	bcf	3,5	;RP0=0, select bank0
+   663  06A6  1303               	bcf	3,6	;RP1=0, select bank0
+   664  06A7  1805               	btfsc	5,0	;volatile
+   665  06A8  2EB8               	goto	l96
+   666                           
+   667                           ;PR19.c: 133: {
+   668                           ;PR19.c: 134: RA3=1;
+   669  06A9  1585               	bsf	5,3	;volatile
+   670                           
+   671                           ;PR19.c: 135: delay(10000);
+   672  06AA  3000               	movlw	0
+   673  06AB  00F3               	movwf	delay@data+3
+   674  06AC  3000               	movlw	0
+   675  06AD  00F2               	movwf	delay@data+2
+   676  06AE  3027               	movlw	39
+   677  06AF  00F1               	movwf	delay@data+1
+   678  06B0  3010               	movlw	16
+   679  06B1  00F0               	movwf	delay@data
+   680  06B2  120A  118A  2445  120A  118A  	fcall	_delay
+   681  06B7  2EA5               	goto	l1394
+   682  06B8                     l96:	
+   683                           
+   684                           ;PR19.c: 136: }
+   685                           ;PR19.c: 137: }
+   686                           ;PR19.c: 138: if(RA1 == 0)
+   687  06B8  1C85               	btfss	5,1	;volatile
+   688  06B9  2EC9               	goto	l1400
+   689  06BA  2EE3               	goto	l101
+   690  06BB                     l103:	
+   691                           ;PR19.c: 139: {
+   692                           ;PR19.c: 140: while(RA1 == 0)
+   693                           
+   694                           
+   695                           ;PR19.c: 141: {
+   696                           ;PR19.c: 142: RA3=1;
+   697  06BB  1585               	bsf	5,3	;volatile
+   698                           
+   699                           ;PR19.c: 143: delay(10000);
+   700  06BC  3000               	movlw	0
+   701  06BD  00F3               	movwf	delay@data+3
+   702  06BE  3000               	movlw	0
+   703  06BF  00F2               	movwf	delay@data+2
+   704  06C0  3027               	movlw	39
+   705  06C1  00F1               	movwf	delay@data+1
+   706  06C2  3010               	movlw	16
+   707  06C3  00F0               	movwf	delay@data
+   708  06C4  120A  118A  2445  120A  118A  	fcall	_delay
+   709  06C9                     l1400:	
+   710  06C9  1283               	bcf	3,5	;RP0=0, select bank0
+   711  06CA  1303               	bcf	3,6	;RP1=0, select bank0
+   712  06CB  1885               	btfsc	5,1	;volatile
+   713  06CC  2ED9               	goto	l1406
+   714  06CD  2EBB               	goto	l103
+   715  06CE                     l1402:	
+   716                           ;PR19.c: 146: {
+   717                           ;PR19.c: 147: case 1:alphamode();
+   718                           
+   719                           ;PR19.c: 144: }
+   720                           ;PR19.c: 145: switch(i)
+   721                           
+   722  06CE  120A  118A  254A  120A  118A  	fcall	_alphamode
+   723  06D3                     l107:	
+   724                           ;PR19.c: 148: case 2:betamode();
+   725                           
+   726  06D3  120A  118A  25CE  120A  118A  	fcall	_betamode
+   727                           
+   728                           ;PR19.c: 150: }
+   729                           
+   730                           ;PR19.c: 149: break;
+   731  06D8  2EE3               	goto	l101
+   732  06D9                     l1406:	
+   733  06D9  1283               	bcf	3,5	;RP0=0, select bank0
+   734  06DA  1303               	bcf	3,6	;RP1=0, select bank0
+   735  06DB  0820               	movf	_i,w
+   736                           
+   737                           ; Switch size 1, requested type "space"
+   738                           ; Number of cases is 2, Range of values is 1 to 2
+   739                           ; switch strategies available:
+   740                           ; Name         Instructions Cycles
+   741                           ; simple_byte            7     4 (average)
+   742                           ; direct_byte           17    11 (fixed)
+   743                           ; jumptable            263     9 (fixed)
+   744                           ;	Chosen strategy is simple_byte
+   745  06DC  3A01               	xorlw	1	; case 1
+   746  06DD  1903               	skipnz
+   747  06DE  2ECE               	goto	l1402
+   748  06DF  3A03               	xorlw	3	; case 2
+   749  06E0  1903               	skipnz
+   750  06E1  2ED3               	goto	l107
+   751  06E2  2EE3               	goto	l101
+   752  06E3                     l101:	
+   753                           
+   754                           ;PR19.c: 151: }
+   755                           ;PR19.c: 152: RA3=0;
+   756  06E3  1283               	bcf	3,5	;RP0=0, select bank0
+   757  06E4  1303               	bcf	3,6	;RP1=0, select bank0
+   758  06E5  1185               	bcf	5,3	;volatile
+   759                           
+   760                           ;PR19.c: 153: shift_display();
+   761  06E6  120A  118A  26EC  120A  118A  	fcall	_shift_display
+   762  06EB  2E99               	goto	l1386
+   763  06EC                     __end_of_main:	
+   764                           
+   765                           	psect	text1
+   766  06EC                     __ptext1:	
+   767 ;; *************** function _shift_display *****************
+   768 ;; Defined at:
+   769 ;;		line 433 in file "../../Source file/PR19.c"
+   770 ;; Parameters:    Size  Location     Type
+   771 ;;		None
+   772 ;; Auto vars:     Size  Location     Type
+   773 ;;		None
+   774 ;; Return value:  Size  Location     Type
+   775 ;;		None               void
+   776 ;; Registers used:
+   777 ;;		wreg, fsr0l, fsr0h, status,2, status,0, pclath, cstack
+   778 ;; Tracked objects:
+   779 ;;		On entry : 0/0
+   780 ;;		On exit  : 0/0
+   781 ;;		Unchanged: 0/0
+   782 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   783 ;;      Params:         0       0       0       0       0
+   784 ;;      Locals:         0       0       0       0       0
+   785 ;;      Temps:          1       0       0       0       0
+   786 ;;      Totals:         1       0       0       0       0
+   787 ;;Total ram usage:        1 bytes
+   788 ;; Hardware stack levels used:    1
+   789 ;; Hardware stack levels required when called:    3
+   790 ;; This function calls:
+   791 ;;		_delay
+   792 ;;		_lcd_clr
+   793 ;;		_lcd_goto
+   794 ;;		_send_config
+   795 ;;		_send_string
+   796 ;; This function is called by:
+   797 ;;		_main
+   798 ;; This function uses a non-reentrant model
+   799 ;;
+   800                           
+   801                           
+   802                           ;psect for function _shift_display
+   803  06EC                     _shift_display:	
+   804                           
+   805                           ;PR19.c: 435: switch(i)
+   806                           
+   807                           ;incstack = 0
+   808                           ; Regs used in _shift_display: [wreg-fsr0h+status,2+status,0+pclath+cstack]
+   809  06EC  2FEC               	goto	l1342
+   810  06ED                     l1264:	
+   811                           ;PR19.c: 436: {
+   812                           ;PR19.c: 437: case 0:
+   813                           
+   814                           
+   815                           ;PR19.c: 438: shift=0;
+   816  06ED  1283               	bcf	3,5	;RP0=0, select bank0
+   817  06EE  1303               	bcf	3,6	;RP1=0, select bank0
+   818  06EF  01A1               	clrf	_shift
+   819                           
+   820                           ;PR19.c: 439: lcd_clr();
+   821  06F0  120A  118A  230D  120A  118A  	fcall	_lcd_clr
+   822                           
+   823                           ;PR19.c: 440: lcd_goto(1);
+   824  06F5  3001               	movlw	1
+   825  06F6  120A  118A  235E  120A  118A  	fcall	_lcd_goto
+   826                           
+   827                           ;PR19.c: 441: send_string("Cytron");
+   828  06FB  3047               	movlw	(low ((STR_31-__stringbase)| (0+32768)))& (0+255)
+   829  06FC  120A  118A  2426  120A  118A  	fcall	_send_string
+   830                           
+   831                           ;PR19.c: 442: lcd_goto(20);
+   832  0701  3014               	movlw	20
+   833  0702  120A  118A  235E  120A  118A  	fcall	_lcd_goto
+   834                           
+   835                           ;PR19.c: 443: send_string("Flexibot");
+   836  0707  3008               	movlw	(low (((STR_33+7)-__stringbase)| (0+32768)))& (0+255)
+   837  0708  120A  118A  2426  120A  118A  	fcall	_send_string
+   838  070D                     l1282:	
+   839                           ;PR19.c: 444: for( ;shift<8;shift+=1)
+   840                           
+   841  070D  3008               	movlw	8
+   842  070E  1283               	bcf	3,5	;RP0=0, select bank0
+   843  070F  1303               	bcf	3,6	;RP1=0, select bank0
+   844  0710  0221               	subwf	_shift,w
+   845  0711  1803               	btfsc	3,0
+   846  0712  2F48               	goto	l1290
+   847                           
+   848                           ;PR19.c: 445: {
+   849                           ;PR19.c: 446: if(RA0 == 0)return;
+   850  0713  1C05               	btfss	5,0	;volatile
+   851  0714  0008               	return
+   852                           
+   853                           ;PR19.c: 447: send_config(0b00011100);
+   854  0715  301C               	movlw	28
+   855  0716  120A  118A  2468  120A  118A  	fcall	_send_config
+   856                           
+   857                           ;PR19.c: 448: delay(50000);
+   858  071B  3000               	movlw	0
+   859  071C  00F3               	movwf	delay@data+3
+   860  071D  3000               	movlw	0
+   861  071E  00F2               	movwf	delay@data+2
+   862  071F  30C3               	movlw	195
+   863  0720  00F1               	movwf	delay@data+1
+   864  0721  3050               	movlw	80
+   865  0722  00F0               	movwf	delay@data
+   866  0723  120A  118A  2445  120A  118A  	fcall	_delay
+   867  0728  3001               	movlw	1
+   868  0729  00FB               	movwf	??_shift_display
+   869  072A  087B               	movf	??_shift_display,w
+   870  072B  1283               	bcf	3,5	;RP0=0, select bank0
+   871  072C  1303               	bcf	3,6	;RP1=0, select bank0
+   872  072D  07A1               	addwf	_shift,f
+   873  072E  2F0D               	goto	l1282
+   874  072F                     l215:	
+   875                           ;PR19.c: 449: }
+   876                           ;PR19.c: 450: for( ;shift>0;shift-=1)
+   877                           
+   878                           
+   879                           ;PR19.c: 451: {
+   880                           ;PR19.c: 452: if(RA0 == 0)return;
+   881  072F  1C05               	btfss	5,0	;volatile
+   882  0730  0008               	return
+   883                           
+   884                           ;PR19.c: 453: send_config(0b00011000);
+   885  0731  3018               	movlw	24
+   886  0732  120A  118A  2468  120A  118A  	fcall	_send_config
+   887                           
+   888                           ;PR19.c: 454: delay(50000);
+   889  0737  3000               	movlw	0
+   890  0738  00F3               	movwf	delay@data+3
+   891  0739  3000               	movlw	0
+   892  073A  00F2               	movwf	delay@data+2
+   893  073B  30C3               	movlw	195
+   894  073C  00F1               	movwf	delay@data+1
+   895  073D  3050               	movlw	80
+   896  073E  00F0               	movwf	delay@data
+   897  073F  120A  118A  2445  120A  118A  	fcall	_delay
+   898  0744  3001               	movlw	1
+   899  0745  1283               	bcf	3,5	;RP0=0, select bank0
+   900  0746  1303               	bcf	3,6	;RP1=0, select bank0
+   901  0747  02A1               	subwf	_shift,f
+   902  0748                     l1290:	
+   903  0748  0821               	movf	_shift,w
+   904  0749  1903               	btfsc	3,2
+   905  074A  0008               	return
+   906  074B  2F2F               	goto	l215
+   907  074C                     l1292:	
+   908                           ;PR19.c: 457: case 1:
+   909                           
+   910                           ;PR19.c: 455: }
+   911                           ;PR19.c: 456: break;
+   912                           
+   913                           
+   914                           ;PR19.c: 458: shift=0;
+   915  074C  01A1               	clrf	_shift
+   916                           
+   917                           ;PR19.c: 459: lcd_clr();
+   918  074D  120A  118A  230D  120A  118A  	fcall	_lcd_clr
+   919                           
+   920                           ;PR19.c: 460: lcd_goto(0);
+   921  0752  3000               	movlw	0
+   922  0753  120A  118A  235E  120A  118A  	fcall	_lcd_goto
+   923                           
+   924                           ;PR19.c: 461: send_string("Cytron Flexibot");
+   925  0758  3001               	movlw	(low ((STR_33-__stringbase)| (0+32768)))& (0+255)
+   926  0759  120A  118A  2426  120A  118A  	fcall	_send_string
+   927                           
+   928                           ;PR19.c: 462: lcd_goto(22);
+   929  075E  3016               	movlw	22
+   930  075F  120A  118A  235E  120A  118A  	fcall	_lcd_goto
+   931                           
+   932                           ;PR19.c: 463: send_string("Alpha Mode?");
+   933  0764  301F               	movlw	(low ((STR_34-__stringbase)| (0+32768)))& (0+255)
+   934  0765  120A  118A  2426  120A  118A  	fcall	_send_string
+   935                           
+   936                           ;PR19.c: 464: if(RA0 == 0 || RA1 ==0)return;
+   937  076A  1283               	bcf	3,5	;RP0=0, select bank0
+   938  076B  1303               	bcf	3,6	;RP1=0, select bank0
+   939  076C  1C05               	btfss	5,0	;volatile
+   940  076D  0008               	return
+   941  076E  1C85               	btfss	5,1	;volatile
+   942  076F  0008               	return
+   943                           
+   944                           ;PR19.c: 465: send_config(0b00011100);
+   945  0770  301C               	movlw	28
+   946  0771  120A  118A  2468  120A  118A  	fcall	_send_config
+   947                           
+   948                           ;PR19.c: 466: delay(80000);
+   949  0776  3000               	movlw	0
+   950  0777  00F3               	movwf	delay@data+3
+   951  0778  3001               	movlw	1
+   952  0779  00F2               	movwf	delay@data+2
+   953  077A  3038               	movlw	56
+   954  077B  00F1               	movwf	delay@data+1
+   955  077C  3080               	movlw	128
+   956  077D  00F0               	movwf	delay@data
+   957  077E  120A  118A  2445  120A  118A  	fcall	_delay
+   958                           
+   959                           ;PR19.c: 467: if(RA0 == 0 ||RA1 ==0)return;
+   960  0783  1283               	bcf	3,5	;RP0=0, select bank0
+   961  0784  1303               	bcf	3,6	;RP1=0, select bank0
+   962  0785  1C05               	btfss	5,0	;volatile
+   963  0786  0008               	return
+   964  0787  1C85               	btfss	5,1	;volatile
+   965  0788  0008               	return
+   966                           
+   967                           ;PR19.c: 468: send_config(0b00011000);
+   968  0789  3018               	movlw	24
+   969  078A  120A  118A  2468  120A  118A  	fcall	_send_config
+   970                           
+   971                           ;PR19.c: 469: delay(80000);
+   972  078F  3000               	movlw	0
+   973  0790  00F3               	movwf	delay@data+3
+   974  0791  3001               	movlw	1
+   975  0792  00F2               	movwf	delay@data+2
+   976  0793  3038               	movlw	56
+   977  0794  00F1               	movwf	delay@data+1
+   978  0795  3080               	movlw	128
+   979  0796  00F0               	movwf	delay@data
+   980  0797  120A  118A  2445   	fcall	_delay
+   981                           
+   982                           ;PR19.c: 470: break;
+   983  079A  0008               	return
+   984  079B                     l1316:	
+   985                           ;PR19.c: 471: case 2:
+   986                           
+   987                           
+   988                           ;PR19.c: 472: shift=0;
+   989  079B  1283               	bcf	3,5	;RP0=0, select bank0
+   990  079C  1303               	bcf	3,6	;RP1=0, select bank0
+   991  079D  01A1               	clrf	_shift
+   992                           
+   993                           ;PR19.c: 473: lcd_clr();
+   994  079E  120A  118A  230D  120A  118A  	fcall	_lcd_clr
+   995                           
+   996                           ;PR19.c: 474: lcd_goto(0);
+   997  07A3  3000               	movlw	0
+   998  07A4  120A  118A  235E  120A  118A  	fcall	_lcd_goto
+   999                           
+  1000                           ;PR19.c: 475: send_string("Cytron Flexibot");
+  1001  07A9  3001               	movlw	(low ((STR_33-__stringbase)| (0+32768)))& (0+255)
+  1002  07AA  120A  118A  2426  120A  118A  	fcall	_send_string
+  1003                           
+  1004                           ;PR19.c: 476: lcd_goto(22);
+  1005  07AF  3016               	movlw	22
+  1006  07B0  120A  118A  235E  120A  118A  	fcall	_lcd_goto
+  1007                           
+  1008                           ;PR19.c: 477: send_string("Beta Mode?");
+  1009  07B5  302B               	movlw	(low ((STR_36-__stringbase)| (0+32768)))& (0+255)
+  1010  07B6  120A  118A  2426  120A  118A  	fcall	_send_string
+  1011                           
+  1012                           ;PR19.c: 478: if(RA0 == 0 || RA1 ==0)return;
+  1013  07BB  1283               	bcf	3,5	;RP0=0, select bank0
+  1014  07BC  1303               	bcf	3,6	;RP1=0, select bank0
+  1015  07BD  1C05               	btfss	5,0	;volatile
+  1016  07BE  0008               	return
+  1017  07BF  1C85               	btfss	5,1	;volatile
+  1018  07C0  0008               	return
+  1019                           
+  1020                           ;PR19.c: 479: send_config(0b00011100);
+  1021  07C1  301C               	movlw	28
+  1022  07C2  120A  118A  2468  120A  118A  	fcall	_send_config
+  1023                           
+  1024                           ;PR19.c: 480: delay(80000);
+  1025  07C7  3000               	movlw	0
+  1026  07C8  00F3               	movwf	delay@data+3
+  1027  07C9  3001               	movlw	1
+  1028  07CA  00F2               	movwf	delay@data+2
+  1029  07CB  3038               	movlw	56
+  1030  07CC  00F1               	movwf	delay@data+1
+  1031  07CD  3080               	movlw	128
+  1032  07CE  00F0               	movwf	delay@data
+  1033  07CF  120A  118A  2445  120A  118A  	fcall	_delay
+  1034                           
+  1035                           ;PR19.c: 481: if(RA0 == 0 || RA1 ==0)return;
+  1036  07D4  1283               	bcf	3,5	;RP0=0, select bank0
+  1037  07D5  1303               	bcf	3,6	;RP1=0, select bank0
+  1038  07D6  1C05               	btfss	5,0	;volatile
+  1039  07D7  0008               	return
+  1040  07D8  1C85               	btfss	5,1	;volatile
+  1041  07D9  0008               	return
+  1042                           
+  1043                           ;PR19.c: 482: send_config(0b00011000);
+  1044  07DA  3018               	movlw	24
+  1045  07DB  120A  118A  2468  120A  118A  	fcall	_send_config
+  1046                           
+  1047                           ;PR19.c: 483: delay(80000);
+  1048  07E0  3000               	movlw	0
+  1049  07E1  00F3               	movwf	delay@data+3
+  1050  07E2  3001               	movlw	1
+  1051  07E3  00F2               	movwf	delay@data+2
+  1052  07E4  3038               	movlw	56
+  1053  07E5  00F1               	movwf	delay@data+1
+  1054  07E6  3080               	movlw	128
+  1055  07E7  00F0               	movwf	delay@data
+  1056  07E8  120A  118A  2445   	fcall	_delay
+  1057                           
+  1058                           ;PR19.c: 485: }
+  1059                           
+  1060                           ;PR19.c: 484: break;
+  1061  07EB  0008               	return
+  1062  07EC                     l1342:	
+  1063  07EC  1283               	bcf	3,5	;RP0=0, select bank0
+  1064  07ED  1303               	bcf	3,6	;RP1=0, select bank0
+  1065  07EE  0820               	movf	_i,w
+  1066                           
+  1067                           ; Switch size 1, requested type "space"
+  1068                           ; Number of cases is 3, Range of values is 0 to 2
+  1069                           ; switch strategies available:
+  1070                           ; Name         Instructions Cycles
+  1071                           ; simple_byte           10     6 (average)
+  1072                           ; direct_byte           17     8 (fixed)
+  1073                           ; jumptable            260     6 (fixed)
+  1074                           ;	Chosen strategy is simple_byte
+  1075  07EF  3A00               	xorlw	0	; case 0
+  1076  07F0  1903               	skipnz
+  1077  07F1  2EED               	goto	l1264
+  1078  07F2  3A01               	xorlw	1	; case 1
+  1079  07F3  1903               	skipnz
+  1080  07F4  2F4C               	goto	l1292
+  1081  07F5  3A03               	xorlw	3	; case 2
+  1082  07F6  1903               	skipnz
+  1083  07F7  2F9B               	goto	l1316
+  1084  07F8  2FF9               	goto	l212
+  1085  07F9                     l212:	
+  1086  07F9  0008               	return
+  1087  07FA                     __end_of_shift_display:	
+  1088                           
+  1089                           	psect	text2
+  1090  05CE                     __ptext2:	
+  1091 ;; *************** function _betamode *****************
+  1092 ;; Defined at:
+  1093 ;;		line 182 in file "../../Source file/PR19.c"
+  1094 ;; Parameters:    Size  Location     Type
+  1095 ;;		None
+  1096 ;; Auto vars:     Size  Location     Type
+  1097 ;;		None
+  1098 ;; Return value:  Size  Location     Type
+  1099 ;;		None               void
+  1100 ;; Registers used:
+  1101 ;;		wreg, fsr0l, fsr0h, status,2, status,0, pclath, cstack
+  1102 ;; Tracked objects:
+  1103 ;;		On entry : 0/0
+  1104 ;;		On exit  : 0/0
+  1105 ;;		Unchanged: 0/0
+  1106 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  1107 ;;      Params:         0       0       0       0       0
+  1108 ;;      Locals:         0       0       0       0       0
+  1109 ;;      Temps:          0       0       0       0       0
+  1110 ;;      Totals:         0       0       0       0       0
+  1111 ;;Total ram usage:        0 bytes
+  1112 ;; Hardware stack levels used:    1
+  1113 ;; Hardware stack levels required when called:    5
+  1114 ;; This function calls:
+  1115 ;;		_deg_0
+  1116 ;;		_deg_150
+  1117 ;;		_deg_180
+  1118 ;;		_deg_210
+  1119 ;;		_deg_30
+  1120 ;;		_deg_330
+  1121 ;;		_delay
+  1122 ;;		_m_stop
+  1123 ;; This function is called by:
+  1124 ;;		_main
+  1125 ;; This function uses a non-reentrant model
+  1126 ;;
+  1127                           
+  1128                           
+  1129                           ;psect for function _betamode
+  1130  05CE                     _betamode:	
+  1131  05CE                     l1260:	
+  1132                           ;PR19.c: 184: while(i==2)
+  1133                           
+  1134                           ;incstack = 0
+  1135                           ; Regs used in _betamode: [wreg-fsr0h+status,2+status,0+pclath+cstack]
+  1136                           
+  1137  05CE  3002               	movlw	2
+  1138  05CF  1283               	bcf	3,5	;RP0=0, select bank0
+  1139  05D0  1303               	bcf	3,6	;RP1=0, select bank0
+  1140  05D1  0620               	xorwf	_i,w
+  1141  05D2  1D03               	btfss	3,2
+  1142  05D3  0008               	return
+  1143                           
+  1144                           ;PR19.c: 185: {
+  1145                           ;PR19.c: 186: deg_330();
+  1146  05D4  120A  118A  2408  120A  118A  	fcall	_deg_330
+  1147                           
+  1148                           ;PR19.c: 187: delay(200000);
+  1149  05D9  3000               	movlw	0
+  1150  05DA  00F3               	movwf	delay@data+3
+  1151  05DB  3003               	movlw	3
+  1152  05DC  00F2               	movwf	delay@data+2
+  1153  05DD  300D               	movlw	13
+  1154  05DE  00F1               	movwf	delay@data+1
+  1155  05DF  3040               	movlw	64
+  1156  05E0  00F0               	movwf	delay@data
+  1157  05E1  120A  118A  2445  120A  118A  	fcall	_delay
+  1158                           
+  1159                           ;PR19.c: 188: deg_0();
+  1160  05E6  120A  118A  2374  120A  118A  	fcall	_deg_0
+  1161                           
+  1162                           ;PR19.c: 189: delay(200000);
+  1163  05EB  3000               	movlw	0
+  1164  05EC  00F3               	movwf	delay@data+3
+  1165  05ED  3003               	movlw	3
+  1166  05EE  00F2               	movwf	delay@data+2
+  1167  05EF  300D               	movlw	13
+  1168  05F0  00F1               	movwf	delay@data+1
+  1169  05F1  3040               	movlw	64
+  1170  05F2  00F0               	movwf	delay@data
+  1171  05F3  120A  118A  2445  120A  118A  	fcall	_delay
+  1172                           
+  1173                           ;PR19.c: 190: deg_30();
+  1174  05F8  120A  118A  23EA  120A  118A  	fcall	_deg_30
+  1175                           
+  1176                           ;PR19.c: 191: delay(200000);
+  1177  05FD  3000               	movlw	0
+  1178  05FE  00F3               	movwf	delay@data+3
+  1179  05FF  3003               	movlw	3
+  1180  0600  00F2               	movwf	delay@data+2
+  1181  0601  300D               	movlw	13
+  1182  0602  00F1               	movwf	delay@data+1
+  1183  0603  3040               	movlw	64
+  1184  0604  00F0               	movwf	delay@data
+  1185  0605  120A  118A  2445  120A  118A  	fcall	_delay
+  1186                           
+  1187                           ;PR19.c: 192: deg_150();
+  1188  060A  120A  118A  23AE  120A  118A  	fcall	_deg_150
+  1189                           
+  1190                           ;PR19.c: 193: delay(200000);
+  1191  060F  3000               	movlw	0
+  1192  0610  00F3               	movwf	delay@data+3
+  1193  0611  3003               	movlw	3
+  1194  0612  00F2               	movwf	delay@data+2
+  1195  0613  300D               	movlw	13
+  1196  0614  00F1               	movwf	delay@data+1
+  1197  0615  3040               	movlw	64
+  1198  0616  00F0               	movwf	delay@data
+  1199  0617  120A  118A  2445  120A  118A  	fcall	_delay
+  1200                           
+  1201                           ;PR19.c: 194: deg_180();
+  1202  061C  120A  118A  2391  120A  118A  	fcall	_deg_180
+  1203                           
+  1204                           ;PR19.c: 195: delay(200000);
+  1205  0621  3000               	movlw	0
+  1206  0622  00F3               	movwf	delay@data+3
+  1207  0623  3003               	movlw	3
+  1208  0624  00F2               	movwf	delay@data+2
+  1209  0625  300D               	movlw	13
+  1210  0626  00F1               	movwf	delay@data+1
+  1211  0627  3040               	movlw	64
+  1212  0628  00F0               	movwf	delay@data
+  1213  0629  120A  118A  2445  120A  118A  	fcall	_delay
+  1214                           
+  1215                           ;PR19.c: 196: deg_210();
+  1216  062E  120A  118A  23CC  120A  118A  	fcall	_deg_210
+  1217                           
+  1218                           ;PR19.c: 197: delay(200000);
+  1219  0633  3000               	movlw	0
+  1220  0634  00F3               	movwf	delay@data+3
+  1221  0635  3003               	movlw	3
+  1222  0636  00F2               	movwf	delay@data+2
+  1223  0637  300D               	movlw	13
+  1224  0638  00F1               	movwf	delay@data+1
+  1225  0639  3040               	movlw	64
+  1226  063A  00F0               	movwf	delay@data
+  1227  063B  120A  118A  2445  120A  118A  	fcall	_delay
+  1228                           
+  1229                           ;PR19.c: 198: m_stop();
+  1230  0640  120A  118A  22FC  120A  118A  	fcall	_m_stop
+  1231                           
+  1232                           ;PR19.c: 199: delay(500000);
+  1233  0645  3000               	movlw	0
+  1234  0646  00F3               	movwf	delay@data+3
+  1235  0647  3007               	movlw	7
+  1236  0648  00F2               	movwf	delay@data+2
+  1237  0649  30A1               	movlw	161
+  1238  064A  00F1               	movwf	delay@data+1
+  1239  064B  3020               	movlw	32
+  1240  064C  00F0               	movwf	delay@data
+  1241  064D  120A  118A  2445  120A  118A  	fcall	_delay
+  1242  0652  2DCE               	goto	l1260
+  1243  0653                     __end_of_betamode:	
+  1244                           
+  1245                           	psect	text3
+  1246  0408                     __ptext3:	
+  1247 ;; *************** function _deg_330 *****************
+  1248 ;; Defined at:
+  1249 ;;		line 349 in file "../../Source file/PR19.c"
+  1250 ;; Parameters:    Size  Location     Type
+  1251 ;;		None
+  1252 ;; Auto vars:     Size  Location     Type
+  1253 ;;		None
+  1254 ;; Return value:  Size  Location     Type
+  1255 ;;		None               void
+  1256 ;; Registers used:
+  1257 ;;		wreg, fsr0l, fsr0h, status,2, status,0, pclath, cstack
+  1258 ;; Tracked objects:
+  1259 ;;		On entry : 0/0
+  1260 ;;		On exit  : 0/0
+  1261 ;;		Unchanged: 0/0
+  1262 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  1263 ;;      Params:         0       0       0       0       0
+  1264 ;;      Locals:         0       0       0       0       0
+  1265 ;;      Temps:          1       0       0       0       0
+  1266 ;;      Totals:         1       0       0       0       0
+  1267 ;;Total ram usage:        1 bytes
+  1268 ;; Hardware stack levels used:    1
+  1269 ;; Hardware stack levels required when called:    4
+  1270 ;; This function calls:
+  1271 ;;		_bm_run
+  1272 ;;		_mode_display
+  1273 ;;		_rm_run
+  1274 ;; This function is called by:
+  1275 ;;		_betamode
+  1276 ;; This function uses a non-reentrant model
+  1277 ;;
+  1278                           
+  1279                           
+  1280                           ;psect for function _deg_330
+  1281  0408                     _deg_330:	
+  1282                           
+  1283                           ;PR19.c: 351: CCPR1L=0;
+  1284                           
+  1285                           ;incstack = 0
+  1286                           ; Regs used in _deg_330: [wreg-fsr0h+status,2+status,0+pclath+cstack]
+  1287  0408  1283               	bcf	3,5	;RP0=0, select bank0
+  1288  0409  1303               	bcf	3,6	;RP1=0, select bank0
+  1289  040A  0195               	clrf	21	;volatile
+  1290                           
+  1291                           ;PR19.c: 352: CCPR2L=255;
+  1292  040B  30FF               	movlw	255
+  1293  040C  009B               	movwf	27	;volatile
+  1294                           
+  1295                           ;PR19.c: 353: CCPR3L=255;
+  1296  040D  30FF               	movlw	255
+  1297  040E  1683               	bsf	3,5	;RP0=1, select bank1
+  1298  040F  1303               	bcf	3,6	;RP1=0, select bank1
+  1299  0410  0095               	movwf	21	;volatile
+  1300                           
+  1301                           ;PR19.c: 354: rm_run(0);
+  1302  0411  3000               	movlw	0
+  1303  0412  120A  118A  2349  120A  118A  	fcall	_rm_run
+  1304                           
+  1305                           ;PR19.c: 355: bm_run(1);
+  1306  0417  3001               	movlw	1
+  1307  0418  120A  118A  231F  120A  118A  	fcall	_bm_run
+  1308                           
+  1309                           ;PR19.c: 356: mode_display("330","Degree");
+  1310  041D  3040               	movlw	(low ((STR_4-__stringbase)| (0+32768)))& (0+255)
+  1311  041E  00FD               	movwf	??_deg_330
+  1312  041F  087D               	movf	??_deg_330,w
+  1313  0420  00FB               	movwf	mode_display@y
+  1314  0421  305F               	movlw	(low ((STR_25-__stringbase)| (0+32768)))& (0+255)
+  1315  0422  120A  118A  251B   	fcall	_mode_display
+  1316  0425  0008               	return
+  1317  0426                     __end_of_deg_330:	
+  1318                           
+  1319                           	psect	text4
+  1320  03EA                     __ptext4:	
+  1321 ;; *************** function _deg_30 *****************
+  1322 ;; Defined at:
+  1323 ;;		line 244 in file "../../Source file/PR19.c"
+  1324 ;; Parameters:    Size  Location     Type
+  1325 ;;		None
+  1326 ;; Auto vars:     Size  Location     Type
+  1327 ;;		None
+  1328 ;; Return value:  Size  Location     Type
+  1329 ;;		None               void
+  1330 ;; Registers used:
+  1331 ;;		wreg, fsr0l, fsr0h, status,2, status,0, pclath, cstack
+  1332 ;; Tracked objects:
+  1333 ;;		On entry : 0/0
+  1334 ;;		On exit  : 0/0
+  1335 ;;		Unchanged: 0/0
+  1336 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  1337 ;;      Params:         0       0       0       0       0
+  1338 ;;      Locals:         0       0       0       0       0
+  1339 ;;      Temps:          1       0       0       0       0
+  1340 ;;      Totals:         1       0       0       0       0
+  1341 ;;Total ram usage:        1 bytes
+  1342 ;; Hardware stack levels used:    1
+  1343 ;; Hardware stack levels required when called:    4
+  1344 ;; This function calls:
+  1345 ;;		_bm_run
+  1346 ;;		_lm_run
+  1347 ;;		_mode_display
+  1348 ;; This function is called by:
+  1349 ;;		_betamode
+  1350 ;; This function uses a non-reentrant model
+  1351 ;;
+  1352                           
+  1353                           
+  1354                           ;psect for function _deg_30
+  1355  03EA                     _deg_30:	
+  1356                           
+  1357                           ;PR19.c: 246: CCPR1L=255;
+  1358                           
+  1359                           ;incstack = 0
+  1360                           ; Regs used in _deg_30: [wreg-fsr0h+status,2+status,0+pclath+cstack]
+  1361  03EA  30FF               	movlw	255
+  1362  03EB  1283               	bcf	3,5	;RP0=0, select bank0
+  1363  03EC  1303               	bcf	3,6	;RP1=0, select bank0
+  1364  03ED  0095               	movwf	21	;volatile
+  1365                           
+  1366                           ;PR19.c: 247: CCPR2L=0;
+  1367  03EE  019B               	clrf	27	;volatile
+  1368                           
+  1369                           ;PR19.c: 248: CCPR3L=255;
+  1370  03EF  30FF               	movlw	255
+  1371  03F0  1683               	bsf	3,5	;RP0=1, select bank1
+  1372  03F1  1303               	bcf	3,6	;RP1=0, select bank1
+  1373  03F2  0095               	movwf	21	;volatile
+  1374                           
+  1375                           ;PR19.c: 249: lm_run(1);
+  1376  03F3  3001               	movlw	1
+  1377  03F4  120A  118A  2334  120A  118A  	fcall	_lm_run
+  1378                           
+  1379                           ;PR19.c: 250: bm_run(0);
+  1380  03F9  3000               	movlw	0
+  1381  03FA  120A  118A  231F  120A  118A  	fcall	_bm_run
+  1382                           
+  1383                           ;PR19.c: 251: mode_display("30","Degree");
+  1384  03FF  3040               	movlw	(low ((STR_4-__stringbase)| (0+32768)))& (0+255)
+  1385  0400  00FD               	movwf	??_deg_30
+  1386  0401  087D               	movf	??_deg_30,w
+  1387  0402  00FB               	movwf	mode_display@y
+  1388  0403  3060               	movlw	(low (((STR_25+1)-__stringbase)| (0+32768)))& (0+255)
+  1389  0404  120A  118A  251B   	fcall	_mode_display
+  1390  0407  0008               	return
+  1391  0408                     __end_of_deg_30:	
+  1392                           
+  1393                           	psect	text5
+  1394  03CC                     __ptext5:	
+  1395 ;; *************** function _deg_210 *****************
+  1396 ;; Defined at:
+  1397 ;;		line 306 in file "../../Source file/PR19.c"
+  1398 ;; Parameters:    Size  Location     Type
+  1399 ;;		None
+  1400 ;; Auto vars:     Size  Location     Type
+  1401 ;;		None
+  1402 ;; Return value:  Size  Location     Type
+  1403 ;;		None               void
+  1404 ;; Registers used:
+  1405 ;;		wreg, fsr0l, fsr0h, status,2, status,0, pclath, cstack
+  1406 ;; Tracked objects:
+  1407 ;;		On entry : 0/0
+  1408 ;;		On exit  : 0/0
+  1409 ;;		Unchanged: 0/0
+  1410 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  1411 ;;      Params:         0       0       0       0       0
+  1412 ;;      Locals:         0       0       0       0       0
+  1413 ;;      Temps:          1       0       0       0       0
+  1414 ;;      Totals:         1       0       0       0       0
+  1415 ;;Total ram usage:        1 bytes
+  1416 ;; Hardware stack levels used:    1
+  1417 ;; Hardware stack levels required when called:    4
+  1418 ;; This function calls:
+  1419 ;;		_bm_run
+  1420 ;;		_lm_run
+  1421 ;;		_mode_display
+  1422 ;; This function is called by:
+  1423 ;;		_betamode
+  1424 ;; This function uses a non-reentrant model
+  1425 ;;
+  1426                           
+  1427                           
+  1428                           ;psect for function _deg_210
+  1429  03CC                     _deg_210:	
+  1430                           
+  1431                           ;PR19.c: 308: CCPR1L=255;
+  1432                           
+  1433                           ;incstack = 0
+  1434                           ; Regs used in _deg_210: [wreg-fsr0h+status,2+status,0+pclath+cstack]
+  1435  03CC  30FF               	movlw	255
+  1436  03CD  1283               	bcf	3,5	;RP0=0, select bank0
+  1437  03CE  1303               	bcf	3,6	;RP1=0, select bank0
+  1438  03CF  0095               	movwf	21	;volatile
+  1439                           
+  1440                           ;PR19.c: 309: CCPR2L=0;
+  1441  03D0  019B               	clrf	27	;volatile
+  1442                           
+  1443                           ;PR19.c: 310: CCPR3L=255;
+  1444  03D1  30FF               	movlw	255
+  1445  03D2  1683               	bsf	3,5	;RP0=1, select bank1
+  1446  03D3  1303               	bcf	3,6	;RP1=0, select bank1
+  1447  03D4  0095               	movwf	21	;volatile
+  1448                           
+  1449                           ;PR19.c: 311: lm_run(0);
+  1450  03D5  3000               	movlw	0
+  1451  03D6  120A  118A  2334  120A  118A  	fcall	_lm_run
+  1452                           
+  1453                           ;PR19.c: 312: bm_run(1);
+  1454  03DB  3001               	movlw	1
+  1455  03DC  120A  118A  231F  120A  118A  	fcall	_bm_run
+  1456                           
+  1457                           ;PR19.c: 313: mode_display("210","Degree");
+  1458  03E1  3040               	movlw	(low ((STR_4-__stringbase)| (0+32768)))& (0+255)
+  1459  03E2  00FD               	movwf	??_deg_210
+  1460  03E3  087D               	movf	??_deg_210,w
+  1461  03E4  00FB               	movwf	mode_display@y
+  1462  03E5  3057               	movlw	(low ((STR_17-__stringbase)| (0+32768)))& (0+255)
+  1463  03E6  120A  118A  251B   	fcall	_mode_display
+  1464  03E9  0008               	return
+  1465  03EA                     __end_of_deg_210:	
+  1466                           
+  1467                           	psect	text6
+  1468  03AE                     __ptext6:	
+  1469 ;; *************** function _deg_150 *****************
+  1470 ;; Defined at:
+  1471 ;;		line 287 in file "../../Source file/PR19.c"
+  1472 ;; Parameters:    Size  Location     Type
+  1473 ;;		None
+  1474 ;; Auto vars:     Size  Location     Type
+  1475 ;;		None
+  1476 ;; Return value:  Size  Location     Type
+  1477 ;;		None               void
+  1478 ;; Registers used:
+  1479 ;;		wreg, fsr0l, fsr0h, status,2, status,0, pclath, cstack
+  1480 ;; Tracked objects:
+  1481 ;;		On entry : 0/0
+  1482 ;;		On exit  : 0/0
+  1483 ;;		Unchanged: 0/0
+  1484 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  1485 ;;      Params:         0       0       0       0       0
+  1486 ;;      Locals:         0       0       0       0       0
+  1487 ;;      Temps:          1       0       0       0       0
+  1488 ;;      Totals:         1       0       0       0       0
+  1489 ;;Total ram usage:        1 bytes
+  1490 ;; Hardware stack levels used:    1
+  1491 ;; Hardware stack levels required when called:    4
+  1492 ;; This function calls:
+  1493 ;;		_bm_run
+  1494 ;;		_mode_display
+  1495 ;;		_rm_run
+  1496 ;; This function is called by:
+  1497 ;;		_betamode
+  1498 ;; This function uses a non-reentrant model
+  1499 ;;
+  1500                           
+  1501                           
+  1502                           ;psect for function _deg_150
+  1503  03AE                     _deg_150:	
+  1504                           
+  1505                           ;PR19.c: 289: CCPR1L=0;
+  1506                           
+  1507                           ;incstack = 0
+  1508                           ; Regs used in _deg_150: [wreg-fsr0h+status,2+status,0+pclath+cstack]
+  1509  03AE  1283               	bcf	3,5	;RP0=0, select bank0
+  1510  03AF  1303               	bcf	3,6	;RP1=0, select bank0
+  1511  03B0  0195               	clrf	21	;volatile
+  1512                           
+  1513                           ;PR19.c: 290: CCPR2L=255;
+  1514  03B1  30FF               	movlw	255
+  1515  03B2  009B               	movwf	27	;volatile
+  1516                           
+  1517                           ;PR19.c: 291: CCPR3L=255;
+  1518  03B3  30FF               	movlw	255
+  1519  03B4  1683               	bsf	3,5	;RP0=1, select bank1
+  1520  03B5  1303               	bcf	3,6	;RP1=0, select bank1
+  1521  03B6  0095               	movwf	21	;volatile
+  1522                           
+  1523                           ;PR19.c: 292: rm_run(1);
+  1524  03B7  3001               	movlw	1
+  1525  03B8  120A  118A  2349  120A  118A  	fcall	_rm_run
+  1526                           
+  1527                           ;PR19.c: 293: bm_run(0);
+  1528  03BD  3000               	movlw	0
+  1529  03BE  120A  118A  231F  120A  118A  	fcall	_bm_run
+  1530                           
+  1531                           ;PR19.c: 294: mode_display("150","Degree");
+  1532  03C3  3040               	movlw	(low ((STR_4-__stringbase)| (0+32768)))& (0+255)
+  1533  03C4  00FD               	movwf	??_deg_150
+  1534  03C5  087D               	movf	??_deg_150,w
+  1535  03C6  00FB               	movwf	mode_display@y
+  1536  03C7  3067               	movlw	(low ((STR_13-__stringbase)| (0+32768)))& (0+255)
+  1537  03C8  120A  118A  251B   	fcall	_mode_display
+  1538  03CB  0008               	return
+  1539  03CC                     __end_of_deg_150:	
+  1540                           
+  1541                           	psect	text7
+  1542  054A                     __ptext7:	
+  1543 ;; *************** function _alphamode *****************
+  1544 ;; Defined at:
+  1545 ;;		line 160 in file "../../Source file/PR19.c"
+  1546 ;; Parameters:    Size  Location     Type
+  1547 ;;		None
+  1548 ;; Auto vars:     Size  Location     Type
+  1549 ;;		None
+  1550 ;; Return value:  Size  Location     Type
+  1551 ;;		None               void
+  1552 ;; Registers used:
+  1553 ;;		wreg, fsr0l, fsr0h, status,2, status,0, pclath, cstack
+  1554 ;; Tracked objects:
+  1555 ;;		On entry : 0/0
+  1556 ;;		On exit  : 0/0
+  1557 ;;		Unchanged: 0/0
+  1558 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  1559 ;;      Params:         0       0       0       0       0
+  1560 ;;      Locals:         0       0       0       0       0
+  1561 ;;      Temps:          0       0       0       0       0
+  1562 ;;      Totals:         0       0       0       0       0
+  1563 ;;Total ram usage:        0 bytes
+  1564 ;; Hardware stack levels used:    1
+  1565 ;; Hardware stack levels required when called:    5
+  1566 ;; This function calls:
+  1567 ;;		_clockwise
+  1568 ;;		_deg_0
+  1569 ;;		_deg_180
+  1570 ;;		_deg_270
+  1571 ;;		_deg_90
+  1572 ;;		_delay
+  1573 ;;		_m_stop
+  1574 ;; This function is called by:
+  1575 ;;		_main
+  1576 ;; This function uses a non-reentrant model
+  1577 ;;
+  1578                           
+  1579                           
+  1580                           ;psect for function _alphamode
+  1581  054A                     _alphamode:	
+  1582  054A                     l1236:	
+  1583                           ;PR19.c: 162: while(i==1)
+  1584                           
+  1585                           ;incstack = 0
+  1586                           ; Regs used in _alphamode: [wreg-fsr0h+status,2+status,0+pclath+cstack]
+  1587                           
+  1588  054A  1283               	bcf	3,5	;RP0=0, select bank0
+  1589  054B  1303               	bcf	3,6	;RP1=0, select bank0
+  1590  054C  0320               	decf	_i,w
+  1591  054D  1D03               	btfss	3,2
+  1592  054E  0008               	return
+  1593                           
+  1594                           ;PR19.c: 163: {
+  1595                           ;PR19.c: 164: deg_270();
+  1596  054F  120A  118A  24D1  120A  118A  	fcall	_deg_270
+  1597                           
+  1598                           ;PR19.c: 165: delay(200000);
+  1599  0554  3000               	movlw	0
+  1600  0555  00F3               	movwf	delay@data+3
+  1601  0556  3003               	movlw	3
+  1602  0557  00F2               	movwf	delay@data+2
+  1603  0558  300D               	movlw	13
+  1604  0559  00F1               	movwf	delay@data+1
+  1605  055A  3040               	movlw	64
+  1606  055B  00F0               	movwf	delay@data
+  1607  055C  120A  118A  2445  120A  118A  	fcall	_delay
+  1608                           
+  1609                           ;PR19.c: 166: deg_0();
+  1610  0561  120A  118A  2374  120A  118A  	fcall	_deg_0
+  1611                           
+  1612                           ;PR19.c: 167: delay(200000);
+  1613  0566  3000               	movlw	0
+  1614  0567  00F3               	movwf	delay@data+3
+  1615  0568  3003               	movlw	3
+  1616  0569  00F2               	movwf	delay@data+2
+  1617  056A  300D               	movlw	13
+  1618  056B  00F1               	movwf	delay@data+1
+  1619  056C  3040               	movlw	64
+  1620  056D  00F0               	movwf	delay@data
+  1621  056E  120A  118A  2445  120A  118A  	fcall	_delay
+  1622                           
+  1623                           ;PR19.c: 168: deg_90();
+  1624  0573  120A  118A  24F6  120A  118A  	fcall	_deg_90
+  1625                           
+  1626                           ;PR19.c: 169: delay(400000);
+  1627  0578  3000               	movlw	0
+  1628  0579  00F3               	movwf	delay@data+3
+  1629  057A  3006               	movlw	6
+  1630  057B  00F2               	movwf	delay@data+2
+  1631  057C  301A               	movlw	26
+  1632  057D  00F1               	movwf	delay@data+1
+  1633  057E  3080               	movlw	128
+  1634  057F  00F0               	movwf	delay@data
+  1635  0580  120A  118A  2445  120A  118A  	fcall	_delay
+  1636                           
+  1637                           ;PR19.c: 170: deg_180();
+  1638  0585  120A  118A  2391  120A  118A  	fcall	_deg_180
+  1639                           
+  1640                           ;PR19.c: 171: delay(200000);
+  1641  058A  3000               	movlw	0
+  1642  058B  00F3               	movwf	delay@data+3
+  1643  058C  3003               	movlw	3
+  1644  058D  00F2               	movwf	delay@data+2
+  1645  058E  300D               	movlw	13
+  1646  058F  00F1               	movwf	delay@data+1
+  1647  0590  3040               	movlw	64
+  1648  0591  00F0               	movwf	delay@data
+  1649  0592  120A  118A  2445  120A  118A  	fcall	_delay
+  1650                           
+  1651                           ;PR19.c: 172: deg_270();
+  1652  0597  120A  118A  24D1  120A  118A  	fcall	_deg_270
+  1653                           
+  1654                           ;PR19.c: 173: delay(200000);
+  1655  059C  3000               	movlw	0
+  1656  059D  00F3               	movwf	delay@data+3
+  1657  059E  3003               	movlw	3
+  1658  059F  00F2               	movwf	delay@data+2
+  1659  05A0  300D               	movlw	13
+  1660  05A1  00F1               	movwf	delay@data+1
+  1661  05A2  3040               	movlw	64
+  1662  05A3  00F0               	movwf	delay@data
+  1663  05A4  120A  118A  2445  120A  118A  	fcall	_delay
+  1664                           
+  1665                           ;PR19.c: 174: clockwise();
+  1666  05A9  120A  118A  24AE  120A  118A  	fcall	_clockwise
+  1667                           
+  1668                           ;PR19.c: 175: delay(100000);
+  1669  05AE  3000               	movlw	0
+  1670  05AF  00F3               	movwf	delay@data+3
+  1671  05B0  3001               	movlw	1
+  1672  05B1  00F2               	movwf	delay@data+2
+  1673  05B2  3086               	movlw	134
+  1674  05B3  00F1               	movwf	delay@data+1
+  1675  05B4  30A0               	movlw	160
+  1676  05B5  00F0               	movwf	delay@data
+  1677  05B6  120A  118A  2445  120A  118A  	fcall	_delay
+  1678                           
+  1679                           ;PR19.c: 176: m_stop();
+  1680  05BB  120A  118A  22FC  120A  118A  	fcall	_m_stop
+  1681                           
+  1682                           ;PR19.c: 177: delay(500000);
+  1683  05C0  3000               	movlw	0
+  1684  05C1  00F3               	movwf	delay@data+3
+  1685  05C2  3007               	movlw	7
+  1686  05C3  00F2               	movwf	delay@data+2
+  1687  05C4  30A1               	movlw	161
+  1688  05C5  00F1               	movwf	delay@data+1
+  1689  05C6  3020               	movlw	32
+  1690  05C7  00F0               	movwf	delay@data
+  1691  05C8  120A  118A  2445  120A  118A  	fcall	_delay
+  1692  05CD  2D4A               	goto	l1236
+  1693  05CE                     __end_of_alphamode:	
+  1694                           
+  1695                           	psect	text8
+  1696  02FC                     __ptext8:	
+  1697 ;; *************** function _m_stop *****************
+  1698 ;; Defined at:
+  1699 ;;		line 205 in file "../../Source file/PR19.c"
+  1700 ;; Parameters:    Size  Location     Type
+  1701 ;;		None
+  1702 ;; Auto vars:     Size  Location     Type
+  1703 ;;		None
+  1704 ;; Return value:  Size  Location     Type
+  1705 ;;		None               void
+  1706 ;; Registers used:
+  1707 ;;		wreg, fsr0l, fsr0h, status,2, status,0, pclath, cstack
+  1708 ;; Tracked objects:
+  1709 ;;		On entry : 0/0
+  1710 ;;		On exit  : 0/0
+  1711 ;;		Unchanged: 0/0
+  1712 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  1713 ;;      Params:         0       0       0       0       0
+  1714 ;;      Locals:         0       0       0       0       0
+  1715 ;;      Temps:          1       0       0       0       0
+  1716 ;;      Totals:         1       0       0       0       0
+  1717 ;;Total ram usage:        1 bytes
+  1718 ;; Hardware stack levels used:    1
+  1719 ;; Hardware stack levels required when called:    4
+  1720 ;; This function calls:
+  1721 ;;		_mode_display
+  1722 ;; This function is called by:
+  1723 ;;		_alphamode
+  1724 ;;		_betamode
+  1725 ;; This function uses a non-reentrant model
+  1726 ;;
+  1727                           
+  1728                           
+  1729                           ;psect for function _m_stop
+  1730  02FC                     _m_stop:	
+  1731                           
+  1732                           ;PR19.c: 207: RC0=0;
+  1733                           
+  1734                           ;incstack = 0
+  1735                           ; Regs used in _m_stop: [wreg-fsr0h+status,2+status,0+pclath+cstack]
+  1736  02FC  1283               	bcf	3,5	;RP0=0, select bank0
+  1737  02FD  1303               	bcf	3,6	;RP1=0, select bank0
+  1738  02FE  1007               	bcf	7,0	;volatile
+  1739                           
+  1740                           ;PR19.c: 208: RC3=0;
+  1741  02FF  1187               	bcf	7,3	;volatile
+  1742                           
+  1743                           ;PR19.c: 209: RC4=0;
+  1744  0300  1207               	bcf	7,4	;volatile
+  1745                           
+  1746                           ;PR19.c: 210: RC5=0;
+  1747  0301  1287               	bcf	7,5	;volatile
+  1748                           
+  1749                           ;PR19.c: 211: RB3=0;
+  1750  0302  1186               	bcf	6,3	;volatile
+  1751                           
+  1752                           ;PR19.c: 212: RB4=0;
+  1753  0303  1206               	bcf	6,4	;volatile
+  1754                           
+  1755                           ;PR19.c: 213: mode_display("Flexibot","Stop");
+  1756  0304  304E               	movlw	(low ((STR_2-__stringbase)| (0+32768)))& (0+255)
+  1757  0305  00FD               	movwf	??_m_stop
+  1758  0306  087D               	movf	??_m_stop,w
+  1759  0307  00FB               	movwf	mode_display@y
+  1760  0308  3008               	movlw	(low (((STR_33+7)-__stringbase)| (0+32768)))& (0+255)
+  1761  0309  120A  118A  251B   	fcall	_mode_display
+  1762  030C  0008               	return
+  1763  030D                     __end_of_m_stop:	
+  1764                           
+  1765                           	psect	text9
+  1766  04F6                     __ptext9:	
+  1767 ;; *************** function _deg_90 *****************
+  1768 ;; Defined at:
+  1769 ;;		line 265 in file "../../Source file/PR19.c"
+  1770 ;; Parameters:    Size  Location     Type
+  1771 ;;		None
+  1772 ;; Auto vars:     Size  Location     Type
+  1773 ;;		None
+  1774 ;; Return value:  Size  Location     Type
+  1775 ;;		None               void
+  1776 ;; Registers used:
+  1777 ;;		wreg, fsr0l, fsr0h, status,2, status,0, pclath, cstack
+  1778 ;; Tracked objects:
+  1779 ;;		On entry : 0/0
+  1780 ;;		On exit  : 0/0
+  1781 ;;		Unchanged: 0/0
+  1782 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  1783 ;;      Params:         0       0       0       0       0
+  1784 ;;      Locals:         0       0       0       0       0
+  1785 ;;      Temps:          1       0       0       0       0
+  1786 ;;      Totals:         1       0       0       0       0
+  1787 ;;Total ram usage:        1 bytes
+  1788 ;; Hardware stack levels used:    1
+  1789 ;; Hardware stack levels required when called:    4
+  1790 ;; This function calls:
+  1791 ;;		_bm_run
+  1792 ;;		_lm_run
+  1793 ;;		_mode_display
+  1794 ;;		_rm_run
+  1795 ;; This function is called by:
+  1796 ;;		_alphamode
+  1797 ;; This function uses a non-reentrant model
+  1798 ;;
+  1799                           
+  1800                           
+  1801                           ;psect for function _deg_90
+  1802  04F6                     _deg_90:	
+  1803                           
+  1804                           ;PR19.c: 267: CCPR1L=190;
+  1805                           
+  1806                           ;incstack = 0
+  1807                           ; Regs used in _deg_90: [wreg-fsr0h+status,2+status,0+pclath+cstack]
+  1808  04F6  30BE               	movlw	190
+  1809  04F7  1283               	bcf	3,5	;RP0=0, select bank0
+  1810  04F8  1303               	bcf	3,6	;RP1=0, select bank0
+  1811  04F9  0095               	movwf	21	;volatile
+  1812                           
+  1813                           ;PR19.c: 268: CCPR2L=190;
+  1814  04FA  30BE               	movlw	190
+  1815  04FB  009B               	movwf	27	;volatile
+  1816                           
+  1817                           ;PR19.c: 269: CCPR3L=255;
+  1818  04FC  30FF               	movlw	255
+  1819  04FD  1683               	bsf	3,5	;RP0=1, select bank1
+  1820  04FE  1303               	bcf	3,6	;RP1=0, select bank1
+  1821  04FF  0095               	movwf	21	;volatile
+  1822                           
+  1823                           ;PR19.c: 270: lm_run(1);
+  1824  0500  3001               	movlw	1
+  1825  0501  120A  118A  2334  120A  118A  	fcall	_lm_run
+  1826                           
+  1827                           ;PR19.c: 271: rm_run(1);
+  1828  0506  3001               	movlw	1
+  1829  0507  120A  118A  2349  120A  118A  	fcall	_rm_run
+  1830                           
+  1831                           ;PR19.c: 272: bm_run(0);
+  1832  050C  3000               	movlw	0
+  1833  050D  120A  118A  231F  120A  118A  	fcall	_bm_run
+  1834                           
+  1835                           ;PR19.c: 273: mode_display("90","Degree");
+  1836  0512  3040               	movlw	(low ((STR_4-__stringbase)| (0+32768)))& (0+255)
+  1837  0513  00FD               	movwf	??_deg_90
+  1838  0514  087D               	movf	??_deg_90,w
+  1839  0515  00FB               	movwf	mode_display@y
+  1840  0516  3076               	movlw	(low ((STR_9-__stringbase)| (0+32768)))& (0+255)
+  1841  0517  120A  118A  251B   	fcall	_mode_display
+  1842  051A  0008               	return
+  1843  051B                     __end_of_deg_90:	
+  1844                           
+  1845                           	psect	text10
+  1846  04D1                     __ptext10:	
+  1847 ;; *************** function _deg_270 *****************
+  1848 ;; Defined at:
+  1849 ;;		line 327 in file "../../Source file/PR19.c"
+  1850 ;; Parameters:    Size  Location     Type
+  1851 ;;		None
+  1852 ;; Auto vars:     Size  Location     Type
+  1853 ;;		None
+  1854 ;; Return value:  Size  Location     Type
+  1855 ;;		None               void
+  1856 ;; Registers used:
+  1857 ;;		wreg, fsr0l, fsr0h, status,2, status,0, pclath, cstack
+  1858 ;; Tracked objects:
+  1859 ;;		On entry : 0/0
+  1860 ;;		On exit  : 0/0
+  1861 ;;		Unchanged: 0/0
+  1862 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  1863 ;;      Params:         0       0       0       0       0
+  1864 ;;      Locals:         0       0       0       0       0
+  1865 ;;      Temps:          1       0       0       0       0
+  1866 ;;      Totals:         1       0       0       0       0
+  1867 ;;Total ram usage:        1 bytes
+  1868 ;; Hardware stack levels used:    1
+  1869 ;; Hardware stack levels required when called:    4
+  1870 ;; This function calls:
+  1871 ;;		_bm_run
+  1872 ;;		_lm_run
+  1873 ;;		_mode_display
+  1874 ;;		_rm_run
+  1875 ;; This function is called by:
+  1876 ;;		_alphamode
+  1877 ;; This function uses a non-reentrant model
+  1878 ;;
+  1879                           
+  1880                           
+  1881                           ;psect for function _deg_270
+  1882  04D1                     _deg_270:	
+  1883                           
+  1884                           ;PR19.c: 329: CCPR1L=190;
+  1885                           
+  1886                           ;incstack = 0
+  1887                           ; Regs used in _deg_270: [wreg-fsr0h+status,2+status,0+pclath+cstack]
+  1888  04D1  30BE               	movlw	190
+  1889  04D2  1283               	bcf	3,5	;RP0=0, select bank0
+  1890  04D3  1303               	bcf	3,6	;RP1=0, select bank0
+  1891  04D4  0095               	movwf	21	;volatile
+  1892                           
+  1893                           ;PR19.c: 330: CCPR2L=190;
+  1894  04D5  30BE               	movlw	190
+  1895  04D6  009B               	movwf	27	;volatile
+  1896                           
+  1897                           ;PR19.c: 331: CCPR3L=255;
+  1898  04D7  30FF               	movlw	255
+  1899  04D8  1683               	bsf	3,5	;RP0=1, select bank1
+  1900  04D9  1303               	bcf	3,6	;RP1=0, select bank1
+  1901  04DA  0095               	movwf	21	;volatile
+  1902                           
+  1903                           ;PR19.c: 332: lm_run(0);
+  1904  04DB  3000               	movlw	0
+  1905  04DC  120A  118A  2334  120A  118A  	fcall	_lm_run
+  1906                           
+  1907                           ;PR19.c: 333: rm_run(0);
+  1908  04E1  3000               	movlw	0
+  1909  04E2  120A  118A  2349  120A  118A  	fcall	_rm_run
+  1910                           
+  1911                           ;PR19.c: 334: bm_run(1);
+  1912  04E7  3001               	movlw	1
+  1913  04E8  120A  118A  231F  120A  118A  	fcall	_bm_run
+  1914                           
+  1915                           ;PR19.c: 335: mode_display("270","Degree");
+  1916  04ED  3040               	movlw	(low ((STR_4-__stringbase)| (0+32768)))& (0+255)
+  1917  04EE  00FD               	movwf	??_deg_270
+  1918  04EF  087D               	movf	??_deg_270,w
+  1919  04F0  00FB               	movwf	mode_display@y
+  1920  04F1  306B               	movlw	(low ((STR_21-__stringbase)| (0+32768)))& (0+255)
+  1921  04F2  120A  118A  251B   	fcall	_mode_display
+  1922  04F5  0008               	return
+  1923  04F6                     __end_of_deg_270:	
+  1924                           
+  1925                           	psect	text11
+  1926  0391                     __ptext11:	
+  1927 ;; *************** function _deg_180 *****************
+  1928 ;; Defined at:
+  1929 ;;		line 297 in file "../../Source file/PR19.c"
+  1930 ;; Parameters:    Size  Location     Type
+  1931 ;;		None
+  1932 ;; Auto vars:     Size  Location     Type
+  1933 ;;		None
+  1934 ;; Return value:  Size  Location     Type
+  1935 ;;		None               void
+  1936 ;; Registers used:
+  1937 ;;		wreg, fsr0l, fsr0h, status,2, status,0, pclath, cstack
+  1938 ;; Tracked objects:
+  1939 ;;		On entry : 0/0
+  1940 ;;		On exit  : 0/0
+  1941 ;;		Unchanged: 0/0
+  1942 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  1943 ;;      Params:         0       0       0       0       0
+  1944 ;;      Locals:         0       0       0       0       0
+  1945 ;;      Temps:          1       0       0       0       0
+  1946 ;;      Totals:         1       0       0       0       0
+  1947 ;;Total ram usage:        1 bytes
+  1948 ;; Hardware stack levels used:    1
+  1949 ;; Hardware stack levels required when called:    4
+  1950 ;; This function calls:
+  1951 ;;		_lm_run
+  1952 ;;		_mode_display
+  1953 ;;		_rm_run
+  1954 ;; This function is called by:
+  1955 ;;		_alphamode
+  1956 ;;		_betamode
+  1957 ;; This function uses a non-reentrant model
+  1958 ;;
+  1959                           
+  1960                           
+  1961                           ;psect for function _deg_180
+  1962  0391                     _deg_180:	
+  1963                           
+  1964                           ;PR19.c: 299: CCPR1L=CCPR2L=255;
+  1965                           
+  1966                           ;incstack = 0
+  1967                           ; Regs used in _deg_180: [wreg-fsr0h+status,2+status,0+pclath+cstack]
+  1968  0391  30FF               	movlw	255
+  1969  0392  1283               	bcf	3,5	;RP0=0, select bank0
+  1970  0393  1303               	bcf	3,6	;RP1=0, select bank0
+  1971  0394  009B               	movwf	27	;volatile
+  1972  0395  0095               	movwf	21	;volatile
+  1973                           
+  1974                           ;PR19.c: 300: CCPR3L=0;
+  1975  0396  1683               	bsf	3,5	;RP0=1, select bank1
+  1976  0397  1303               	bcf	3,6	;RP1=0, select bank1
+  1977  0398  0195               	clrf	21	;volatile
+  1978                           
+  1979                           ;PR19.c: 301: lm_run(0);
+  1980  0399  3000               	movlw	0
+  1981  039A  120A  118A  2334  120A  118A  	fcall	_lm_run
+  1982                           
+  1983                           ;PR19.c: 302: rm_run(1);
+  1984  039F  3001               	movlw	1
+  1985  03A0  120A  118A  2349  120A  118A  	fcall	_rm_run
+  1986                           
+  1987                           ;PR19.c: 303: mode_display("180","Degree");
+  1988  03A5  3040               	movlw	(low ((STR_4-__stringbase)| (0+32768)))& (0+255)
+  1989  03A6  00FD               	movwf	??_deg_180
+  1990  03A7  087D               	movf	??_deg_180,w
+  1991  03A8  00FB               	movwf	mode_display@y
+  1992  03A9  306F               	movlw	(low ((STR_15-__stringbase)| (0+32768)))& (0+255)
+  1993  03AA  120A  118A  251B   	fcall	_mode_display
+  1994  03AD  0008               	return
+  1995  03AE                     __end_of_deg_180:	
+  1996                           
+  1997                           	psect	text12
+  1998  0374                     __ptext12:	
+  1999 ;; *************** function _deg_0 *****************
+  2000 ;; Defined at:
+  2001 ;;		line 235 in file "../../Source file/PR19.c"
+  2002 ;; Parameters:    Size  Location     Type
+  2003 ;;		None
+  2004 ;; Auto vars:     Size  Location     Type
+  2005 ;;		None
+  2006 ;; Return value:  Size  Location     Type
+  2007 ;;		None               void
+  2008 ;; Registers used:
+  2009 ;;		wreg, fsr0l, fsr0h, status,2, status,0, pclath, cstack
+  2010 ;; Tracked objects:
+  2011 ;;		On entry : 0/0
+  2012 ;;		On exit  : 0/0
+  2013 ;;		Unchanged: 0/0
+  2014 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  2015 ;;      Params:         0       0       0       0       0
+  2016 ;;      Locals:         0       0       0       0       0
+  2017 ;;      Temps:          1       0       0       0       0
+  2018 ;;      Totals:         1       0       0       0       0
+  2019 ;;Total ram usage:        1 bytes
+  2020 ;; Hardware stack levels used:    1
+  2021 ;; Hardware stack levels required when called:    4
+  2022 ;; This function calls:
+  2023 ;;		_lm_run
+  2024 ;;		_mode_display
+  2025 ;;		_rm_run
+  2026 ;; This function is called by:
+  2027 ;;		_alphamode
+  2028 ;;		_betamode
+  2029 ;; This function uses a non-reentrant model
+  2030 ;;
+  2031                           
+  2032                           
+  2033                           ;psect for function _deg_0
+  2034  0374                     _deg_0:	
+  2035                           
+  2036                           ;PR19.c: 237: CCPR1L=CCPR2L=255;
+  2037                           
+  2038                           ;incstack = 0
+  2039                           ; Regs used in _deg_0: [wreg-fsr0h+status,2+status,0+pclath+cstack]
+  2040  0374  30FF               	movlw	255
+  2041  0375  1283               	bcf	3,5	;RP0=0, select bank0
+  2042  0376  1303               	bcf	3,6	;RP1=0, select bank0
+  2043  0377  009B               	movwf	27	;volatile
+  2044  0378  0095               	movwf	21	;volatile
+  2045                           
+  2046                           ;PR19.c: 238: CCPR3L=0;
+  2047  0379  1683               	bsf	3,5	;RP0=1, select bank1
+  2048  037A  1303               	bcf	3,6	;RP1=0, select bank1
+  2049  037B  0195               	clrf	21	;volatile
+  2050                           
+  2051                           ;PR19.c: 239: lm_run(1);
+  2052  037C  3001               	movlw	1
+  2053  037D  120A  118A  2334  120A  118A  	fcall	_lm_run
+  2054                           
+  2055                           ;PR19.c: 240: rm_run(0);
+  2056  0382  3000               	movlw	0
+  2057  0383  120A  118A  2349  120A  118A  	fcall	_rm_run
+  2058                           
+  2059                           ;PR19.c: 241: mode_display("0","Degree");
+  2060  0388  3040               	movlw	(low ((STR_4-__stringbase)| (0+32768)))& (0+255)
+  2061  0389  00FD               	movwf	??_deg_0
+  2062  038A  087D               	movf	??_deg_0,w
+  2063  038B  00FB               	movwf	mode_display@y
+  2064  038C  3055               	movlw	(low (((STR_23+2)-__stringbase)| (0+32768)))& (0+255)
+  2065  038D  120A  118A  251B   	fcall	_mode_display
+  2066  0390  0008               	return
+  2067  0391                     __end_of_deg_0:	
+  2068                           
+  2069                           	psect	text13
+  2070  04AE                     __ptext13:	
+  2071 ;; *************** function _clockwise *****************
+  2072 ;; Defined at:
+  2073 ;;		line 359 in file "../../Source file/PR19.c"
+  2074 ;; Parameters:    Size  Location     Type
+  2075 ;;		None
+  2076 ;; Auto vars:     Size  Location     Type
+  2077 ;;		None
+  2078 ;; Return value:  Size  Location     Type
+  2079 ;;		None               void
+  2080 ;; Registers used:
+  2081 ;;		wreg, fsr0l, fsr0h, status,2, status,0, pclath, cstack
+  2082 ;; Tracked objects:
+  2083 ;;		On entry : 0/0
+  2084 ;;		On exit  : 0/0
+  2085 ;;		Unchanged: 0/0
+  2086 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  2087 ;;      Params:         0       0       0       0       0
+  2088 ;;      Locals:         0       0       0       0       0
+  2089 ;;      Temps:          1       0       0       0       0
+  2090 ;;      Totals:         1       0       0       0       0
+  2091 ;;Total ram usage:        1 bytes
+  2092 ;; Hardware stack levels used:    1
+  2093 ;; Hardware stack levels required when called:    4
+  2094 ;; This function calls:
+  2095 ;;		_bm_run
+  2096 ;;		_lm_run
+  2097 ;;		_mode_display
+  2098 ;;		_rm_run
+  2099 ;; This function is called by:
+  2100 ;;		_alphamode
+  2101 ;; This function uses a non-reentrant model
+  2102 ;;
+  2103                           
+  2104                           
+  2105                           ;psect for function _clockwise
+  2106  04AE                     _clockwise:	
+  2107                           
+  2108                           ;PR19.c: 361: CCPR1L=CCPR2L=CCPR3L=255;
+  2109                           
+  2110                           ;incstack = 0
+  2111                           ; Regs used in _clockwise: [wreg-fsr0h+status,2+status,0+pclath+cstack]
+  2112  04AE  30FF               	movlw	255
+  2113  04AF  1683               	bsf	3,5	;RP0=1, select bank1
+  2114  04B0  1303               	bcf	3,6	;RP1=0, select bank1
+  2115  04B1  0095               	movwf	21	;volatile
+  2116  04B2  1283               	bcf	3,5	;RP0=0, select bank0
+  2117  04B3  1303               	bcf	3,6	;RP1=0, select bank0
+  2118  04B4  009B               	movwf	27	;volatile
+  2119  04B5  0095               	movwf	21	;volatile
+  2120                           
+  2121                           ;PR19.c: 362: lm_run(1);
+  2122  04B6  3001               	movlw	1
+  2123  04B7  120A  118A  2334  120A  118A  	fcall	_lm_run
+  2124                           
+  2125                           ;PR19.c: 363: rm_run(1);
+  2126  04BC  3001               	movlw	1
+  2127  04BD  120A  118A  2349  120A  118A  	fcall	_rm_run
+  2128                           
+  2129                           ;PR19.c: 364: bm_run(1);
+  2130  04C2  3001               	movlw	1
+  2131  04C3  120A  118A  231F  120A  118A  	fcall	_bm_run
+  2132                           
+  2133                           ;PR19.c: 365: mode_display("Clockwise","");
+  2134  04C8  3056               	movlw	(low (((STR_23+3)-__stringbase)| (0+32768)))& (0+255)
+  2135  04C9  00FD               	movwf	??_clockwise
+  2136  04CA  087D               	movf	??_clockwise,w
+  2137  04CB  00FB               	movwf	mode_display@y
+  2138  04CC  3036               	movlw	(low ((STR_27-__stringbase)| (0+32768)))& (0+255)
+  2139  04CD  120A  118A  251B   	fcall	_mode_display
+  2140  04D0  0008               	return
+  2141  04D1                     __end_of_clockwise:	
+  2142                           
+  2143                           	psect	text14
+  2144  0349                     __ptext14:	
+  2145 ;; *************** function _rm_run *****************
+  2146 ;; Defined at:
+  2147 ;;		line 222 in file "../../Source file/PR19.c"
+  2148 ;; Parameters:    Size  Location     Type
+  2149 ;;  dir             1    wreg     unsigned char 
+  2150 ;; Auto vars:     Size  Location     Type
+  2151 ;;  dir             1    0[COMMON] unsigned char 
+  2152 ;; Return value:  Size  Location     Type
+  2153 ;;		None               void
+  2154 ;; Registers used:
+  2155 ;;		wreg, status,2, status,0
+  2156 ;; Tracked objects:
+  2157 ;;		On entry : 0/0
+  2158 ;;		On exit  : 0/0
+  2159 ;;		Unchanged: 0/0
+  2160 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  2161 ;;      Params:         0       0       0       0       0
+  2162 ;;      Locals:         1       0       0       0       0
+  2163 ;;      Temps:          0       0       0       0       0
+  2164 ;;      Totals:         1       0       0       0       0
+  2165 ;;Total ram usage:        1 bytes
+  2166 ;; Hardware stack levels used:    1
+  2167 ;; This function calls:
+  2168 ;;		Nothing
+  2169 ;; This function is called by:
+  2170 ;;		_deg_0
+  2171 ;;		_deg_90
+  2172 ;;		_deg_150
+  2173 ;;		_deg_180
+  2174 ;;		_deg_270
+  2175 ;;		_deg_330
+  2176 ;;		_clockwise
+  2177 ;;		_deg_60
+  2178 ;;		_deg_120
+  2179 ;;		_deg_240
+  2180 ;;		_deg_300
+  2181 ;;		_anticlockwise
+  2182 ;; This function uses a non-reentrant model
+  2183 ;;
+  2184                           
+  2185                           
+  2186                           ;psect for function _rm_run
+  2187  0349                     _rm_run:	
+  2188                           
+  2189                           ;incstack = 0
+  2190                           ; Regs used in _rm_run: [wreg+status,2+status,0]
+  2191                           ;rm_run@dir stored from wreg
+  2192  0349  00F0               	movwf	rm_run@dir
+  2193                           
+  2194                           ;PR19.c: 224: RC4=dir;
+  2195  034A  1C70               	btfss	rm_run@dir,0
+  2196  034B  2B50               	goto	u500
+  2197  034C  1283               	bcf	3,5	;RP0=0, select bank0
+  2198  034D  1303               	bcf	3,6	;RP1=0, select bank0
+  2199  034E  1607               	bsf	7,4	;volatile
+  2200  034F  2B53               	goto	l1106
+  2201  0350                     u500:	
+  2202  0350  1283               	bcf	3,5	;RP0=0, select bank0
+  2203  0351  1303               	bcf	3,6	;RP1=0, select bank0
+  2204  0352  1207               	bcf	7,4	;volatile
+  2205  0353                     l1106:	
+  2206                           
+  2207                           ;PR19.c: 225: RC5=!dir;
+  2208  0353  0870               	movf	rm_run@dir,w
+  2209  0354  1D03               	btfss	3,2
+  2210  0355  2B5A               	goto	u520
+  2211  0356  1283               	bcf	3,5	;RP0=0, select bank0
+  2212  0357  1303               	bcf	3,6	;RP1=0, select bank0
+  2213  0358  1687               	bsf	7,5	;volatile
+  2214  0359  0008               	return
+  2215  035A                     u520:	
+  2216  035A  1283               	bcf	3,5	;RP0=0, select bank0
+  2217  035B  1303               	bcf	3,6	;RP1=0, select bank0
+  2218  035C  1287               	bcf	7,5	;volatile
+  2219  035D  0008               	return
+  2220  035E                     __end_of_rm_run:	
+  2221                           
+  2222                           	psect	text15
+  2223  051B                     __ptext15:	
+  2224 ;; *************** function _mode_display *****************
+  2225 ;; Defined at:
+  2226 ;;		line 490 in file "../../Source file/PR19.c"
+  2227 ;; Parameters:    Size  Location     Type
+  2228 ;;  x               1    wreg     PTR const unsigned char 
+  2229 ;;		 -> STR_29(14), STR_27(10), STR_25(4), STR_23(4), 
+  2230 ;;		 -> STR_21(4), STR_19(4), STR_17(4), STR_15(4), 
+  2231 ;;		 -> STR_13(4), STR_11(4), STR_9(3), STR_7(3), 
+  2232 ;;		 -> STR_5(3), STR_3(2), STR_1(9), 
+  2233 ;;  y               1   11[COMMON] PTR const unsigned char 
+  2234 ;;		 -> STR_30(1), STR_28(1), STR_26(7), STR_24(7), 
+  2235 ;;		 -> STR_22(7), STR_20(7), STR_18(7), STR_16(7), 
+  2236 ;;		 -> STR_14(7), STR_12(7), STR_10(7), STR_8(7), 
+  2237 ;;		 -> STR_6(7), STR_4(7), STR_2(5), 
+  2238 ;; Auto vars:     Size  Location     Type
+  2239 ;;  x               1   12[COMMON] PTR const unsigned char 
+  2240 ;;		 -> STR_29(14), STR_27(10), STR_25(4), STR_23(4), 
+  2241 ;;		 -> STR_21(4), STR_19(4), STR_17(4), STR_15(4), 
+  2242 ;;		 -> STR_13(4), STR_11(4), STR_9(3), STR_7(3), 
+  2243 ;;		 -> STR_5(3), STR_3(2), STR_1(9), 
+  2244 ;; Return value:  Size  Location     Type
+  2245 ;;		None               void
+  2246 ;; Registers used:
+  2247 ;;		wreg, fsr0l, fsr0h, status,2, status,0, pclath, cstack
+  2248 ;; Tracked objects:
+  2249 ;;		On entry : 0/0
+  2250 ;;		On exit  : 0/0
+  2251 ;;		Unchanged: 0/0
+  2252 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  2253 ;;      Params:         1       0       0       0       0
+  2254 ;;      Locals:         1       0       0       0       0
+  2255 ;;      Temps:          0       0       0       0       0
+  2256 ;;      Totals:         2       0       0       0       0
+  2257 ;;Total ram usage:        2 bytes
+  2258 ;; Hardware stack levels used:    1
+  2259 ;; Hardware stack levels required when called:    3
+  2260 ;; This function calls:
+  2261 ;;		_delay
+  2262 ;;		_lcd_clr
+  2263 ;;		_lcd_goto
+  2264 ;;		_send_string
+  2265 ;; This function is called by:
+  2266 ;;		_m_stop
+  2267 ;;		_deg_0
+  2268 ;;		_deg_30
+  2269 ;;		_deg_90
+  2270 ;;		_deg_150
+  2271 ;;		_deg_180
+  2272 ;;		_deg_210
+  2273 ;;		_deg_270
+  2274 ;;		_deg_330
+  2275 ;;		_clockwise
+  2276 ;;		_deg_60
+  2277 ;;		_deg_120
+  2278 ;;		_deg_240
+  2279 ;;		_deg_300
+  2280 ;;		_anticlockwise
+  2281 ;; This function uses a non-reentrant model
+  2282 ;;
+  2283                           
+  2284                           
+  2285                           ;psect for function _mode_display
+  2286  051B                     _mode_display:	
+  2287                           
+  2288                           ;incstack = 0
+  2289                           ; Regs used in _mode_display: [wreg-fsr0h+status,2+status,0+pclath+cstack]
+  2290                           ;mode_display@x stored from wreg
+  2291  051B  00FC               	movwf	mode_display@x
+  2292                           
+  2293                           ;PR19.c: 492: RA3=0;
+  2294  051C  1283               	bcf	3,5	;RP0=0, select bank0
+  2295  051D  1303               	bcf	3,6	;RP1=0, select bank0
+  2296  051E  1185               	bcf	5,3	;volatile
+  2297                           
+  2298                           ;PR19.c: 493: if(RA0 == 0)return;
+  2299  051F  1C05               	btfss	5,0	;volatile
+  2300  0520  0008               	return
+  2301                           
+  2302                           ;PR19.c: 494: lcd_clr();
+  2303  0521  120A  118A  230D  120A  118A  	fcall	_lcd_clr
+  2304                           
+  2305                           ;PR19.c: 495: lcd_goto(0);
+  2306  0526  3000               	movlw	0
+  2307  0527  120A  118A  235E  120A  118A  	fcall	_lcd_goto
+  2308                           
+  2309                           ;PR19.c: 496: send_string(x);
+  2310  052C  087C               	movf	mode_display@x,w
+  2311  052D  120A  118A  2426  120A  118A  	fcall	_send_string
+  2312                           
+  2313                           ;PR19.c: 497: lcd_goto(20);
+  2314  0532  3014               	movlw	20
+  2315  0533  120A  118A  235E  120A  118A  	fcall	_lcd_goto
+  2316                           
+  2317                           ;PR19.c: 498: send_string(y);
+  2318  0538  087B               	movf	mode_display@y,w
+  2319  0539  120A  118A  2426  120A  118A  	fcall	_send_string
+  2320                           
+  2321                           ;PR19.c: 499: delay(10000);
+  2322  053E  3000               	movlw	0
+  2323  053F  00F3               	movwf	delay@data+3
+  2324  0540  3000               	movlw	0
+  2325  0541  00F2               	movwf	delay@data+2
+  2326  0542  3027               	movlw	39
+  2327  0543  00F1               	movwf	delay@data+1
+  2328  0544  3010               	movlw	16
+  2329  0545  00F0               	movwf	delay@data
+  2330  0546  120A  118A  2445   	fcall	_delay
+  2331  0549  0008               	return
+  2332  054A                     __end_of_mode_display:	
+  2333                           
+  2334                           	psect	text16
+  2335  0426                     __ptext16:	
+  2336 ;; *************** function _send_string *****************
+  2337 ;; Defined at:
+  2338 ;;		line 426 in file "../../Source file/PR19.c"
+  2339 ;; Parameters:    Size  Location     Type
+  2340 ;;  s               1    wreg     PTR const unsigned char 
+  2341 ;;		 -> STR_36(11), STR_35(16), STR_34(12), STR_33(16), 
+  2342 ;;		 -> STR_32(9), STR_31(7), STR_30(1), STR_29(14), 
+  2343 ;;		 -> STR_28(1), STR_27(10), STR_26(7), STR_25(4), 
+  2344 ;;		 -> STR_24(7), STR_23(4), STR_22(7), STR_21(4), 
+  2345 ;;		 -> STR_20(7), STR_19(4), STR_18(7), STR_17(4), 
+  2346 ;;		 -> STR_16(7), STR_15(4), STR_14(7), STR_13(4), 
+  2347 ;;		 -> STR_12(7), STR_11(4), STR_10(7), STR_9(3), 
+  2348 ;;		 -> STR_8(7), STR_7(3), STR_6(7), STR_5(3), 
+  2349 ;;		 -> STR_4(7), STR_3(2), STR_2(5), STR_1(9), 
+  2350 ;; Auto vars:     Size  Location     Type
+  2351 ;;  s               1   10[COMMON] PTR const unsigned char 
+  2352 ;;		 -> STR_36(11), STR_35(16), STR_34(12), STR_33(16), 
+  2353 ;;		 -> STR_32(9), STR_31(7), STR_30(1), STR_29(14), 
+  2354 ;;		 -> STR_28(1), STR_27(10), STR_26(7), STR_25(4), 
+  2355 ;;		 -> STR_24(7), STR_23(4), STR_22(7), STR_21(4), 
+  2356 ;;		 -> STR_20(7), STR_19(4), STR_18(7), STR_17(4), 
+  2357 ;;		 -> STR_16(7), STR_15(4), STR_14(7), STR_13(4), 
+  2358 ;;		 -> STR_12(7), STR_11(4), STR_10(7), STR_9(3), 
+  2359 ;;		 -> STR_8(7), STR_7(3), STR_6(7), STR_5(3), 
+  2360 ;;		 -> STR_4(7), STR_3(2), STR_2(5), STR_1(9), 
+  2361 ;; Return value:  Size  Location     Type
+  2362 ;;		None               void
+  2363 ;; Registers used:
+  2364 ;;		wreg, fsr0l, fsr0h, status,2, status,0, pclath, cstack
+  2365 ;; Tracked objects:
+  2366 ;;		On entry : 0/0
+  2367 ;;		On exit  : 0/0
+  2368 ;;		Unchanged: 0/0
+  2369 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  2370 ;;      Params:         0       0       0       0       0
+  2371 ;;      Locals:         1       0       0       0       0
+  2372 ;;      Temps:          1       0       0       0       0
+  2373 ;;      Totals:         2       0       0       0       0
+  2374 ;;Total ram usage:        2 bytes
+  2375 ;; Hardware stack levels used:    1
+  2376 ;; Hardware stack levels required when called:    2
+  2377 ;; This function calls:
+  2378 ;;		_send_char
+  2379 ;; This function is called by:
+  2380 ;;		_shift_display
+  2381 ;;		_mode_display
+  2382 ;; This function uses a non-reentrant model
+  2383 ;;
+  2384                           
+  2385                           
+  2386                           ;psect for function _send_string
+  2387  0426                     _send_string:	
+  2388                           
+  2389                           ;incstack = 0
+  2390                           ; Regs used in _send_string: [wreg-fsr0h+status,2+status,0+pclath+cstack]
+  2391                           ;send_string@s stored from wreg
+  2392  0426  00FA               	movwf	send_string@s
+  2393  0427                     l1084:	
+  2394                           ;PR19.c: 428: while (s && *s)send_char (*s++);
+  2395                           
+  2396  0427  087A               	movf	send_string@s,w
+  2397  0428  1903               	btfsc	3,2
+  2398  0429  0008               	return
+  2399  042A  087A               	movf	send_string@s,w
+  2400  042B  0084               	movwf	4
+  2401  042C  120A  118A  2003  120A  118A  	fcall	stringdir
+  2402  0431  3A00               	xorlw	0
+  2403  0432  1903               	btfsc	3,2
+  2404  0433  0008               	return
+  2405  0434  087A               	movf	send_string@s,w
+  2406  0435  0084               	movwf	4
+  2407  0436  120A  118A  2003  120A  118A  	fcall	stringdir
+  2408  043B  120A  118A  248B  120A  118A  	fcall	_send_char
+  2409  0440  3001               	movlw	1
+  2410  0441  00F9               	movwf	??_send_string
+  2411  0442  0879               	movf	??_send_string,w
+  2412  0443  07FA               	addwf	send_string@s,f
+  2413  0444  2C27               	goto	l1084
+  2414  0445                     __end_of_send_string:	
+  2415                           
+  2416                           	psect	text17
+  2417  048B                     __ptext17:	
+  2418 ;; *************** function _send_char *****************
+  2419 ;; Defined at:
+  2420 ;;		line 396 in file "../../Source file/PR19.c"
+  2421 ;; Parameters:    Size  Location     Type
+  2422 ;;  data            1    wreg     unsigned char 
+  2423 ;; Auto vars:     Size  Location     Type
+  2424 ;;  data            1    8[COMMON] unsigned char 
+  2425 ;; Return value:  Size  Location     Type
+  2426 ;;		None               void
+  2427 ;; Registers used:
+  2428 ;;		wreg, status,2, status,0, pclath, cstack
+  2429 ;; Tracked objects:
+  2430 ;;		On entry : 0/0
+  2431 ;;		On exit  : 0/0
+  2432 ;;		Unchanged: 0/0
+  2433 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  2434 ;;      Params:         0       0       0       0       0
+  2435 ;;      Locals:         1       0       0       0       0
+  2436 ;;      Temps:          0       0       0       0       0
+  2437 ;;      Totals:         1       0       0       0       0
+  2438 ;;Total ram usage:        1 bytes
+  2439 ;; Hardware stack levels used:    1
+  2440 ;; Hardware stack levels required when called:    1
+  2441 ;; This function calls:
+  2442 ;;		_delay
+  2443 ;; This function is called by:
+  2444 ;;		_send_string
+  2445 ;; This function uses a non-reentrant model
+  2446 ;;
+  2447                           
+  2448                           
+  2449                           ;psect for function _send_char
+  2450  048B                     _send_char:	
+  2451                           
+  2452                           ;incstack = 0
+  2453                           ; Regs used in _send_char: [wreg+status,2+status,0+pclath+cstack]
+  2454                           ;send_char@data stored from wreg
+  2455  048B  00F8               	movwf	send_char@data
+  2456                           
+  2457                           ;PR19.c: 398: RB7=1;
+  2458  048C  1283               	bcf	3,5	;RP0=0, select bank0
+  2459  048D  1303               	bcf	3,6	;RP1=0, select bank0
+  2460  048E  1786               	bsf	6,7	;volatile
+  2461                           
+  2462                           ;PR19.c: 399: PORTD=data;
+  2463  048F  0878               	movf	send_char@data,w
+  2464  0490  0088               	movwf	8	;volatile
+  2465                           
+  2466                           ;PR19.c: 400: RB6=1;
+  2467  0491  1706               	bsf	6,6	;volatile
+  2468                           
+  2469                           ;PR19.c: 401: delay(10);
+  2470  0492  3000               	movlw	0
+  2471  0493  00F3               	movwf	delay@data+3
+  2472  0494  3000               	movlw	0
+  2473  0495  00F2               	movwf	delay@data+2
+  2474  0496  3000               	movlw	0
+  2475  0497  00F1               	movwf	delay@data+1
+  2476  0498  300A               	movlw	10
+  2477  0499  00F0               	movwf	delay@data
+  2478  049A  120A  118A  2445  120A  118A  	fcall	_delay
+  2479                           
+  2480                           ;PR19.c: 402: RB6=0;
+  2481  049F  1283               	bcf	3,5	;RP0=0, select bank0
+  2482  04A0  1303               	bcf	3,6	;RP1=0, select bank0
+  2483  04A1  1306               	bcf	6,6	;volatile
+  2484                           
+  2485                           ;PR19.c: 403: delay(10);
+  2486  04A2  3000               	movlw	0
+  2487  04A3  00F3               	movwf	delay@data+3
+  2488  04A4  3000               	movlw	0
+  2489  04A5  00F2               	movwf	delay@data+2
+  2490  04A6  3000               	movlw	0
+  2491  04A7  00F1               	movwf	delay@data+1
+  2492  04A8  300A               	movlw	10
+  2493  04A9  00F0               	movwf	delay@data
+  2494  04AA  120A  118A  2445   	fcall	_delay
+  2495  04AD  0008               	return
+  2496  04AE                     __end_of_send_char:	
+  2497                           
+  2498                           	psect	text18
+  2499  035E                     __ptext18:	
+  2500 ;; *************** function _lcd_goto *****************
+  2501 ;; Defined at:
+  2502 ;;		line 407 in file "../../Source file/PR19.c"
+  2503 ;; Parameters:    Size  Location     Type
+  2504 ;;  data            1    wreg     unsigned char 
+  2505 ;; Auto vars:     Size  Location     Type
+  2506 ;;  data            1   10[COMMON] unsigned char 
+  2507 ;; Return value:  Size  Location     Type
+  2508 ;;		None               void
+  2509 ;; Registers used:
+  2510 ;;		wreg, status,2, status,0, pclath, cstack
+  2511 ;; Tracked objects:
+  2512 ;;		On entry : 0/0
+  2513 ;;		On exit  : 0/0
+  2514 ;;		Unchanged: 0/0
+  2515 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  2516 ;;      Params:         0       0       0       0       0
+  2517 ;;      Locals:         1       0       0       0       0
+  2518 ;;      Temps:          1       0       0       0       0
+  2519 ;;      Totals:         2       0       0       0       0
+  2520 ;;Total ram usage:        2 bytes
+  2521 ;; Hardware stack levels used:    1
+  2522 ;; Hardware stack levels required when called:    2
+  2523 ;; This function calls:
+  2524 ;;		_send_config
+  2525 ;; This function is called by:
+  2526 ;;		_shift_display
+  2527 ;;		_mode_display
+  2528 ;; This function uses a non-reentrant model
+  2529 ;;
+  2530                           
+  2531                           
+  2532                           ;psect for function _lcd_goto
+  2533  035E                     _lcd_goto:	
+  2534                           
+  2535                           ;incstack = 0
+  2536                           ; Regs used in _lcd_goto: [wreg+status,2+status,0+pclath+cstack]
+  2537                           ;lcd_goto@data stored from wreg
+  2538  035E  00FA               	movwf	lcd_goto@data
+  2539                           
+  2540                           ;PR19.c: 409: if(data<16)
+  2541  035F  3010               	movlw	16
+  2542  0360  027A               	subwf	lcd_goto@data,w
+  2543  0361  1803               	skipnc
+  2544  0362  2B69               	goto	l1072
+  2545                           
+  2546                           ;PR19.c: 410: {
+  2547                           ;PR19.c: 411: send_config(0x80+data);
+  2548  0363  087A               	movf	lcd_goto@data,w
+  2549  0364  3E80               	addlw	128
+  2550  0365  120A  118A  2468   	fcall	_send_config
+  2551                           
+  2552                           ;PR19.c: 412: }
+  2553  0368  0008               	return
+  2554  0369                     l1072:	
+  2555                           
+  2556                           ;PR19.c: 413: else
+  2557                           ;PR19.c: 414: {
+  2558                           ;PR19.c: 415: data=data-20;
+  2559  0369  087A               	movf	lcd_goto@data,w
+  2560  036A  3EEC               	addlw	236
+  2561  036B  00F9               	movwf	??_lcd_goto
+  2562  036C  0879               	movf	??_lcd_goto,w
+  2563  036D  00FA               	movwf	lcd_goto@data
+  2564                           
+  2565                           ;PR19.c: 416: send_config(0xc0+data);
+  2566  036E  087A               	movf	lcd_goto@data,w
+  2567  036F  3EC0               	addlw	192
+  2568  0370  120A  118A  2468   	fcall	_send_config
+  2569  0373  0008               	return
+  2570  0374                     __end_of_lcd_goto:	
+  2571                           
+  2572                           	psect	text19
+  2573  030D                     __ptext19:	
+  2574 ;; *************** function _lcd_clr *****************
+  2575 ;; Defined at:
+  2576 ;;		line 420 in file "../../Source file/PR19.c"
+  2577 ;; Parameters:    Size  Location     Type
+  2578 ;;		None
+  2579 ;; Auto vars:     Size  Location     Type
+  2580 ;;		None
+  2581 ;; Return value:  Size  Location     Type
+  2582 ;;		None               void
+  2583 ;; Registers used:
+  2584 ;;		wreg, status,2, status,0, pclath, cstack
+  2585 ;; Tracked objects:
+  2586 ;;		On entry : 0/0
+  2587 ;;		On exit  : 0/0
+  2588 ;;		Unchanged: 0/0
+  2589 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  2590 ;;      Params:         0       0       0       0       0
+  2591 ;;      Locals:         0       0       0       0       0
+  2592 ;;      Temps:          0       0       0       0       0
+  2593 ;;      Totals:         0       0       0       0       0
+  2594 ;;Total ram usage:        0 bytes
+  2595 ;; Hardware stack levels used:    1
+  2596 ;; Hardware stack levels required when called:    2
+  2597 ;; This function calls:
+  2598 ;;		_delay
+  2599 ;;		_send_config
+  2600 ;; This function is called by:
+  2601 ;;		_shift_display
+  2602 ;;		_mode_display
+  2603 ;; This function uses a non-reentrant model
+  2604 ;;
+  2605                           
+  2606                           
+  2607                           ;psect for function _lcd_clr
+  2608  030D                     _lcd_clr:	
+  2609                           
+  2610                           ;PR19.c: 422: send_config(0x01);
+  2611                           
+  2612                           ;incstack = 0
+  2613                           ; Regs used in _lcd_clr: [wreg+status,2+status,0+pclath+cstack]
+  2614  030D  3001               	movlw	1
+  2615  030E  120A  118A  2468  120A  118A  	fcall	_send_config
+  2616                           
+  2617                           ;PR19.c: 423: delay(600);
+  2618  0313  3000               	movlw	0
+  2619  0314  00F3               	movwf	delay@data+3
+  2620  0315  3000               	movlw	0
+  2621  0316  00F2               	movwf	delay@data+2
+  2622  0317  3002               	movlw	2
+  2623  0318  00F1               	movwf	delay@data+1
+  2624  0319  3058               	movlw	88
+  2625  031A  00F0               	movwf	delay@data
+  2626  031B  120A  118A  2445   	fcall	_delay
+  2627  031E  0008               	return
+  2628  031F                     __end_of_lcd_clr:	
+  2629                           
+  2630                           	psect	text20
+  2631  0468                     __ptext20:	
+  2632 ;; *************** function _send_config *****************
+  2633 ;; Defined at:
+  2634 ;;		line 386 in file "../../Source file/PR19.c"
+  2635 ;; Parameters:    Size  Location     Type
+  2636 ;;  data            1    wreg     unsigned char 
+  2637 ;; Auto vars:     Size  Location     Type
+  2638 ;;  data            1    8[COMMON] unsigned char 
+  2639 ;; Return value:  Size  Location     Type
+  2640 ;;		None               void
+  2641 ;; Registers used:
+  2642 ;;		wreg, status,2, status,0, pclath, cstack
+  2643 ;; Tracked objects:
+  2644 ;;		On entry : 0/0
+  2645 ;;		On exit  : 0/0
+  2646 ;;		Unchanged: 0/0
+  2647 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  2648 ;;      Params:         0       0       0       0       0
+  2649 ;;      Locals:         1       0       0       0       0
+  2650 ;;      Temps:          0       0       0       0       0
+  2651 ;;      Totals:         1       0       0       0       0
+  2652 ;;Total ram usage:        1 bytes
+  2653 ;; Hardware stack levels used:    1
+  2654 ;; Hardware stack levels required when called:    1
+  2655 ;; This function calls:
+  2656 ;;		_delay
+  2657 ;; This function is called by:
+  2658 ;;		_main
+  2659 ;;		_lcd_goto
+  2660 ;;		_lcd_clr
+  2661 ;;		_shift_display
+  2662 ;; This function uses a non-reentrant model
+  2663 ;;
+  2664                           
+  2665                           
+  2666                           ;psect for function _send_config
+  2667  0468                     _send_config:	
+  2668                           
+  2669                           ;incstack = 0
+  2670                           ; Regs used in _send_config: [wreg+status,2+status,0+pclath+cstack]
+  2671                           ;send_config@data stored from wreg
+  2672  0468  00F8               	movwf	send_config@data
+  2673                           
+  2674                           ;PR19.c: 388: RB7=0;
+  2675  0469  1283               	bcf	3,5	;RP0=0, select bank0
+  2676  046A  1303               	bcf	3,6	;RP1=0, select bank0
+  2677  046B  1386               	bcf	6,7	;volatile
+  2678                           
+  2679                           ;PR19.c: 389: PORTD=data;
+  2680  046C  0878               	movf	send_config@data,w
+  2681  046D  0088               	movwf	8	;volatile
+  2682                           
+  2683                           ;PR19.c: 390: RB6=1;
+  2684  046E  1706               	bsf	6,6	;volatile
+  2685                           
+  2686                           ;PR19.c: 391: delay(50);
+  2687  046F  3000               	movlw	0
+  2688  0470  00F3               	movwf	delay@data+3
+  2689  0471  3000               	movlw	0
+  2690  0472  00F2               	movwf	delay@data+2
+  2691  0473  3000               	movlw	0
+  2692  0474  00F1               	movwf	delay@data+1
+  2693  0475  3032               	movlw	50
+  2694  0476  00F0               	movwf	delay@data
+  2695  0477  120A  118A  2445  120A  118A  	fcall	_delay
+  2696                           
+  2697                           ;PR19.c: 392: RB6=0;
+  2698  047C  1283               	bcf	3,5	;RP0=0, select bank0
+  2699  047D  1303               	bcf	3,6	;RP1=0, select bank0
+  2700  047E  1306               	bcf	6,6	;volatile
+  2701                           
+  2702                           ;PR19.c: 393: delay(50);
+  2703  047F  3000               	movlw	0
+  2704  0480  00F3               	movwf	delay@data+3
+  2705  0481  3000               	movlw	0
+  2706  0482  00F2               	movwf	delay@data+2
+  2707  0483  3000               	movlw	0
+  2708  0484  00F1               	movwf	delay@data+1
+  2709  0485  3032               	movlw	50
+  2710  0486  00F0               	movwf	delay@data
+  2711  0487  120A  118A  2445   	fcall	_delay
+  2712  048A  0008               	return
+  2713  048B                     __end_of_send_config:	
+  2714                           
+  2715                           	psect	text21
+  2716  0445                     __ptext21:	
+  2717 ;; *************** function _delay *****************
+  2718 ;; Defined at:
+  2719 ;;		line 379 in file "../../Source file/PR19.c"
+  2720 ;; Parameters:    Size  Location     Type
+  2721 ;;  data            4    0[COMMON] unsigned long 
+  2722 ;; Auto vars:     Size  Location     Type
+  2723 ;;		None
+  2724 ;; Return value:  Size  Location     Type
+  2725 ;;		None               void
+  2726 ;; Registers used:
+  2727 ;;		wreg
+  2728 ;; Tracked objects:
+  2729 ;;		On entry : 0/0
+  2730 ;;		On exit  : 0/0
+  2731 ;;		Unchanged: 0/0
+  2732 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  2733 ;;      Params:         4       0       0       0       0
+  2734 ;;      Locals:         0       0       0       0       0
+  2735 ;;      Temps:          4       0       0       0       0
+  2736 ;;      Totals:         8       0       0       0       0
+  2737 ;;Total ram usage:        8 bytes
+  2738 ;; Hardware stack levels used:    1
+  2739 ;; This function calls:
+  2740 ;;		Nothing
+  2741 ;; This function is called by:
+  2742 ;;		_main
+  2743 ;;		_alphamode
+  2744 ;;		_betamode
+  2745 ;;		_send_config
+  2746 ;;		_send_char
+  2747 ;;		_lcd_clr
+  2748 ;;		_shift_display
+  2749 ;;		_mode_display
+  2750 ;; This function uses a non-reentrant model
+  2751 ;;
+  2752                           
+  2753                           
+  2754                           ;psect for function _delay
+  2755  0445                     _delay:	
+  2756                           
+  2757                           ;PR19.c: 381: for( ;data>0;data-=1);
+  2758                           
+  2759                           ;incstack = 0
+  2760                           ; Regs used in _delay: [wreg]
+  2761  0445  0873               	movf	delay@data+3,w
+  2762  0446  0472               	iorwf	delay@data+2,w
+  2763  0447  0471               	iorwf	delay@data+1,w
+  2764  0448  0470               	iorwf	delay@data,w
+  2765  0449  1903               	btfsc	3,2
+  2766  044A  0008               	return
+  2767  044B  3001               	movlw	1
+  2768  044C  00F4               	movwf	??_delay
+  2769  044D  3000               	movlw	0
+  2770  044E  00F5               	movwf	??_delay+1
+  2771  044F  3000               	movlw	0
+  2772  0450  00F6               	movwf	??_delay+2
+  2773  0451  3000               	movlw	0
+  2774  0452  00F7               	movwf	??_delay+3
+  2775  0453  0874               	movf	??_delay,w
+  2776  0454  02F0               	subwf	delay@data,f
+  2777  0455  0875               	movf	??_delay+1,w
+  2778  0456  1C03               	skipc
+  2779  0457  0F75               	incfsz	??_delay+1,w
+  2780  0458  2C5A               	goto	u405
+  2781  0459  2C5B               	goto	u406
+  2782  045A                     u405:	
+  2783  045A  02F1               	subwf	delay@data+1,f
+  2784  045B                     u406:	
+  2785  045B  0876               	movf	??_delay+2,w
+  2786  045C  1C03               	skipc
+  2787  045D  0F76               	incfsz	??_delay+2,w
+  2788  045E  2C60               	goto	u407
+  2789  045F  2C61               	goto	u408
+  2790  0460                     u407:	
+  2791  0460  02F2               	subwf	delay@data+2,f
+  2792  0461                     u408:	
+  2793  0461  0877               	movf	??_delay+3,w
+  2794  0462  1C03               	skipc
+  2795  0463  0F77               	incfsz	??_delay+3,w
+  2796  0464  2C66               	goto	u409
+  2797  0465  2C45               	goto	_delay
+  2798  0466                     u409:	
+  2799  0466  02F3               	subwf	delay@data+3,f
+  2800  0467  2C45               	goto	_delay
+  2801  0468                     __end_of_delay:	
+  2802                           
+  2803                           	psect	text22
+  2804  0334                     __ptext22:	
+  2805 ;; *************** function _lm_run *****************
+  2806 ;; Defined at:
+  2807 ;;		line 216 in file "../../Source file/PR19.c"
+  2808 ;; Parameters:    Size  Location     Type
+  2809 ;;  dir             1    wreg     unsigned char 
+  2810 ;; Auto vars:     Size  Location     Type
+  2811 ;;  dir             1    0[COMMON] unsigned char 
+  2812 ;; Return value:  Size  Location     Type
+  2813 ;;		None               void
+  2814 ;; Registers used:
+  2815 ;;		wreg, status,2, status,0
+  2816 ;; Tracked objects:
+  2817 ;;		On entry : 0/0
+  2818 ;;		On exit  : 0/0
+  2819 ;;		Unchanged: 0/0
+  2820 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  2821 ;;      Params:         0       0       0       0       0
+  2822 ;;      Locals:         1       0       0       0       0
+  2823 ;;      Temps:          0       0       0       0       0
+  2824 ;;      Totals:         1       0       0       0       0
+  2825 ;;Total ram usage:        1 bytes
+  2826 ;; Hardware stack levels used:    1
+  2827 ;; This function calls:
+  2828 ;;		Nothing
+  2829 ;; This function is called by:
+  2830 ;;		_deg_0
+  2831 ;;		_deg_30
+  2832 ;;		_deg_90
+  2833 ;;		_deg_180
+  2834 ;;		_deg_210
+  2835 ;;		_deg_270
+  2836 ;;		_clockwise
+  2837 ;;		_deg_60
+  2838 ;;		_deg_120
+  2839 ;;		_deg_240
+  2840 ;;		_deg_300
+  2841 ;;		_anticlockwise
+  2842 ;; This function uses a non-reentrant model
+  2843 ;;
+  2844                           
+  2845                           
+  2846                           ;psect for function _lm_run
+  2847  0334                     _lm_run:	
+  2848                           
+  2849                           ;incstack = 0
+  2850                           ; Regs used in _lm_run: [wreg+status,2+status,0]
+  2851                           ;lm_run@dir stored from wreg
+  2852  0334  00F0               	movwf	lm_run@dir
+  2853                           
+  2854                           ;PR19.c: 218: RC0=dir;
+  2855  0335  1C70               	btfss	lm_run@dir,0
+  2856  0336  2B3B               	goto	u460
+  2857  0337  1283               	bcf	3,5	;RP0=0, select bank0
+  2858  0338  1303               	bcf	3,6	;RP1=0, select bank0
+  2859  0339  1407               	bsf	7,0	;volatile
+  2860  033A  2B3E               	goto	l1102
+  2861  033B                     u460:	
+  2862  033B  1283               	bcf	3,5	;RP0=0, select bank0
+  2863  033C  1303               	bcf	3,6	;RP1=0, select bank0
+  2864  033D  1007               	bcf	7,0	;volatile
+  2865  033E                     l1102:	
+  2866                           
+  2867                           ;PR19.c: 219: RC3=!dir;
+  2868  033E  0870               	movf	lm_run@dir,w
+  2869  033F  1D03               	btfss	3,2
+  2870  0340  2B45               	goto	u480
+  2871  0341  1283               	bcf	3,5	;RP0=0, select bank0
+  2872  0342  1303               	bcf	3,6	;RP1=0, select bank0
+  2873  0343  1587               	bsf	7,3	;volatile
+  2874  0344  0008               	return
+  2875  0345                     u480:	
+  2876  0345  1283               	bcf	3,5	;RP0=0, select bank0
+  2877  0346  1303               	bcf	3,6	;RP1=0, select bank0
+  2878  0347  1187               	bcf	7,3	;volatile
+  2879  0348  0008               	return
+  2880  0349                     __end_of_lm_run:	
+  2881                           
+  2882                           	psect	text23
+  2883  031F                     __ptext23:	
+  2884 ;; *************** function _bm_run *****************
+  2885 ;; Defined at:
+  2886 ;;		line 228 in file "../../Source file/PR19.c"
+  2887 ;; Parameters:    Size  Location     Type
+  2888 ;;  dir             1    wreg     unsigned char 
+  2889 ;; Auto vars:     Size  Location     Type
+  2890 ;;  dir             1    0[COMMON] unsigned char 
+  2891 ;; Return value:  Size  Location     Type
+  2892 ;;		None               void
+  2893 ;; Registers used:
+  2894 ;;		wreg, status,2, status,0
+  2895 ;; Tracked objects:
+  2896 ;;		On entry : 0/0
+  2897 ;;		On exit  : 0/0
+  2898 ;;		Unchanged: 0/0
+  2899 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  2900 ;;      Params:         0       0       0       0       0
+  2901 ;;      Locals:         1       0       0       0       0
+  2902 ;;      Temps:          0       0       0       0       0
+  2903 ;;      Totals:         1       0       0       0       0
+  2904 ;;Total ram usage:        1 bytes
+  2905 ;; Hardware stack levels used:    1
+  2906 ;; This function calls:
+  2907 ;;		Nothing
+  2908 ;; This function is called by:
+  2909 ;;		_deg_30
+  2910 ;;		_deg_90
+  2911 ;;		_deg_150
+  2912 ;;		_deg_210
+  2913 ;;		_deg_270
+  2914 ;;		_deg_330
+  2915 ;;		_clockwise
+  2916 ;;		_deg_60
+  2917 ;;		_deg_120
+  2918 ;;		_deg_240
+  2919 ;;		_deg_300
+  2920 ;;		_anticlockwise
+  2921 ;; This function uses a non-reentrant model
+  2922 ;;
+  2923                           
+  2924                           
+  2925                           ;psect for function _bm_run
+  2926  031F                     _bm_run:	
+  2927                           
+  2928                           ;incstack = 0
+  2929                           ; Regs used in _bm_run: [wreg+status,2+status,0]
+  2930                           ;bm_run@dir stored from wreg
+  2931  031F  00F0               	movwf	bm_run@dir
+  2932                           
+  2933                           ;PR19.c: 230: RB3=!dir;
+  2934  0320  0870               	movf	bm_run@dir,w
+  2935  0321  1D03               	btfss	3,2
+  2936  0322  2B27               	goto	u540
+  2937  0323  1283               	bcf	3,5	;RP0=0, select bank0
+  2938  0324  1303               	bcf	3,6	;RP1=0, select bank0
+  2939  0325  1586               	bsf	6,3	;volatile
+  2940  0326  2B2A               	goto	l1110
+  2941  0327                     u540:	
+  2942  0327  1283               	bcf	3,5	;RP0=0, select bank0
+  2943  0328  1303               	bcf	3,6	;RP1=0, select bank0
+  2944  0329  1186               	bcf	6,3	;volatile
+  2945  032A                     l1110:	
+  2946                           
+  2947                           ;PR19.c: 231: RB4=dir;
+  2948  032A  1C70               	btfss	bm_run@dir,0
+  2949  032B  2B30               	goto	u560
+  2950  032C  1283               	bcf	3,5	;RP0=0, select bank0
+  2951  032D  1303               	bcf	3,6	;RP1=0, select bank0
+  2952  032E  1606               	bsf	6,4	;volatile
+  2953  032F  0008               	return
+  2954  0330                     u560:	
+  2955  0330  1283               	bcf	3,5	;RP0=0, select bank0
+  2956  0331  1303               	bcf	3,6	;RP1=0, select bank0
+  2957  0332  1206               	bcf	6,4	;volatile
+  2958  0333  0008               	return
+  2959  0334                     __end_of_bm_run:	
+  2960  007E                     btemp	set	126	;btemp
+  2961  007E                     wtemp	set	126
+  2962  007E                     wtemp0	set	126
+  2963  0080                     wtemp1	set	128
+  2964  0082                     wtemp2	set	130
+  2965  0084                     wtemp3	set	132
+  2966  0086                     wtemp4	set	134
+  2967  0088                     wtemp5	set	136
+  2968  007F                     wtemp6	set	127
+  2969  007E                     ttemp	set	126
+  2970  007E                     ttemp0	set	126
+  2971  0081                     ttemp1	set	129
+  2972  0084                     ttemp2	set	132
+  2973  0087                     ttemp3	set	135
+  2974  007F                     ttemp4	set	127
+  2975  007E                     ltemp	set	126
+  2976  007E                     ltemp0	set	126
+  2977  0082                     ltemp1	set	130
+  2978  0086                     ltemp2	set	134
+  2979  0080                     ltemp3	set	128
+
+
+Data Sizes:
+    Strings     120
+    Constant    0
+    Data        0
+    BSS         2
+    Persistent  0
+    Stack       0
+
+Auto Spaces:
+    Space          Size  Autos    Used
+    COMMON           14     14      14
+    BANK0            80      1       3
+    BANK1            80      0       0
+    BANK3            96      0       0
+    BANK2            96      0       0
+
+Pointer List with Targets:
+
+    mode_display@y	PTR const unsigned char  size(1) Largest target is 7
+		 -> STR_30(CODE[1]), STR_28(CODE[1]), STR_26(CODE[7]), STR_24(CODE[7]), 
+		 -> STR_22(CODE[7]), STR_20(CODE[7]), STR_18(CODE[7]), STR_16(CODE[7]), 
+		 -> STR_14(CODE[7]), STR_12(CODE[7]), STR_10(CODE[7]), STR_8(CODE[7]), 
+		 -> STR_6(CODE[7]), STR_4(CODE[7]), STR_2(CODE[5]), 
+
+    mode_display@x	PTR const unsigned char  size(1) Largest target is 14
+		 -> STR_29(CODE[14]), STR_27(CODE[10]), STR_25(CODE[4]), STR_23(CODE[4]), 
+		 -> STR_21(CODE[4]), STR_19(CODE[4]), STR_17(CODE[4]), STR_15(CODE[4]), 
+		 -> STR_13(CODE[4]), STR_11(CODE[4]), STR_9(CODE[3]), STR_7(CODE[3]), 
+		 -> STR_5(CODE[3]), STR_3(CODE[2]), STR_1(CODE[9]), 
+
+    send_string@s	PTR const unsigned char  size(1) Largest target is 16
+		 -> STR_36(CODE[11]), STR_35(CODE[16]), STR_34(CODE[12]), STR_33(CODE[16]), 
+		 -> STR_32(CODE[9]), STR_31(CODE[7]), STR_30(CODE[1]), STR_29(CODE[14]), 
+		 -> STR_28(CODE[1]), STR_27(CODE[10]), STR_26(CODE[7]), STR_25(CODE[4]), 
+		 -> STR_24(CODE[7]), STR_23(CODE[4]), STR_22(CODE[7]), STR_21(CODE[4]), 
+		 -> STR_20(CODE[7]), STR_19(CODE[4]), STR_18(CODE[7]), STR_17(CODE[4]), 
+		 -> STR_16(CODE[7]), STR_15(CODE[4]), STR_14(CODE[7]), STR_13(CODE[4]), 
+		 -> STR_12(CODE[7]), STR_11(CODE[4]), STR_10(CODE[7]), STR_9(CODE[3]), 
+		 -> STR_8(CODE[7]), STR_7(CODE[3]), STR_6(CODE[7]), STR_5(CODE[3]), 
+		 -> STR_4(CODE[7]), STR_3(CODE[2]), STR_2(CODE[5]), STR_1(CODE[9]), 
+
+
+Critical Paths under _main in COMMON
+
+    _shift_display->_lcd_goto
+    _shift_display->_send_string
+    _betamode->_deg_0
+    _betamode->_deg_150
+    _betamode->_deg_180
+    _betamode->_deg_210
+    _betamode->_deg_30
+    _betamode->_deg_330
+    _betamode->_m_stop
+    _deg_330->_mode_display
+    _deg_30->_mode_display
+    _deg_210->_mode_display
+    _deg_150->_mode_display
+    _alphamode->_clockwise
+    _alphamode->_deg_0
+    _alphamode->_deg_180
+    _alphamode->_deg_270
+    _alphamode->_deg_90
+    _alphamode->_m_stop
+    _m_stop->_mode_display
+    _deg_90->_mode_display
+    _deg_270->_mode_display
+    _deg_180->_mode_display
+    _deg_0->_mode_display
+    _clockwise->_mode_display
+    _mode_display->_lcd_goto
+    _mode_display->_send_string
+    _send_string->_send_char
+    _send_char->_delay
+    _lcd_goto->_send_config
+    _lcd_clr->_send_config
+    _send_config->_delay
+
+Critical Paths under _main in BANK0
+
+    None.
+
+Critical Paths under _main in BANK1
+
+    None.
+
+Critical Paths under _main in BANK3
+
+    None.
+
+Critical Paths under _main in BANK2
+
+    None.
+
+Call Graph Tables:
+
+ ---------------------------------------------------------------------------------
+ (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+ ---------------------------------------------------------------------------------
+ (0) _main                                                 1     1      0  138123
+                                              0 BANK0      1     1      0
+                          _alphamode
+                           _betamode
+                              _delay
+                        _send_config
+                      _shift_display
+ ---------------------------------------------------------------------------------
+ (1) _shift_display                                        1     1      0    9634
+                                             11 COMMON     1     1      0
+                              _delay
+                            _lcd_clr
+                           _lcd_goto
+                        _send_config
+                        _send_string
+ ---------------------------------------------------------------------------------
+ (1) _betamode                                             0     0      0   67346
+                              _deg_0
+                            _deg_150
+                            _deg_180
+                            _deg_210
+                             _deg_30
+                            _deg_330
+                              _delay
+                             _m_stop
+ ---------------------------------------------------------------------------------
+ (2) _deg_330                                              1     1      0    9415
+                                             13 COMMON     1     1      0
+                             _bm_run
+                       _mode_display
+                             _rm_run
+ ---------------------------------------------------------------------------------
+ (2) _deg_30                                               1     1      0    9415
+                                             13 COMMON     1     1      0
+                             _bm_run
+                             _lm_run
+                       _mode_display
+ ---------------------------------------------------------------------------------
+ (2) _deg_210                                              1     1      0    9415
+                                             13 COMMON     1     1      0
+                             _bm_run
+                             _lm_run
+                       _mode_display
+ ---------------------------------------------------------------------------------
+ (2) _deg_150                                              1     1      0    9415
+                                             13 COMMON     1     1      0
+                             _bm_run
+                       _mode_display
+                             _rm_run
+ ---------------------------------------------------------------------------------
+ (1) _alphamode                                            0     0      0   58063
+                          _clockwise
+                              _deg_0
+                            _deg_180
+                            _deg_270
+                             _deg_90
+                              _delay
+                             _m_stop
+ ---------------------------------------------------------------------------------
+ (2) _m_stop                                               1     1      0    9327
+                                             13 COMMON     1     1      0
+                       _mode_display
+ ---------------------------------------------------------------------------------
+ (2) _deg_90                                               1     1      0    9459
+                                             13 COMMON     1     1      0
+                             _bm_run
+                             _lm_run
+                       _mode_display
+                             _rm_run
+ ---------------------------------------------------------------------------------
+ (2) _deg_270                                              1     1      0    9459
+                                             13 COMMON     1     1      0
+                             _bm_run
+                             _lm_run
+                       _mode_display
+                             _rm_run
+ ---------------------------------------------------------------------------------
+ (2) _deg_180                                              1     1      0    9415
+                                             13 COMMON     1     1      0
+                             _lm_run
+                       _mode_display
+                             _rm_run
+ ---------------------------------------------------------------------------------
+ (2) _deg_0                                                1     1      0    9415
+                                             13 COMMON     1     1      0
+                             _lm_run
+                       _mode_display
+                             _rm_run
+ ---------------------------------------------------------------------------------
+ (2) _clockwise                                            1     1      0    9459
+                                             13 COMMON     1     1      0
+                             _bm_run
+                             _lm_run
+                       _mode_display
+                             _rm_run
+ ---------------------------------------------------------------------------------
+ (3) _rm_run                                               1     1      0      44
+                                              0 COMMON     1     1      0
+ ---------------------------------------------------------------------------------
+ (3) _mode_display                                         2     1      1    9327
+                                             11 COMMON     2     1      1
+                              _delay
+                            _lcd_clr
+                           _lcd_goto
+                        _send_string
+ ---------------------------------------------------------------------------------
+ (2) _send_string                                          2     2      0    1834
+                                              9 COMMON     2     2      0
+                          _send_char
+ ---------------------------------------------------------------------------------
+ (3) _send_char                                            1     1      0    1551
+                                              8 COMMON     1     1      0
+                              _delay
+ ---------------------------------------------------------------------------------
+ (2) _lcd_goto                                             2     2      0    1640
+                                              9 COMMON     2     2      0
+                        _send_config
+ ---------------------------------------------------------------------------------
+ (2) _lcd_clr                                              0     0      0    3080
+                              _delay
+                        _send_config
+ ---------------------------------------------------------------------------------
+ (2) _send_config                                          1     1      0    1551
+                                              8 COMMON     1     1      0
+                              _delay
+ ---------------------------------------------------------------------------------
+ (4) _delay                                                8     4      4    1529
+                                              0 COMMON     8     4      4
+ ---------------------------------------------------------------------------------
+ (3) _lm_run                                               1     1      0      44
+                                              0 COMMON     1     1      0
+ ---------------------------------------------------------------------------------
+ (3) _bm_run                                               1     1      0      44
+                                              0 COMMON     1     1      0
+ ---------------------------------------------------------------------------------
+ Estimated maximum stack depth 4
+ ---------------------------------------------------------------------------------
+
+ Call Graph Graphs:
+
+ _main (ROOT)
+   _alphamode
+     _clockwise
+       _bm_run
+       _lm_run
+       _mode_display
+         _delay
+         _lcd_clr
+           _delay
+           _send_config
+             _delay
+         _lcd_goto
+           _send_config
+             _delay
+         _send_string
+           _send_char
+             _delay
+       _rm_run
+     _deg_0
+       _lm_run
+       _mode_display
+         _delay
+         _lcd_clr
+           _delay
+           _send_config
+             _delay
+         _lcd_goto
+           _send_config
+             _delay
+         _send_string
+           _send_char
+             _delay
+       _rm_run
+     _deg_180
+       _lm_run
+       _mode_display
+         _delay
+         _lcd_clr
+           _delay
+           _send_config
+             _delay
+         _lcd_goto
+           _send_config
+             _delay
+         _send_string
+           _send_char
+             _delay
+       _rm_run
+     _deg_270
+       _bm_run
+       _lm_run
+       _mode_display
+         _delay
+         _lcd_clr
+           _delay
+           _send_config
+             _delay
+         _lcd_goto
+           _send_config
+             _delay
+         _send_string
+           _send_char
+             _delay
+       _rm_run
+     _deg_90
+       _bm_run
+       _lm_run
+       _mode_display
+         _delay
+         _lcd_clr
+           _delay
+           _send_config
+             _delay
+         _lcd_goto
+           _send_config
+             _delay
+         _send_string
+           _send_char
+             _delay
+       _rm_run
+     _delay
+     _m_stop
+       _mode_display
+         _delay
+         _lcd_clr
+           _delay
+           _send_config
+             _delay
+         _lcd_goto
+           _send_config
+             _delay
+         _send_string
+           _send_char
+             _delay
+   _betamode
+     _deg_0
+       _lm_run
+       _mode_display
+         _delay
+         _lcd_clr
+           _delay
+           _send_config
+             _delay
+         _lcd_goto
+           _send_config
+             _delay
+         _send_string
+           _send_char
+             _delay
+       _rm_run
+     _deg_150
+       _bm_run
+       _mode_display
+         _delay
+         _lcd_clr
+           _delay
+           _send_config
+             _delay
+         _lcd_goto
+           _send_config
+             _delay
+         _send_string
+           _send_char
+             _delay
+       _rm_run
+     _deg_180
+       _lm_run
+       _mode_display
+         _delay
+         _lcd_clr
+           _delay
+           _send_config
+             _delay
+         _lcd_goto
+           _send_config
+             _delay
+         _send_string
+           _send_char
+             _delay
+       _rm_run
+     _deg_210
+       _bm_run
+       _lm_run
+       _mode_display
+         _delay
+         _lcd_clr
+           _delay
+           _send_config
+             _delay
+         _lcd_goto
+           _send_config
+             _delay
+         _send_string
+           _send_char
+             _delay
+     _deg_30
+       _bm_run
+       _lm_run
+       _mode_display
+         _delay
+         _lcd_clr
+           _delay
+           _send_config
+             _delay
+         _lcd_goto
+           _send_config
+             _delay
+         _send_string
+           _send_char
+             _delay
+     _deg_330
+       _bm_run
+       _mode_display
+         _delay
+         _lcd_clr
+           _delay
+           _send_config
+             _delay
+         _lcd_goto
+           _send_config
+             _delay
+         _send_string
+           _send_char
+             _delay
+       _rm_run
+     _delay
+     _m_stop
+       _mode_display
+         _delay
+         _lcd_clr
+           _delay
+           _send_config
+             _delay
+         _lcd_goto
+           _send_config
+             _delay
+         _send_string
+           _send_char
+             _delay
+   _delay
+   _send_config
+     _delay
+   _shift_display
+     _delay
+     _lcd_clr
+       _delay
+       _send_config
+         _delay
+     _lcd_goto
+       _send_config
+         _delay
+     _send_config
+       _delay
+     _send_string
+       _send_char
+         _delay
+
+ Address spaces:
+Name               Size   Autos  Total    Cost      Usage
+BITCOMMON            E      0       0       0        0.0%
+NULL                 0      0       0       0        0.0%
+CODE                 0      0       0       0        0.0%
+COMMON               E      E       E       1      100.0%
+BITSFR0              0      0       0       1        0.0%
+SFR0                 0      0       0       1        0.0%
+BITSFR1              0      0       0       2        0.0%
+SFR1                 0      0       0       2        0.0%
+STACK                0      0       0       2        0.0%
+ABS                  0      0      11       3        0.0%
+BITBANK0            50      0       0       4        0.0%
+BITSFR3              0      0       0       4        0.0%
+SFR3                 0      0       0       4        0.0%
+BANK0               50      1       3       5        3.8%
+BITSFR2              0      0       0       5        0.0%
+SFR2                 0      0       0       5        0.0%
+DATA                 0      0      11       6        0.0%
+BITBANK1            50      0       0       7        0.0%
+BANK1               50      0       0       8        0.0%
+BITBANK3            60      0       0       9        0.0%
+BANK3               60      0       0      10        0.0%
+BITBANK2            60      0       0      11        0.0%
+BANK2               60      0       0      12        0.0%
+
+
+Microchip Technology PIC Macro Assembler V1.34 build -361300703 
+Symbol Table                                                                                   Tue Jul 21 14:10:31 2015
+
+                      _i 0020                        pc 0002              __CFG_CP$OFF 0000  
+                     l96 06B8                       fsr 0004                      l101 06E3  
+                    l103 06BB                      l107 06D3                      l212 07F9  
+                    l215 072F                      _RA0 0028                      _RA1 0029  
+                    _RA2 002A                      _RA3 002B                      _RC0 0038  
+                    _RB3 0033                      _RB4 0034                      _RC3 003B  
+                    _RC4 003C                      _RB6 0036                      _RC5 003D  
+                    _RB7 0037                      u500 0350                      u405 045A  
+                    u406 045B                      _PR2 0092                      u407 0460  
+                    u408 0461                      u520 035A                      u409 0466  
+                    u540 0327                      u460 033B                      u560 0330  
+                    u480 0345                      fsr0 0004             __CFG_BORV$20 0000  
+           __CFG_IESO$ON 0000          send_config@data 0078                     l1110 032A  
+                   l1102 033E                     l1106 0353                     l1072 0369  
+                   l1400 06C9                     l1402 06CE                     l1084 0427  
+                   l1236 054A                     l1260 05CE                     l1316 079B  
+                   l1342 07EC                     l1406 06D9                     l1264 06ED  
+                   l1290 0748                     l1282 070D                     l1292 074C  
+                   l1394 06A5                     l1386 0699                     STR_1 0010  
+           __CFG_WDTE$ON 0000                     STR_2 0056                     STR_3 005D  
+                   STR_4 0048                     STR_5 0068                     STR_6 0048  
+                   STR_7 007B                     STR_9 007E            __CFG_FCMEN$ON 0000  
+                   _main 0653                     btemp 007E            __CFG_BOREN$ON 0000  
+           lcd_goto@data 007A            mode_display@x 007C            mode_display@y 007B  
+                   ltemp 007E                     start 0000                     ttemp 007E  
+                   wtemp 007E            __CFG_MCLRE$ON 0000                    ?_main 0070  
+                  STR_10 0048                    STR_11 0063                    STR_21 0073  
+                  STR_13 006F                    STR_22 0048                    STR_14 0048  
+                  STR_15 0077                    STR_23 005B                    STR_31 004F  
+                  STR_16 0048                    STR_32 0010                    STR_25 0067  
+                  STR_17 005F                    STR_33 0009                    STR_26 0048  
+                  STR_18 0048                    STR_34 0027                    STR_35 0009  
+                  STR_19 006B                    STR_27 003E                    STR_28 005E  
+                  STR_36 0033                    STR_29 0019          __end_of_deg_210 03EA  
+        __end_of_deg_150 03CC          __end_of_deg_330 0426          __end_of_deg_180 03AE  
+        __end_of_deg_270 04F6                    _T2CON 0012                    _PORTB 0006  
+                  _PORTC 0007                    _PORTD 0008                    _TRISA 0085  
+                  _TRISB 0086                    _TRISC 0087                    _TRISD 0088  
+        __end_of_lcd_clr 031F                    _deg_0 0374                    _delay 0445  
+                  _shift 0021                    pclath 000A                    ltemp0 007E  
+                  ltemp1 0082                    ltemp2 0086                    ltemp3 0080  
+                  ttemp0 007E                    ttemp1 0081                    ttemp2 0084  
+                  ttemp3 0087                    ttemp4 007F                    status 0003  
+                  wtemp0 007E                    wtemp1 0080                    wtemp2 0082  
+                  wtemp3 0084                    wtemp4 0086                    wtemp5 0088  
+                  wtemp6 007F          __initialization 07FA             __end_of_main 06EC  
+                 ??_main 0022          __CFG_CCP2MX$RC1 0000                   ?_deg_0 0070  
+                 ?_delay 0070             ?_send_config 0070                   _ADCON1 009F  
+                 _CCPR1L 0015                   _CCPR2L 001B                   _CCPR3L 0095  
+           ?_send_string 0070         __end_of_betamode 0653           __CFG_PWRTE$OFF 0000  
+       __end_of_lcd_goto 0374                   _deg_30 03EA                   _deg_90 04F6  
+              ??_deg_210 007D                ??_deg_150 007D                ??_deg_330 007D  
+              ??_deg_180 007D                ??_deg_270 007D                   _bm_run 031F  
+                 _m_stop 02FC                   _lm_run 0334                   _rm_run 0349  
+              ??_lcd_clr 0079            ?_mode_display 007B  __end_of__initialization 07FC  
+  __end_of_shift_display 07FA           __pcstackCOMMON 0070            __end_of_deg_0 0391  
+          __end_of_delay 0468       __size_of_alphamode 0084           ??_mode_display 007C  
+     __size_of_clockwise 0023                  ??_deg_0 007D                  ??_delay 0074  
+             __pbssBANK0 0020               __pmaintext 0653                  ?_deg_30 0070  
+                ?_deg_90 0070                  ?_bm_run 0070       __size_of_send_char 0023  
+                _CCP1CON 0017                  _CCP2CON 001D                  _CCP3CON 0097  
+                ?_m_stop 0070                  ?_lm_run 0070                  ?_rm_run 0070  
+              ?_betamode 0070                ?_lcd_goto 0070               __stringtab 0003  
+   __size_of_send_config 0023        __end_of_alphamode 05CE     __size_of_send_string 001F  
+      __end_of_clockwise 04D1          __size_of_deg_30 001E          __size_of_deg_90 0025  
+                _deg_210 03CC                  _deg_150 03AE                  _deg_330 0408  
+                _deg_180 0391                  _deg_270 04D1          __size_of_bm_run 0015  
+        __size_of_m_stop 0011          __size_of_lm_run 0015                  __ptext1 06EC  
+                __ptext2 05CE                  __ptext3 0408                  __ptext4 03EA  
+                __ptext5 03CC                  __ptext6 03AE                  __ptext7 054A  
+                __ptext8 02FC                  __ptext9 04F6          __size_of_rm_run 0015  
+                _lcd_clr 030D               ??_betamode 007E               ??_lcd_goto 0079  
+   end_of_initialization 07FC        __end_of_send_char 04AE     __end_of_mode_display 054A  
+          send_char@data 0078           __end_of_deg_30 0408           __end_of_deg_90 051B  
+         __end_of_bm_run 0334           __end_of_m_stop 030D           __end_of_lm_run 0349  
+         __end_of_rm_run 035E      start_initialization 07FA                 ??_deg_30 007D  
+               ??_deg_90 007D                 ??_bm_run 0070                 ??_m_stop 007D  
+               ??_lm_run 0070                 ??_rm_run 0070   __size_of_shift_display 010E  
+              ___latbits 0002            __pcstackBANK0 0022        __size_of_betamode 0085  
+  __size_of_mode_display 002F        __size_of_lcd_goto 0016                _alphamode 054A  
+               ?_deg_210 0070                 ?_deg_150 0070                 ?_deg_330 0070  
+               ?_deg_180 0070                 ?_deg_270 0070                _clockwise 04AE  
+              __pstrings 0003                 ?_lcd_clr 0070             _mode_display 051B  
+          ??_send_config 0078           __size_of_deg_0 001D           __size_of_delay 0023  
+              delay@data 0070            ??_send_string 0079                bm_run@dir 0070  
+              _send_char 048B            _shift_display 06EC               ?_alphamode 0070  
+             ?_clockwise 0070              __stringbase 0008      __end_of_send_config 048B  
+         ?_shift_display 0070               ?_send_char 0070             send_string@s 007A  
+    __end_of_send_string 0445                lm_run@dir 0070         __size_of_deg_210 001E  
+       __size_of_deg_150 001E         __size_of_deg_330 001E         __size_of_deg_180 001D  
+       __size_of_deg_270 0025       __end_of__stringtab 0009         __size_of_lcd_clr 0012  
+               _betamode 05CE                 __ptext10 04D1                 __ptext11 0391  
+               __ptext20 0468                 __ptext12 0374                 __ptext21 0445  
+               __ptext13 04AE                 __ptext22 0334                 __ptext14 0349  
+               __ptext23 031F                 __ptext15 051B                 __ptext16 0426  
+               __ptext17 048B                 __ptext18 035E                 __ptext19 030D  
+               _lcd_goto 035E            __size_of_main 0099                rm_run@dir 0070  
+            ??_alphamode 007E              ??_clockwise 007D              _send_config 0468  
+        ??_shift_display 007B              _send_string 0426              ??_send_char 0078  
+              stringcode 0003                 stringdir 0003                 stringtab 0003  
+     __CFG_FOSC$EXTRCCLK 0000  
