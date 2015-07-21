@@ -1,0 +1,331 @@
+[p LITE_MODE AUTOSTATIC PIC14 PICREGULAR PICMID ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 16F777 ]
+"3 C:\Program Files (x86)\Microchip\xc8\v1.00\sources\bmul.c
+[v ___bmul `(uc  1 e 1 0 ]
+"5 C:\Program Files (x86)\Microchip\xc8\v1.00\sources\abdiv.c
+[v ___abdiv `(c  1 e 1 0 ]
+"5 C:\Program Files (x86)\Microchip\xc8\v1.00\sources\abmod.c
+[v ___abmod `(c  1 e 1 0 ]
+"34 C:\Program Files (x86)\Microchip\xc8\v1.00\sources\abtoft.c
+[v ___abtoft `(f  1 e 3 0 ]
+"5 C:\Program Files (x86)\Microchip\xc8\v1.00\sources\aldiv.c
+[v ___aldiv `(l  1 e 4 0 ]
+"5 C:\Program Files (x86)\Microchip\xc8\v1.00\sources\almod.c
+[v ___almod `(l  1 e 4 0 ]
+"43 C:\Program Files (x86)\Microchip\xc8\v1.00\sources\altoft.c
+[v ___altoft `(f  1 e 3 0 ]
+"5 C:\Program Files (x86)\Microchip\xc8\v1.00\sources\atdiv.c
+[v ___atdiv `(m  1 e 3 0 ]
+"5 C:\Program Files (x86)\Microchip\xc8\v1.00\sources\atmod.c
+[v ___atmod `(m  1 e 3 0 ]
+"38 C:\Program Files (x86)\Microchip\xc8\v1.00\sources\attoft.c
+[v ___attoft `(f  1 e 3 0 ]
+"5 C:\Program Files (x86)\Microchip\xc8\v1.00\sources\awdiv.c
+[v ___awdiv `(i  1 e 2 0 ]
+"5 C:\Program Files (x86)\Microchip\xc8\v1.00\sources\awmod.c
+[v ___awmod `(i  1 e 2 0 ]
+"33 C:\Program Files (x86)\Microchip\xc8\v1.00\sources\awtoft.c
+[v ___awtoft `(f  1 e 3 0 ]
+"63 C:\Program Files (x86)\Microchip\xc8\v1.00\sources\float.c
+[v ___ftpack `(f  1 e 3 0 ]
+"87 C:\Program Files (x86)\Microchip\xc8\v1.00\sources\ftadd.c
+[v ___ftadd `(f  1 e 3 0 ]
+"50 C:\Program Files (x86)\Microchip\xc8\v1.00\sources\ftdiv.c
+[v ___ftdiv `(f  1 e 3 0 ]
+"5 C:\Program Files (x86)\Microchip\xc8\v1.00\sources\ftge.c
+[v ___ftge `(b  1 e 0 0 ]
+"52 C:\Program Files (x86)\Microchip\xc8\v1.00\sources\ftmul.c
+[v ___ftmul `(f  1 e 3 0 ]
+"16 C:\Program Files (x86)\Microchip\xc8\v1.00\sources\ftneg.c
+[v ___ftneg `(f  1 e 3 0 ]
+"17 C:\Program Files (x86)\Microchip\xc8\v1.00\sources\ftsub.c
+[v ___ftsub `(f  1 e 3 0 ]
+"45 C:\Program Files (x86)\Microchip\xc8\v1.00\sources\fttol.c
+[v ___fttol `(l  1 e 4 0 ]
+"5 C:\Program Files (x86)\Microchip\xc8\v1.00\sources\lbdiv.c
+[v ___lbdiv `(uc  1 e 1 0 ]
+"5 C:\Program Files (x86)\Microchip\xc8\v1.00\sources\lbmod.c
+[v ___lbmod `(uc  1 e 1 0 ]
+"28 C:\Program Files (x86)\Microchip\xc8\v1.00\sources\lbtoft.c
+[v ___lbtoft `(f  1 e 3 0 ]
+"5 C:\Program Files (x86)\Microchip\xc8\v1.00\sources\lldiv.c
+[v ___lldiv `(ul  1 e 4 0 ]
+"5 C:\Program Files (x86)\Microchip\xc8\v1.00\sources\llmod.c
+[v ___llmod `(ul  1 e 4 0 ]
+"36 C:\Program Files (x86)\Microchip\xc8\v1.00\sources\lltoft.c
+[v ___lltoft `(f  1 e 3 0 ]
+"3 C:\Program Files (x86)\Microchip\xc8\v1.00\sources\lmul.c
+[v ___lmul `(ul  1 e 4 0 ]
+"5 C:\Program Files (x86)\Microchip\xc8\v1.00\sources\ltdiv.c
+[v ___ltdiv `(um  1 e 3 0 ]
+"5 C:\Program Files (x86)\Microchip\xc8\v1.00\sources\ltmod.c
+[v ___ltmod `(um  1 e 3 0 ]
+"31 C:\Program Files (x86)\Microchip\xc8\v1.00\sources\lttoft.c
+[v ___lttoft `(f  1 e 3 0 ]
+"5 C:\Program Files (x86)\Microchip\xc8\v1.00\sources\lwdiv.c
+[v ___lwdiv `(ui  1 e 2 0 ]
+"5 C:\Program Files (x86)\Microchip\xc8\v1.00\sources\lwmod.c
+[v ___lwmod `(ui  1 e 2 0 ]
+"29 C:\Program Files (x86)\Microchip\xc8\v1.00\sources\lwtoft.c
+[v ___lwtoft `(f  1 e 3 0 ]
+"3 C:\Program Files (x86)\Microchip\xc8\v1.00\sources\tmul.c
+[v ___tmul `(um  1 e 3 0 ]
+"3 C:\Program Files (x86)\Microchip\xc8\v1.00\sources\wmul.c
+[v ___wmul `(ui  1 e 2 0 ]
+"77 PR19.c
+[v _main `(v  1 e 0 0 ]
+"144
+[v _alphamode `(v  1 e 0 0 ]
+"166
+[v _betamode `(v  1 e 0 0 ]
+"189
+[v _m_stop `(v  1 e 0 0 ]
+"200
+[v _lm_run `(v  1 e 0 0 ]
+"206
+[v _rm_run `(v  1 e 0 0 ]
+"212
+[v _bm_run `(v  1 e 0 0 ]
+"219
+[v _deg_0 `(v  1 e 0 0 ]
+"228
+[v _deg_30 `(v  1 e 0 0 ]
+"238
+[v _deg_60 `(v  1 e 0 0 ]
+"249
+[v _deg_90 `(v  1 e 0 0 ]
+"260
+[v _deg_120 `(v  1 e 0 0 ]
+"271
+[v _deg_150 `(v  1 e 0 0 ]
+"281
+[v _deg_180 `(v  1 e 0 0 ]
+"290
+[v _deg_210 `(v  1 e 0 0 ]
+"300
+[v _deg_240 `(v  1 e 0 0 ]
+"311
+[v _deg_270 `(v  1 e 0 0 ]
+"322
+[v _deg_300 `(v  1 e 0 0 ]
+"333
+[v _deg_330 `(v  1 e 0 0 ]
+"343
+[v _clockwise `(v  1 e 0 0 ]
+"352
+[v _anticlockwise `(v  1 e 0 0 ]
+"363
+[v _delay `(v  1 e 0 0 ]
+"370
+[v _send_config `(v  1 e 0 0 ]
+"380
+[v _send_char `(v  1 e 0 0 ]
+"391
+[v _lcd_goto `(v  1 e 0 0 ]
+"404
+[v _lcd_clr `(v  1 e 0 0 ]
+"410
+[v _send_string `(v  1 e 0 0 ]
+"417
+[v _shift_display `(v  1 e 0 0 ]
+"474
+[v _mode_display `(v  1 e 0 0 ]
+"216 C:\Program Files (x86)\Microchip\xc8\v1.00\include\pic16f777.h
+[v _PORTB `VEuc  1 e 1 @6 ]
+"235
+[v _PORTC `VEuc  1 e 1 @7 ]
+"254
+[v _PORTD `VEuc  1 e 1 @8 ]
+"423
+[v _T2CON `VEuc  1 e 1 @18 ]
+"480
+[v _CCPR1L `VEuc  1 e 1 @21 ]
+"498
+[v _CCP1CON `VEuc  1 e 1 @23 ]
+"571
+[v _CCPR2L `VEuc  1 e 1 @27 ]
+"589
+[v _CCP2CON `VEuc  1 e 1 @29 ]
+"671
+[v _TRISA `VEuc  1 e 1 @133 ]
+"690
+[v _TRISB `VEuc  1 e 1 @134 ]
+"709
+[v _TRISC `VEuc  1 e 1 @135 ]
+"728
+[v _TRISD `VEuc  1 e 1 @136 ]
+"865
+[v _PR2 `VEuc  1 e 1 @146 ]
+"955
+[v _CCPR3L `VEuc  1 e 1 @149 ]
+"973
+[v _CCP3CON `VEuc  1 e 1 @151 ]
+"1087
+[v _ADCON1 `VEuc  1 e 1 @159 ]
+"1309
+[v _RA0 `VEb  1 e 0 @40 ]
+"1310
+[v _RA1 `VEb  1 e 0 @41 ]
+"1311
+[v _RA2 `VEb  1 e 0 @42 ]
+"1312
+[v _RA3 `VEb  1 e 0 @43 ]
+"1320
+[v _RB3 `VEb  1 e 0 @51 ]
+"1321
+[v _RB4 `VEb  1 e 0 @52 ]
+"1323
+[v _RB6 `VEb  1 e 0 @54 ]
+"1324
+[v _RB7 `VEb  1 e 0 @55 ]
+"1327
+[v _RC0 `VEb  1 e 0 @56 ]
+"1330
+[v _RC3 `VEb  1 e 0 @59 ]
+"1331
+[v _RC4 `VEb  1 e 0 @60 ]
+"1332
+[v _RC5 `VEb  1 e 0 @61 ]
+"19 PR19.c
+[v _i `uc  1 e 1 0 ]
+[v _shift `uc  1 e 1 0 ]
+"77
+[v _main `(v  1 e 0 0 ]
+{
+"138
+} 0
+"144
+[v _alphamode `(v  1 e 0 0 ]
+{
+"162
+} 0
+"166
+[v _betamode `(v  1 e 0 0 ]
+{
+"184
+} 0
+"417
+[v _shift_display `(v  1 e 0 0 ]
+{
+"469
+} 0
+"311
+[v _deg_270 `(v  1 e 0 0 ]
+{
+"319
+} 0
+"219
+[v _deg_0 `(v  1 e 0 0 ]
+{
+"225
+} 0
+"249
+[v _deg_90 `(v  1 e 0 0 ]
+{
+"257
+} 0
+"281
+[v _deg_180 `(v  1 e 0 0 ]
+{
+"287
+} 0
+"343
+[v _clockwise `(v  1 e 0 0 ]
+{
+"349
+} 0
+"189
+[v _m_stop `(v  1 e 0 0 ]
+{
+"197
+} 0
+"333
+[v _deg_330 `(v  1 e 0 0 ]
+{
+"340
+} 0
+"228
+[v _deg_30 `(v  1 e 0 0 ]
+{
+"235
+} 0
+"271
+[v _deg_150 `(v  1 e 0 0 ]
+{
+"278
+} 0
+"290
+[v _deg_210 `(v  1 e 0 0 ]
+{
+"297
+} 0
+"474
+[v _mode_display `(v  1 e 0 0 ]
+{
+[v mode_display@x `*.cDCCuc  1 a 1 wreg ]
+[v mode_display@x `*.cDCCuc  1 a 1 wreg ]
+[v mode_display@y `*.cDCCuc  1 p 1 11 ]
+"483
+} 0
+"200
+[v _lm_run `(v  1 e 0 0 ]
+{
+[v lm_run@dir `uc  1 a 1 wreg ]
+[v lm_run@dir `uc  1 a 1 wreg ]
+"203
+} 0
+"206
+[v _rm_run `(v  1 e 0 0 ]
+{
+[v rm_run@dir `uc  1 a 1 wreg ]
+[v rm_run@dir `uc  1 a 1 wreg ]
+"209
+} 0
+"212
+[v _bm_run `(v  1 e 0 0 ]
+{
+[v bm_run@dir `uc  1 a 1 wreg ]
+[v bm_run@dir `uc  1 a 1 wreg ]
+"215
+} 0
+"391
+[v _lcd_goto `(v  1 e 0 0 ]
+{
+[v lcd_goto@data `uc  1 a 1 wreg ]
+[v lcd_goto@data `uc  1 a 1 wreg ]
+"401
+} 0
+"404
+[v _lcd_clr `(v  1 e 0 0 ]
+{
+"407
+} 0
+"370
+[v _send_config `(v  1 e 0 0 ]
+{
+[v send_config@data `uc  1 a 1 wreg ]
+[v send_config@data `uc  1 a 1 wreg ]
+"377
+} 0
+"410
+[v _send_string `(v  1 e 0 0 ]
+{
+[v send_string@s `*.cDCCuc  1 a 1 wreg ]
+[v send_string@s `*.cDCCuc  1 a 1 wreg ]
+"412
+} 0
+"380
+[v _send_char `(v  1 e 0 0 ]
+{
+[v send_char@data `uc  1 a 1 wreg ]
+[v send_char@data `uc  1 a 1 wreg ]
+"387
+} 0
+"363
+[v _delay `(v  1 e 0 0 ]
+{
+[v delay@data `ul  1 p 4 0 ]
+"365
+} 0

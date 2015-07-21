@@ -1,0 +1,25 @@
+_delay: CODE, 1163 0 48
+_deg_0: CODE, 746 0 31
+_deg_30: CODE, 840 0 32
+_deg_90: CODE, 1124 0 39
+_deg_330: CODE, 808 0 32
+_main: CODE, 1540 0 180
+_bm_run: CODE, 694 0 23
+_clockwise: CODE, 1010 0 37
+_betamode: CODE, 1402 0 138
+_deg_210: CODE, 904 0 32
+_shift_display: CODE, 1720 0 328
+_lm_run: CODE, 648 0 23
+_lcd_clr: CODE, 628 0 20
+_deg_270: CODE, 1085 0 39
+_rm_run: CODE, 671 0 23
+_lcd_goto: CODE, 717 0 29
+_send_string: CODE, 1047 0 38
+_deg_150: CODE, 872 0 32
+_send_config: CODE, 936 0 37
+_deg_180: CODE, 777 0 31
+_mode_display: CODE, 1211 0 53
+_alphamode: CODE, 1264 0 138
+_send_char: CODE, 973 0 37
+_m_stop: CODE, 609 0 19
+Total: 1439
